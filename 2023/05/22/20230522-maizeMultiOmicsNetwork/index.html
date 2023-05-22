@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/functionalGenes.png">
 <meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/predictFTgenes.png">
 <meta property="article:published_time" content="2023-05-22T03:18:45.000Z">
-<meta property="article:modified_time" content="2023-05-22T03:28:39.355Z">
+<meta property="article:modified_time" content="2023-05-22T03:59:06.136Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="玉米">
 <meta property="article:tag" content="多组学">
@@ -310,7 +310,7 @@
                 <p>随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络。</p>
 <h2 id="构建多组学网络"><a href="#构建多组学网络" class="headerlink" title="构建多组学网络"></a>构建多组学网络</h2><p>作者收集了不同组织、时期的多个样本，使用多种方法分别构建了基因组网络、共表达网络、共翻译网络以及蛋白质互作网络。其中基因组网络由ChIA-PET方法构建，共表达网络由31个组织时期的转录组数据构建，共翻译网络由21个组织时期的Ribo-seq数据构建，蛋白质互作网络使用RLL-Y2H构建。最终构建了一个包含407,721个功能元件（node）、多于2,800,000个边（edge）的综合网络。</p>
 <p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png" srcset="/img/loading.gif" lazyload alt="玉米多组学整合网络图谱" title="玉米多组学整合网络图谱"></p>
-<h2 id="重复基因功能分化"><a href="#重复基因功能分化" class="headerlink" title="重复基因功能分化"></a>重复基因功能分化</h2><p>基因复制（基因组加倍WGD、串联重复tandem duplication、近端重复proximal duplication、转座重复transposition duplication、散在重复dispersed duplication）为基因功能进化提供契机。相较于非旁系同源基因，玉米重复基因，尤其是串联重复、近端重复以及基因组加倍重复基因更倾向于富集在相同的模块中，且具有更小的SD（节点间最短距离），表明其功能的保守性。进而根据基因间相似性和差异性将其分为I<del>V5类，其相似性逐渐降低而差异性增加，分别代表保守的（I）、亚功能化（II）、新功能化（III和IV）以及无功能化/特化（V）。重复基因更倾向于富集在代表功能保守的类别中，表明其在网络中的功能相似性。从共表达到共转录再到互作组网络重复基因在I</del>V类中的比例各不相同且存在重新分组的现象。最后根据重复基因起源的时间和I~V类中的分布比例发现，新生成的基因倾向于更保守。</p>
+<h2 id="重复基因功能分化"><a href="#重复基因功能分化" class="headerlink" title="重复基因功能分化"></a>重复基因功能分化</h2><p>基因复制（基因组加倍WGD、串联重复tandem duplication、近端重复proximal duplication、转座重复transposition duplication、散在重复dispersed duplication）为基因功能进化提供契机。相较于非旁系同源基因，玉米重复基因，尤其是串联重复、近端重复以及基因组加倍重复基因更倾向于富集在相同的模块中，且具有更小的SD（节点间最短距离），表明其功能的保守性。进而根据基因间相似性和差异性将其分为I ~ V5类，其相似性逐渐降低而差异性增加，分别代表保守的（I）、亚功能化（II）、新功能化（III和IV）以及无功能化/特化（V）。重复基因更倾向于富集在代表功能保守的类别中，表明其在网络中的功能相似性。从共表达到共转录再到互作组网络重复基因在I ~ V类中的比例各不相同且存在重新分组的现象。最后根据重复基因起源的时间和I ~ V类中的分布比例发现，新生成的基因倾向于更保守。</p>
 <p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/duplicatedGenes.png" srcset="/img/loading.gif" lazyload alt="不同组学层间重复基因的网络相似性和差异性" title="不同组学层间重复基因的网络相似性和差异"></p>
 <h2 id="玉米亚基因组间非对称调控"><a href="#玉米亚基因组间非对称调控" class="headerlink" title="玉米亚基因组间非对称调控"></a>玉米亚基因组间非对称调控</h2><p>玉米是一种异源四倍体物种，两套亚基因组中maize1保留了更多的基因，且maize1中的基因表达量比maize2基因表达量更高。通过比较两个亚基因组中同源基因的连接度（Degree）发现，从共表达到共翻译再到互作组网络，其连接度差异愈发明显，到互作组网络中存在显著差异。滑窗统计方法表明maize1中由更多的优势bins。</p>
 <p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/subgenome.png" srcset="/img/loading.gif" lazyload alt="亚基因组间不对称的网络分化" title="亚基因组间不对称的网络分化"></p>
