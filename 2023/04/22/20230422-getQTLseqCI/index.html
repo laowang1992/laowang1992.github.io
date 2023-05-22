@@ -16,17 +16,17 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="书接上文，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。  计算原理模拟取样过程双亲杂交（AA × BB）、自交后产生包含大量子代个体的分离群体（RIL或F2），随机抽取两组若干个体构成两个模拟bulk pool。对于构成bulk pool的每一个个体可能的基因型以及概率使固定的，RIL群体为AA:BB">
+    <meta name="description" content="书接上文，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。  计算原理模拟取样过程双亲杂交（AA × BB）、自交后产生包含大量子代个体的分离群体（RIL或F2），随机抽取两组若干个体构成两个模拟bulk pool。对于构成bulk pool的每一个个体可能的基因型以及概率是固定的，RIL群体为AA:BB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QTL-seq系列 | 如何计算置信区间">
 <meta property="og:url" content="http://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="书接上文，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。  计算原理模拟取样过程双亲杂交（AA × BB）、自交后产生包含大量子代个体的分离群体（RIL或F2），随机抽取两组若干个体构成两个模拟bulk pool。对于构成bulk pool的每一个个体可能的基因型以及概率使固定的，RIL群体为AA:BB">
+<meta property="og:description" content="书接上文，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。  计算原理模拟取样过程双亲杂交（AA × BB）、自交后产生包含大量子代个体的分离群体（RIL或F2），随机抽取两组若干个体构成两个模拟bulk pool。对于构成bulk pool的每一个个体可能的基因型以及概率是固定的，RIL群体为AA:BB">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/method.png">
 <meta property="og:image" content="http://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/QTLseqCI.png">
 <meta property="article:published_time" content="2023-04-22T13:32:37.000Z">
-<meta property="article:modified_time" content="2023-04-22T14:12:57.301Z">
+<meta property="article:modified_time" content="2023-04-27T07:52:13.142Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="QTL-seq">
@@ -305,7 +305,7 @@
                 
                 <p><a href="http://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/">书接上文</a>，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。</p>
 <p><img src="/2023/04/22/20230422-getQTLseqCI/method.png" srcset="/img/loading.gif" lazyload alt="计算原理" title="计算原理"></p>
-<h2 id="计算原理"><a href="#计算原理" class="headerlink" title="计算原理"></a>计算原理</h2><h3 id="模拟取样过程"><a href="#模拟取样过程" class="headerlink" title="模拟取样过程"></a>模拟取样过程</h3><p>双亲杂交（AA × BB）、自交后产生包含大量子代个体的分离群体（RIL或F<sub>2</sub>），随机抽取两组若干个体构成两个模拟bulk pool。对于构成bulk pool的每一个个体可能的基因型以及概率使固定的，RIL群体为AA:BB=0.5:0.5，而F<sub>2</sub>群体为AA:AB:BB=0.25:0.5:0.25，由此可以计算出给定子代数目的bulk pool中的等位基因频率P(A)和P(B)。</p>
+<h2 id="计算原理"><a href="#计算原理" class="headerlink" title="计算原理"></a>计算原理</h2><h3 id="模拟取样过程"><a href="#模拟取样过程" class="headerlink" title="模拟取样过程"></a>模拟取样过程</h3><p>双亲杂交（AA × BB）、自交后产生包含大量子代个体的分离群体（RIL或F<sub>2</sub>），随机抽取两组若干个体构成两个模拟bulk pool。对于构成bulk pool的每一个个体可能的基因型以及概率是固定的，RIL群体为AA:BB=0.5:0.5，而F<sub>2</sub>群体为AA:AB:BB=0.25:0.5:0.25，由此可以计算出给定子代数目的bulk pool中的等位基因频率P(A)和P(B)。</p>
 <h3 id="模拟计算ΔSNP-index"><a href="#模拟计算ΔSNP-index" class="headerlink" title="模拟计算ΔSNP-index"></a>模拟计算ΔSNP-index</h3><p>前面计算出了bulk pool中的等位基因频率，那么在特定测序深度（N）下等位基因A出现的次数就相当于进行N次二项分布取样$n(A) = X \sim B(N,P(A))$，进而可以得到SNP index = n(A)/N，两个bulk pool的SNP index相减得到ΔSNP-index。</p>
 <h3 id="计算零假设下的ΔSNP-index分布"><a href="#计算零假设下的ΔSNP-index分布" class="headerlink" title="计算零假设下的ΔSNP-index分布"></a>计算零假设下的ΔSNP-index分布</h3><p>将以上过程重复若干次（10000次）可以得到在零假设下的ΔSNP-index的分布，取其上分位数和下分位数可以得到对应置信区间（如95%置信区间取上0.025分位数和下0.025分位数）。</p>
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>这里使用R语言实现上述过程。</p>

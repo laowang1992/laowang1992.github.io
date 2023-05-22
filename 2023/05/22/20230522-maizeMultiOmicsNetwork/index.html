@@ -16,31 +16,30 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="玉米（Zea mays）是重要的粮食作物和饲料作物，同时也是重要的工业原料，并且在世界范围内广泛种植。干旱胁迫会导致作物严重减产，挖掘抗旱种质资源，选育高产抗旱品种可以缓解这一问题。作者在自然群体中筛选出一个具有抗旱特性的玉米种质资源（CIMBL55）。相较于B73和Mo17，CIMBL55具有较高的苗期存活率以及干旱条件下较低的产量损失。  基因组组装和共线性分析作者结合PacBio三代长读长测">
+    <meta name="description" content="随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nat. Genet | 一个优良抗旱玉米种质的基因组组装与遗传剖析">
-<meta property="og:url" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/index.html">
+<meta property="og:title" content="Nat. Genet | 玉米多组学整合网络图谱">
+<meta property="og:url" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="玉米（Zea mays）是重要的粮食作物和饲料作物，同时也是重要的工业原料，并且在世界范围内广泛种植。干旱胁迫会导致作物严重减产，挖掘抗旱种质资源，选育高产抗旱品种可以缓解这一问题。作者在自然群体中筛选出一个具有抗旱特性的玉米种质资源（CIMBL55）。相较于B73和Mo17，CIMBL55具有较高的苗期存活率以及干旱条件下较低的产量损失。  基因组组装和共线性分析作者结合PacBio三代长读长测">
+<meta property="og:description" content="随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/phenotype.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/genome_and_synteny.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/SV.PNG">
-<meta property="og:image" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/epigenomic_variations.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/ZmRtn16.png">
-<meta property="article:published_time" content="2023-04-20T12:56:47.000Z">
-<meta property="article:modified_time" content="2023-05-22T03:20:11.133Z">
+<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/duplicatedGenes.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/subgenome.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/functionalGenes.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/predictFTgenes.png">
+<meta property="article:published_time" content="2023-05-22T03:18:45.000Z">
+<meta property="article:modified_time" content="2023-05-22T03:28:39.355Z">
 <meta property="article:author" content="老王">
-<meta property="article:tag" content="基因组">
-<meta property="article:tag" content="SV">
-<meta property="article:tag" content="抗旱">
 <meta property="article:tag" content="玉米">
+<meta property="article:tag" content="多组学">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/phenotype.png">
+<meta name="twitter:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png">
   
   
   
-  <title>Nat. Genet | 一个优良抗旱玉米种质的基因组组装与遗传剖析 - 请叫我老王</title>
+  <title>Nat. Genet | 玉米多组学整合网络图谱 - 请叫我老王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -223,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Nat. Genet | 一个优良抗旱玉米种质的基因组组装与遗传剖析"></span>
+            <span id="subtitle" data-typed-text="Nat. Genet | 玉米多组学整合网络图谱"></span>
           
         </div>
 
@@ -234,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-20 20:56" pubdate>
-          2023年4月20日 晚上
+        <time datetime="2023-05-22 11:18" pubdate>
+          2023年5月22日 上午
         </time>
       </span>
     
@@ -246,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.4k 字
         
       </span>
     
@@ -257,7 +256,7 @@
         
         
         
-          14 分钟
+          12 分钟
         
       </span>
     
@@ -303,23 +302,24 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Nat. Genet | 一个优良抗旱玉米种质的基因组组装与遗传剖析</h1>
+            <h1 style="display: none">Nat. Genet | 玉米多组学整合网络图谱</h1>
             
             
               <div class="markdown-body">
                 
-                <p>玉米（<em>Zea mays</em>）是重要的粮食作物和饲料作物，同时也是重要的工业原料，并且在世界范围内广泛种植。干旱胁迫会导致作物严重减产，挖掘抗旱种质资源，选育高产抗旱品种可以缓解这一问题。作者在自然群体中筛选出一个具有抗旱特性的玉米种质资源（CIMBL55）。相较于B73和Mo17，CIMBL55具有较高的苗期存活率以及干旱条件下较低的产量损失。</p>
-<p><img src="/2023/04/20/20230420-DroughtResistantMaizeGermplasm/phenotype.png" srcset="/img/loading.gif" lazyload alt="CIMBL55具有显著抗旱性" title="CIMBL55具有显著抗旱性"></p>
-<h2 id="基因组组装和共线性分析"><a href="#基因组组装和共线性分析" class="headerlink" title="基因组组装和共线性分析"></a>基因组组装和共线性分析</h2><p>作者结合PacBio三代长读长测序、BioNano光学图谱以及Hi-C测序技术对CIMBL55进行基因组测序组装。通过BUSCO分析以及9个CIMBL55 BAC克隆序列比对，作者验证了其基因组的质量可靠。通过CIMBL55与B73基因组间共线性分析，作者讲CIMBL55基因分成同源染色体共线性基因、非同源染色体重复基因、contigs上的共线性基因、不在共线性block中的直系同源基因和没有直系同源蛋白序列的基因5类。其中属于class 1-3的基因（Synteny）表达量显著高于class 4-5的基因（Noynteny）表达量。</p>
-<p><img src="/2023/04/20/20230420-DroughtResistantMaizeGermplasm/genome_and_synteny.png" srcset="/img/loading.gif" lazyload alt="基因组组装及共线性分析" title="基因组组装及共线性分析"></p>
-<h2 id="SV鉴定"><a href="#SV鉴定" class="headerlink" title="SV鉴定"></a>SV鉴定</h2><p>作者将B73、Mo17和CIMBL55进行比对并鉴定了841,911个SV（&gt;20 bp），在玉米自然群体中鉴定了其中544,853个SVs的基因型。先前在自然群体中利用SNP鉴定的108个抗旱基因中有79个基因的优良等位基因（superior alleles）富集在CIMBL55中。进一步SV基因型进行关联分析，鉴定到69个基因包含和抗旱表型显著关联的SV，其中65个基因的优良单倍型（SNP和SV）富集在CIMBL55中。<em>ZmABF4</em>编码bZIP转录因子，可以调控ABA和干旱诱导的基因表达，在<em>ZmABF4</em>的第二个内含子上鉴定到一个SNP和一个SV，这两个变异和基因表达量、抗旱性显著关联。在自然群体中带有<em>ZmABF4<sup>CIMBL55</sup><em>单倍型的个体具有更高的</em>ZmABF4</em>表达量和抗旱性，而且<em>ZmABF4<sup>B73</sup><em>超表达植株和野生型相比表现出更高的抗旱性，表明</em>ZmABF4</em>可以正调控玉米抗旱性。</p>
-<p><img src="/2023/04/20/20230420-DroughtResistantMaizeGermplasm/SV.PNG" srcset="/img/loading.gif" lazyload alt="SV" title="SV"></p>
-<h2 id="表观基因组变异影响玉米抗旱"><a href="#表观基因组变异影响玉米抗旱" class="headerlink" title="表观基因组变异影响玉米抗旱"></a>表观基因组变异影响玉米抗旱</h2><p>根据CIMBL55基因组插入片段（包括0.5-kb-flanking regions）的mCG、mCHG和mCHH甲基化水平使用层次聚类将其分为5类，其中第四类插入片段和flanking regions相比具有更高的甲基化水平，这类插入片段富集了大量DNA-TEs且距离转录起始位点较近。一些NAC-domain-containing transcription factor家族成员对失水胁迫抗性有积极作用。和<em>ZmNAC075<sup>CIMBL55</sup><em>相比</em>ZmNAC075<sup>B73</sup><em>上游有两个插入片段，这两个片段被超甲基化可能导致</em>ZmNAC075</em>表达量降低进而导致玉米抗旱性降低。</p>
-<p><img src="/2023/04/20/20230420-DroughtResistantMaizeGermplasm/epigenomic_variations.png" srcset="/img/loading.gif" lazyload alt="表观基因组变异影响玉米抗旱性" title="表观基因组变异影响玉米抗旱性"></p>
-<h2 id="ZmRtn16提高玉米抗旱性"><a href="#ZmRtn16提高玉米抗旱性" class="headerlink" title="ZmRtn16提高玉米抗旱性"></a>ZmRtn16提高玉米抗旱性</h2><p>通过比较基因组分析鉴定到<em>ZmRtn16<sup>CIMBL55</sup><em>的3′-UTR区域存在一个28 bp缺失片段，带有这一缺失片段的玉米种质具有更高的抗旱性且</em>ZmRtn16</em>表达量更高，同时这一缺失片段可以增强<em>ZmRtn16</em>转录本的稳定性。<em>ZmRtn16</em>超表达株系、<em>crispr</em>敲除株系和野生型对照株系比较分析表明，<em>ZmRtn16</em>可以降低干旱条件下的玉米叶片气孔开度和降低失水率，从而减少干旱条件下的产量损失和增强抗旱性。进一步实验表明，<em>ZmRtn16</em>可以和ZmVHA-A以及ZmVHA-E3互作，促进ZmVHA-A和ZmVHA-E3定位到液泡膜上并增强V-H<sup>+</sup>-ATPase活性。</p>
-<p><img src="/2023/04/20/20230420-DroughtResistantMaizeGermplasm/ZmRtn16.png" srcset="/img/loading.gif" lazyload alt="ZmRtn16提高玉米抗旱性" title="ZmRtn16提高玉米抗旱性"></p>
+                <p>随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络。</p>
+<h2 id="构建多组学网络"><a href="#构建多组学网络" class="headerlink" title="构建多组学网络"></a>构建多组学网络</h2><p>作者收集了不同组织、时期的多个样本，使用多种方法分别构建了基因组网络、共表达网络、共翻译网络以及蛋白质互作网络。其中基因组网络由ChIA-PET方法构建，共表达网络由31个组织时期的转录组数据构建，共翻译网络由21个组织时期的Ribo-seq数据构建，蛋白质互作网络使用RLL-Y2H构建。最终构建了一个包含407,721个功能元件（node）、多于2,800,000个边（edge）的综合网络。</p>
+<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png" srcset="/img/loading.gif" lazyload alt="玉米多组学整合网络图谱" title="玉米多组学整合网络图谱"></p>
+<h2 id="重复基因功能分化"><a href="#重复基因功能分化" class="headerlink" title="重复基因功能分化"></a>重复基因功能分化</h2><p>基因复制（基因组加倍WGD、串联重复tandem duplication、近端重复proximal duplication、转座重复transposition duplication、散在重复dispersed duplication）为基因功能进化提供契机。相较于非旁系同源基因，玉米重复基因，尤其是串联重复、近端重复以及基因组加倍重复基因更倾向于富集在相同的模块中，且具有更小的SD（节点间最短距离），表明其功能的保守性。进而根据基因间相似性和差异性将其分为I<del>V5类，其相似性逐渐降低而差异性增加，分别代表保守的（I）、亚功能化（II）、新功能化（III和IV）以及无功能化/特化（V）。重复基因更倾向于富集在代表功能保守的类别中，表明其在网络中的功能相似性。从共表达到共转录再到互作组网络重复基因在I</del>V类中的比例各不相同且存在重新分组的现象。最后根据重复基因起源的时间和I~V类中的分布比例发现，新生成的基因倾向于更保守。</p>
+<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/duplicatedGenes.png" srcset="/img/loading.gif" lazyload alt="不同组学层间重复基因的网络相似性和差异性" title="不同组学层间重复基因的网络相似性和差异"></p>
+<h2 id="玉米亚基因组间非对称调控"><a href="#玉米亚基因组间非对称调控" class="headerlink" title="玉米亚基因组间非对称调控"></a>玉米亚基因组间非对称调控</h2><p>玉米是一种异源四倍体物种，两套亚基因组中maize1保留了更多的基因，且maize1中的基因表达量比maize2基因表达量更高。通过比较两个亚基因组中同源基因的连接度（Degree）发现，从共表达到共翻译再到互作组网络，其连接度差异愈发明显，到互作组网络中存在显著差异。滑窗统计方法表明maize1中由更多的优势bins。</p>
+<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/subgenome.png" srcset="/img/loading.gif" lazyload alt="亚基因组间不对称的网络分化" title="亚基因组间不对称的网络分化"></p>
+<h2 id="重要基因的功能网络"><a href="#重要基因的功能网络" class="headerlink" title="重要基因的功能网络"></a>重要基因的功能网络</h2><p>处于同一个网络中的基因可能具有相似的功能。因此作者搜集功能已知的基因并找到其所处的子网络，通过对子网络的分析鉴定了调控相同性状的新的功能基因。</p>
+<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/functionalGenes.png" srcset="/img/loading.gif" lazyload alt="多组学网络重建复杂性状的调控网络" title="多组学网络重建复杂性状的调控网络"></p>
+<h2 id="花期新基因的预测"><a href="#花期新基因的预测" class="headerlink" title="花期新基因的预测"></a>花期新基因的预测</h2><p>花期是重要的农艺性状。作者搜集已知的玉米花期基因和其他物种花期基因的同源基因，结合多组学整合网络使用机器学习的方法建立预测模型，进而预测玉米花期基因。最终预测了2,651个花期相关基因，以及鉴定到8个子网络和花期相关，这8个子网络分别代表了不同的调控途径。对其中20个基因进行基因敲除并考察突变体和野生型的表型，作者验证了其在花期表型中的功能。</p>
+<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/predictFTgenes.png" srcset="/img/loading.gif" lazyload alt="使用多组学网路预测花期基因" title="使用多组学网路预测花期基因"></p>
 <p><strong>原文链接</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41588-023-01297-y">Tian T, Wang S, Yang S, et al. Genome assembly and genetic dissection of a prominent drought-resistant maize germplasm. Nat Genet. 2023;55(3):496-506. doi:10.1038/s41588-023-01297-y</a></p>
+<p><a target="_blank" rel="noopener" href="https://doi.org/10.1038/s41588-022-01262-1">Han L, Zhong W, Qian J, et al. A multi-omics integrative network map of maize. Nat Genet. 2023;55(1):144-153. doi:10.1038/s41588-022-01262-1</a></p>
 
                 
               </div>
@@ -353,13 +353,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%9F%BA%E5%9B%A0%E7%BB%84/">#基因组</a>
-      
-        <a href="/tags/SV/">#SV</a>
-      
-        <a href="/tags/%E6%8A%97%E6%97%B1/">#抗旱</a>
-      
         <a href="/tags/%E7%8E%89%E7%B1%B3/">#玉米</a>
+      
+        <a href="/tags/%E5%A4%9A%E7%BB%84%E5%AD%A6/">#多组学</a>
+      
+        <a href="/tags/%E7%BD%91%E7%BB%9C/">#网络</a>
       
     </div>
   
@@ -371,8 +369,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Nat. Genet | 一个优良抗旱玉米种质的基因组组装与遗传剖析</div>
-      <div>http://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/</div>
+      <div>Nat. Genet | 玉米多组学整合网络图谱</div>
+      <div>http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/</div>
     </div>
     <div class="license-meta">
       
@@ -384,7 +382,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月20日</div>
+          <div>2023年5月22日</div>
         </div>
       
       
@@ -416,18 +414,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/22/20230422-QTLseqMethod/" title="QTL-seq系列 | QTL-seq原理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">QTL-seq系列 | QTL-seq原理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/22/20230322-pheCorDist/" title="R绘图 | 群体表型分布和相关关系">
-                        <span class="hidden-mobile">R绘图 | 群体表型分布和相关关系</span>
+                      <a href="/2023/04/24/20230424-FirstYearAnniversary/" title="搞对象一周年纪念日">
+                        <span class="hidden-mobile">搞对象一周年纪念日</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
