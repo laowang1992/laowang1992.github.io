@@ -16,30 +16,25 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络">
+    <meta name="description" content="shiny是一个创建交互式web应用程序的工具，有R和python版本，这里只涉及R版本。 安装shiny是一个R语言扩展包，安装方便： 1install.packages(&quot;shiny&quot;) 基本构成一个shiny程序包含在一个文件夹中（即shiny app的工作目录，例如：newdir&#x2F;），其中代码部分在文件夹内的一个叫app.R的R脚本中（newdir&#x2F;app.R）。app">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nat. Genet | 玉米多组学整合网络图谱">
-<meta property="og:url" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/index.html">
+<meta property="og:title" content="R语言 | shiny基础（一）：shiny入门">
+<meta property="og:url" content="http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络">
+<meta property="og:description" content="shiny是一个创建交互式web应用程序的工具，有R和python版本，这里只涉及R版本。 安装shiny是一个R语言扩展包，安装方便： 1install.packages(&quot;shiny&quot;) 基本构成一个shiny程序包含在一个文件夹中（即shiny app的工作目录，例如：newdir&#x2F;），其中代码部分在文件夹内的一个叫app.R的R脚本中（newdir&#x2F;app.R）。app">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/duplicatedGenes.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/subgenome.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/functionalGenes.png">
-<meta property="og:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/predictFTgenes.png">
-<meta property="article:published_time" content="2023-05-22T03:18:45.000Z">
-<meta property="article:modified_time" content="2023-05-22T03:59:06.136Z">
+<meta property="og:image" content="http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/run-app.png">
+<meta property="article:published_time" content="2023-05-31T09:42:07.000Z">
+<meta property="article:modified_time" content="2023-05-31T10:52:42.213Z">
 <meta property="article:author" content="老王">
-<meta property="article:tag" content="玉米">
-<meta property="article:tag" content="多组学">
-<meta property="article:tag" content="网络">
+<meta property="article:tag" content="R">
+<meta property="article:tag" content="shiny">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png">
+<meta name="twitter:image" content="http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/run-app.png">
   
   
   
-  <title>Nat. Genet | 玉米多组学整合网络图谱 - 请叫我老王</title>
+  <title>R语言 | shiny基础（一）：shiny入门 - 请叫我老王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Nat. Genet | 玉米多组学整合网络图谱"></span>
+            <span id="subtitle" data-typed-text="R语言 | shiny基础（一）：shiny入门"></span>
           
         </div>
 
@@ -233,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-22 11:18" pubdate>
-          2023年5月22日 上午
+        <time datetime="2023-05-31 17:42" pubdate>
+          2023年5月31日 下午
         </time>
       </span>
     
@@ -245,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          796 字
         
       </span>
     
@@ -256,7 +251,7 @@
         
         
         
-          12 分钟
+          7 分钟
         
       </span>
     
@@ -302,24 +297,28 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Nat. Genet | 玉米多组学整合网络图谱</h1>
+            <h1 style="display: none">R语言 | shiny基础（一）：shiny入门</h1>
             
             
               <div class="markdown-body">
                 
-                <p>随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics integrative network map of maize”这篇文献以玉米为例构建多组学网络，挖掘重要农艺性状基因和调控网络。</p>
-<h2 id="构建多组学网络"><a href="#构建多组学网络" class="headerlink" title="构建多组学网络"></a>构建多组学网络</h2><p>作者收集了不同组织、时期的多个样本，使用多种方法分别构建了基因组网络、共表达网络、共翻译网络以及蛋白质互作网络。其中基因组网络由ChIA-PET方法构建，共表达网络由31个组织时期的转录组数据构建，共翻译网络由21个组织时期的Ribo-seq数据构建，蛋白质互作网络使用RLL-Y2H构建。最终构建了一个包含407,721个功能元件（node）、多于2,800,000个边（edge）的综合网络。</p>
-<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/MultiOmicsNetwork.png" srcset="/img/loading.gif" lazyload alt="玉米多组学整合网络图谱" title="玉米多组学整合网络图谱"></p>
-<h2 id="重复基因功能分化"><a href="#重复基因功能分化" class="headerlink" title="重复基因功能分化"></a>重复基因功能分化</h2><p>基因复制（基因组加倍WGD、串联重复tandem duplication、近端重复proximal duplication、转座重复transposition duplication、散在重复dispersed duplication）为基因功能进化提供契机。相较于非旁系同源基因，玉米重复基因，尤其是串联重复、近端重复以及基因组加倍重复基因更倾向于富集在相同的模块中，且具有更小的SD（节点间最短距离），表明其功能的保守性。进而根据基因间相似性和差异性将其分为I ~ V5类，其相似性逐渐降低而差异性增加，分别代表保守的（I）、亚功能化（II）、新功能化（III和IV）以及无功能化/特化（V）。重复基因更倾向于富集在代表功能保守的类别中，表明其在网络中的功能相似性。从共表达到共转录再到互作组网络重复基因在I ~ V类中的比例各不相同且存在重新分组的现象。最后根据重复基因起源的时间和I ~ V类中的分布比例发现，新生成的基因倾向于更保守。</p>
-<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/duplicatedGenes.png" srcset="/img/loading.gif" lazyload alt="不同组学层间重复基因的网络相似性和差异性" title="不同组学层间重复基因的网络相似性和差异"></p>
-<h2 id="玉米亚基因组间非对称调控"><a href="#玉米亚基因组间非对称调控" class="headerlink" title="玉米亚基因组间非对称调控"></a>玉米亚基因组间非对称调控</h2><p>玉米是一种异源四倍体物种，两套亚基因组中maize1保留了更多的基因，且maize1中的基因表达量比maize2基因表达量更高。通过比较两个亚基因组中同源基因的连接度（Degree）发现，从共表达到共翻译再到互作组网络，其连接度差异愈发明显，到互作组网络中存在显著差异。滑窗统计方法表明maize1中由更多的优势bins。</p>
-<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/subgenome.png" srcset="/img/loading.gif" lazyload alt="亚基因组间不对称的网络分化" title="亚基因组间不对称的网络分化"></p>
-<h2 id="重要基因的功能网络"><a href="#重要基因的功能网络" class="headerlink" title="重要基因的功能网络"></a>重要基因的功能网络</h2><p>处于同一个网络中的基因可能具有相似的功能。因此作者搜集功能已知的基因并找到其所处的子网络，通过对子网络的分析鉴定了调控相同性状的新的功能基因。</p>
-<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/functionalGenes.png" srcset="/img/loading.gif" lazyload alt="多组学网络重建复杂性状的调控网络" title="多组学网络重建复杂性状的调控网络"></p>
-<h2 id="花期新基因的预测"><a href="#花期新基因的预测" class="headerlink" title="花期新基因的预测"></a>花期新基因的预测</h2><p>花期是重要的农艺性状。作者搜集已知的玉米花期基因和其他物种花期基因的同源基因，结合多组学整合网络使用机器学习的方法建立预测模型，进而预测玉米花期基因。最终预测了2,651个花期相关基因，以及鉴定到8个子网络和花期相关，这8个子网络分别代表了不同的调控途径。对其中20个基因进行基因敲除并考察突变体和野生型的表型，作者验证了其在花期表型中的功能。</p>
-<p><img src="/2023/05/22/20230522-maizeMultiOmicsNetwork/predictFTgenes.png" srcset="/img/loading.gif" lazyload alt="使用多组学网路预测花期基因" title="使用多组学网路预测花期基因"></p>
-<p><strong>原文链接</strong></p>
-<p><a target="_blank" rel="noopener" href="https://doi.org/10.1038/s41588-022-01262-1">Han L, Zhong W, Qian J, et al. A multi-omics integrative network map of maize. Nat Genet. 2023;55(1):144-153. doi:10.1038/s41588-022-01262-1</a></p>
+                <p>shiny是一个创建交互式web应用程序的工具，有R和python版本，这里只涉及R版本。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>shiny是一个R语言扩展包，安装方便：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs R">install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;shiny&quot;</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+<h2 id="基本构成"><a href="#基本构成" class="headerlink" title="基本构成"></a>基本构成</h2><p>一个shiny程序包含在一个文件夹中（即shiny app的工作目录，例如：<code>newdir/</code>），其中代码部分在文件夹内的一个叫<code>app.R</code>的R脚本中（<code>newdir/app.R</code>）。<code>app.R</code>由三个部分构成：</p>
+<ul>
+<li>一个ui（user interface）对象</li>
+<li>一个server函数</li>
+<li>调用<code>shinyApp</code>函数</li>
+</ul>
+<p><code>ui</code>对象决定了web应用的布局、外观。<code>server</code>函数包含构建交互web应用的指令，例如生成图片、表格、文字等等。<code>shinyApp()</code>函数使用前面定义的<code>ui</code>和<code>server</code>创建web应用。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs R">library<span class="hljs-punctuation">(</span>shiny<span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># Define UI for app ----</span><br>ui <span class="hljs-operator">&lt;-</span> fluidPage<span class="hljs-punctuation">(</span><br>    <span class="hljs-comment"># some code</span><br><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># Define server logic ----</span><br>server <span class="hljs-operator">&lt;-</span> <span class="hljs-keyword">function</span><span class="hljs-punctuation">(</span>input<span class="hljs-punctuation">,</span> output<span class="hljs-punctuation">)</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-comment"># some code</span><br><span class="hljs-punctuation">&#125;</span><br><br>shinyApp<span class="hljs-punctuation">(</span>ui <span class="hljs-operator">=</span> ui<span class="hljs-punctuation">,</span> server <span class="hljs-operator">=</span> server<span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="如何运行shiny"><a href="#如何运行shiny" class="headerlink" title="如何运行shiny"></a>如何运行shiny</h2><h3 id="runApp函数"><a href="#runApp函数" class="headerlink" title="runApp函数"></a><code>runApp</code>函数</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs R">library<span class="hljs-punctuation">(</span>shiny<span class="hljs-punctuation">)</span><br>runApp<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;./my_app&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># `./my_app`是指app.R所在文件加的路径</span><br></code></pre></td></tr></table></figure>
+<h3 id="Rstudio"><a href="#Rstudio" class="headerlink" title="Rstudio"></a>Rstudio</h3><p>当打开一个shiny app的<code>app.R</code>脚本时，Rstudio会自动识别到这是一个shiny脚本，并且会出现一个Run App按钮，点击此按钮可以运行app.R脚本，或者使用键盘的Control+Shift+Enter也可以实现运行脚本。</p>
+<p><img src="/2023/05/31/20230531-shinyBasics1/run-app.png" srcset="/img/loading.gif" lazyload alt="Rstudio中运行shiny app" title="Rstudio中运行shiny app"></p>
+<p><strong>参考资料</strong></p>
+<p><a target="_blank" rel="noopener" href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/</a></p>
 
                 
               </div>
@@ -338,7 +337,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/" class="category-chain-item">文献解读</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
   
   
 
@@ -353,11 +352,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%8E%89%E7%B1%B3/">#玉米</a>
+        <a href="/tags/R/">#R</a>
       
-        <a href="/tags/%E5%A4%9A%E7%BB%84%E5%AD%A6/">#多组学</a>
-      
-        <a href="/tags/%E7%BD%91%E7%BB%9C/">#网络</a>
+        <a href="/tags/shiny/">#shiny</a>
       
     </div>
   
@@ -369,8 +366,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Nat. Genet | 玉米多组学整合网络图谱</div>
-      <div>http://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/</div>
+      <div>R语言 | shiny基础（一）：shiny入门</div>
+      <div>http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +379,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月22日</div>
+          <div>2023年5月31日</div>
         </div>
       
       
@@ -414,18 +411,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/31/20230531-shinyBasics1/" title="R语言 | shiny基础（一）：shiny入门">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">R语言 | shiny基础（一）：shiny入门</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/24/20230424-FirstYearAnniversary/" title="搞对象一周年纪念日">
-                        <span class="hidden-mobile">搞对象一周年纪念日</span>
+                      <a href="/2023/05/22/20230522-maizeMultiOmicsNetwork/" title="Nat. Genet | 玉米多组学整合网络图谱">
+                        <span class="hidden-mobile">Nat. Genet | 玉米多组学整合网络图谱</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
