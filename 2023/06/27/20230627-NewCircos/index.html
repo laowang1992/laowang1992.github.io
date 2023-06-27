@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="老王">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="实际案例及问题我们先看文章中的例子。在下图中最外两层分别表示了遗传连锁图和物理图（基因组），中间连线代表构图标记在遗传图和物理图上位置的对应关系。我们可以看到不同染色体间的长度比例和不同连锁图间的长度比例是相同的，但是这一点显然和实际情况不符。这幅图是由circos软件绘制，造成上述比例问题的原因可能是circos并不能改变不同track的比例，或者有改变比例的设置方法但作者并不知道。  解决方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R绘图 | 如何改变circos图中不同track中sector间的比例">
+<meta property="og:url" content="http://laowang2023.cn/2023/06/27/20230627-NewCircos/index.html">
+<meta property="og:site_name" content="请叫我老王">
+<meta property="og:description" content="实际案例及问题我们先看文章中的例子。在下图中最外两层分别表示了遗传连锁图和物理图（基因组），中间连线代表构图标记在遗传图和物理图上位置的对应关系。我们可以看到不同染色体间的长度比例和不同连锁图间的长度比例是相同的，但是这一点显然和实际情况不符。这幅图是由circos软件绘制，造成上述比例问题的原因可能是circos并不能改变不同track的比例，或者有改变比例的设置方法但作者并不知道。  解决方案">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://laowang2023.cn/2023/06/27/20230627-NewCircos/rawCircos.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/06/27/20230627-NewCircos/rect.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/06/27/20230627-NewCircos/rect_with_link.png">
+<meta property="og:image" content="http://laowang2023.cn/2023/06/27/20230627-NewCircos/circos.png">
+<meta property="article:published_time" content="2023-06-27T12:11:53.000Z">
+<meta property="article:modified_time" content="2023-06-27T12:21:23.926Z">
+<meta property="article:author" content="老王">
+<meta property="article:tag" content="R">
+<meta property="article:tag" content="绘图">
+<meta property="article:tag" content="circos">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://laowang2023.cn/2023/06/27/20230627-NewCircos/rawCircos.png">
+  
+  
+  
+  <title>R绘图 | 如何改变circos图中不同track中sector间的比例 - 请叫我老王</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"laowang2023.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2gDQrSMhKFxALJaFFpTbgc23-gzGzoHsz","app_key":"NBsdUEdxwrnzaL1XcLReQM4N","server_url":"https://2gdqrsmh.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>请叫我老王</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="R绘图 | 如何改变circos图中不同track中sector间的比例"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-27 20:11" pubdate>
+          2023年6月27日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">R绘图 | 如何改变circos图中不同track中sector间的比例</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="实际案例及问题"><a href="#实际案例及问题" class="headerlink" title="实际案例及问题"></a>实际案例及问题</h2><p>我们先看文章中的例子。在下图中最外两层分别表示了遗传连锁图和物理图（基因组），中间连线代表构图标记在遗传图和物理图上位置的对应关系。我们可以看到不同染色体间的长度比例和不同连锁图间的长度比例是相同的，但是这一点显然和实际情况不符。这幅图是由<a target="_blank" rel="noopener" href="http://circos.ca/">circos</a>软件绘制，造成上述比例问题的原因可能是circos并不能改变不同track的比例，或者有改变比例的设置方法但作者并不知道。</p>
+<p><img src="/2023/06/27/20230627-NewCircos/rawCircos.png" srcset="/img/loading.gif" lazyload alt="Zhang et al., Industrial Crops &amp; Products, 2023" title="Zhang et al., Industrial Crops &amp; Products, 2023"></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>我们今天就尝试着用R语言的<code>ggplot2</code>来解决这一问题。基本思路是先用<code>geom_rect()</code>构建不同染色体和连锁群，然后使用<code>ggforce</code>扩展包的<code>geom_diagonal()</code>函数添加标记在连锁图和物理图间对应位置的连线，最后用<code>coord_polar()</code>将直角坐标系转换为极坐标系。</p>
+<h3 id="构建染色体和连锁群"><a href="#构建染色体和连锁群" class="headerlink" title="构建染色体和连锁群"></a>构建染色体和连锁群</h3><p>每个染色体和连锁群长度不同，且都是从 0 开始，为了能在同一水平线上依次画出不同染色体或连锁群，我们需要把其起始位置 0 和终止位置加上该染色体或连锁群前面的长度总和，并且为了是不同染色体或连锁群不重合，还需要加上 n-1 （n为该染色体或连锁群排序位置）个间隔大小，同理标记在基因组或连锁图上的位置也需要相同处理。还有一个问题是物理图和遗传图总长以及单位并不相同，需要将长度信息和位置信息标准化，在此我们将所有$长度或位置 \div total Length \times 1000000$。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># 加载扩展包</span><br>library<span class="hljs-punctuation">(</span>tidyverse<span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>ggforce<span class="hljs-punctuation">)</span><br><span class="hljs-comment"># 读取染色体和连锁群长度信息</span><br>chrLen <span class="hljs-operator">&lt;-</span> read_tsv<span class="hljs-punctuation">(</span>file <span class="hljs-operator">=</span> <span class="hljs-string">&quot;chrLen.txt&quot;</span><span class="hljs-punctuation">,</span> col_names <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Chr&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Len&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><br>lgLen <span class="hljs-operator">&lt;-</span> read_tsv<span class="hljs-punctuation">(</span>file <span class="hljs-operator">=</span> <span class="hljs-string">&quot;lgLen.txt&quot;</span><span class="hljs-punctuation">,</span> col_names <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Lg&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;LgLen&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 计算连锁图和物理图总长，用于标准化位置或长度信息</span><br>totalLgLen <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>lgLen<span class="hljs-operator">$</span>LgLen<span class="hljs-punctuation">)</span><br>totalChrLen <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>chrLen<span class="hljs-operator">$</span>Len<span class="hljs-punctuation">)</span><br>chrLen <span class="hljs-operator">&lt;-</span> chrLen <span class="hljs-operator">%&gt;%</span> mutate<span class="hljs-punctuation">(</span>Len <span class="hljs-operator">=</span> Len<span class="hljs-operator">/</span>totalChrLen<span class="hljs-operator">*</span><span class="hljs-number">1000000</span><span class="hljs-punctuation">)</span><br>lgLen <span class="hljs-operator">&lt;-</span> lgLen <span class="hljs-operator">%&gt;%</span> mutate<span class="hljs-punctuation">(</span>LgLen <span class="hljs-operator">=</span> LgLen<span class="hljs-operator">/</span>totalLgLen<span class="hljs-operator">*</span><span class="hljs-number">1000000</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 读取标记在物理图和连锁图上的位置信息，并除以总长进行标准化</span><br>lgMap <span class="hljs-operator">&lt;-</span> read_tsv<span class="hljs-punctuation">(</span>file <span class="hljs-operator">=</span> <span class="hljs-string">&quot;linkage_map.txt&quot;</span><span class="hljs-punctuation">,</span> col_names <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Marker&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Lg&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;LgPos&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><br>phyMap <span class="hljs-operator">&lt;-</span> read_tsv<span class="hljs-punctuation">(</span>file <span class="hljs-operator">=</span> <span class="hljs-string">&quot;physical_map.txt&quot;</span><span class="hljs-punctuation">,</span> col_names <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Marker&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Chr&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Pos&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><br>phyMap <span class="hljs-operator">&lt;-</span> phyMap <span class="hljs-operator">%&gt;%</span> filter<span class="hljs-punctuation">(</span><span class="hljs-operator">!</span>str_detect<span class="hljs-punctuation">(</span>Chr<span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;random&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><br><br>lgMap <span class="hljs-operator">&lt;-</span> lgMap <span class="hljs-operator">%&gt;%</span> mutate<span class="hljs-punctuation">(</span>LgPos <span class="hljs-operator">=</span> LgPos<span class="hljs-operator">/</span>totalLgLen<span class="hljs-operator">*</span><span class="hljs-number">1000000</span><span class="hljs-punctuation">)</span><br>phyMap <span class="hljs-operator">&lt;-</span> phyMap <span class="hljs-operator">%&gt;%</span> mutate<span class="hljs-punctuation">(</span>Pos <span class="hljs-operator">=</span> Pos<span class="hljs-operator">/</span>totalChrLen<span class="hljs-operator">*</span><span class="hljs-number">1000000</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># addUp函数读取染色体或连锁群长度信息，并将&quot;df&quot;参数中的位置信息加上对应染色体或连锁群前面的总长，以及不同染色体或连锁群之间的分隔长度(&quot;band=0.01&quot;指分隔长度为总长的 1%)</span><br>source<span class="hljs-punctuation">(</span>file <span class="hljs-operator">=</span> <span class="hljs-string">&quot;E:/mygit/SomeScript/addUp.R&quot;</span><span class="hljs-punctuation">)</span><br>lg_addUp <span class="hljs-operator">&lt;-</span> addUp<span class="hljs-punctuation">(</span>df <span class="hljs-operator">=</span> lgMap<span class="hljs-punctuation">,</span> len <span class="hljs-operator">=</span> lgLen<span class="hljs-punctuation">,</span> lenName <span class="hljs-operator">=</span> <span class="hljs-string">&quot;LgLen&quot;</span><span class="hljs-punctuation">,</span> group <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Lg&quot;</span><span class="hljs-punctuation">,</span> pos <span class="hljs-operator">=</span> <span class="hljs-string">&quot;LgPos&quot;</span><span class="hljs-punctuation">,</span> band <span class="hljs-operator">=</span> <span class="hljs-number">0.01</span><span class="hljs-punctuation">)</span><br>phy_addUp <span class="hljs-operator">&lt;-</span> addUp<span class="hljs-punctuation">(</span>df <span class="hljs-operator">=</span> phyMap<span class="hljs-punctuation">,</span> len <span class="hljs-operator">=</span> chrLen<span class="hljs-punctuation">,</span> lenName <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Len&quot;</span><span class="hljs-punctuation">,</span> group <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Chr&quot;</span><span class="hljs-punctuation">,</span> pos <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Pos&quot;</span><span class="hljs-punctuation">,</span> band <span class="hljs-operator">=</span> <span class="hljs-number">0.01</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 然后我们使用geom_rect()函数将染色体和连锁群用长条矩形表示出来，同时用红色和蓝色表示A亚基因组和C亚基因组</span><br>p <span class="hljs-operator">&lt;-</span> ggplot<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  geom_rect<span class="hljs-punctuation">(</span>data <span class="hljs-operator">=</span> phy<span class="hljs-punctuation">,</span> mapping <span class="hljs-operator">=</span> aes<span class="hljs-punctuation">(</span>xmin <span class="hljs-operator">=</span> xmin<span class="hljs-punctuation">,</span> xmax <span class="hljs-operator">=</span> xmax<span class="hljs-punctuation">,</span> ymin <span class="hljs-operator">=</span> ymin<span class="hljs-punctuation">,</span> ymax <span class="hljs-operator">=</span> ymax<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> fill <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;#CD5C5C&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;#4169E1&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">9</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  geom_rect<span class="hljs-punctuation">(</span>data <span class="hljs-operator">=</span> lg<span class="hljs-punctuation">,</span> mapping <span class="hljs-operator">=</span> aes<span class="hljs-punctuation">(</span>xmin <span class="hljs-operator">=</span> xmin<span class="hljs-punctuation">,</span> xmax <span class="hljs-operator">=</span> xmax<span class="hljs-punctuation">,</span> ymin <span class="hljs-operator">=</span> ymin<span class="hljs-punctuation">,</span> ymax <span class="hljs-operator">=</span> ymax<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> fill <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;red&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">10</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;blue&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">9</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  scale_y_continuous<span class="hljs-punctuation">(</span>limits <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-number">2</span><span class="hljs-punctuation">,</span> <span class="hljs-number">15</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> expand <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-number">0</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  scale_x_continuous<span class="hljs-punctuation">(</span>limits <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-operator">-</span><span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>chrLen<span class="hljs-operator">$</span>Len<span class="hljs-punctuation">)</span><span class="hljs-operator">*</span><span class="hljs-number">0.010</span><span class="hljs-operator">*</span><span class="hljs-number">0.5</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>chrLen<span class="hljs-operator">$</span>Len<span class="hljs-punctuation">)</span><span class="hljs-operator">*</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-operator">+</span>nrow<span class="hljs-punctuation">(</span>chrLen<span class="hljs-punctuation">)</span><span class="hljs-operator">*</span><span class="hljs-number">0.01</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> breaks <span class="hljs-operator">=</span> lg_addUp<span class="hljs-operator">$</span>breaks<span class="hljs-punctuation">,</span> labels <span class="hljs-operator">=</span> lg_addUp<span class="hljs-operator">$</span>labels<span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  coord_polar<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  cowplot<span class="hljs-operator">::</span>theme_half_open<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  theme<span class="hljs-punctuation">(</span>axis.line <span class="hljs-operator">=</span> element_blank<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <br>        axis.ticks <span class="hljs-operator">=</span> element_blank<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <br>        axis.text.y <span class="hljs-operator">=</span> element_blank<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <br>        axis.title <span class="hljs-operator">=</span> element_blank<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><br>p<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2023/06/27/20230627-NewCircos/rect.png" srcset="/img/loading.gif" lazyload alt="用长条矩形表示染色体和连锁群" title="用长条矩形表示染色体和连锁群"></p>
+<h3 id="添加曲线"><a href="#添加曲线" class="headerlink" title="添加曲线"></a>添加曲线</h3><p>上述已经画出染色体和连锁群，我们用``函数添加一条bezier曲线用于表示标记在基因组和连锁图上对应的位置。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs R">p <span class="hljs-operator">&lt;-</span> p <span class="hljs-operator">+</span> <br>  geom_diagonal<span class="hljs-punctuation">(</span>data <span class="hljs-operator">=</span> linker<span class="hljs-punctuation">,</span> <br>                mapping <span class="hljs-operator">=</span> aes<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x<span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> y<span class="hljs-punctuation">,</span> xend <span class="hljs-operator">=</span> xend<span class="hljs-punctuation">,</span> yend <span class="hljs-operator">=</span> yend<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <br>                orientation <span class="hljs-operator">=</span> <span class="hljs-string">&quot;y&quot;</span><span class="hljs-punctuation">,</span> linewidth <span class="hljs-operator">=</span> <span class="hljs-number">0.2</span><span class="hljs-punctuation">,</span> color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;gray&quot;</span><span class="hljs-punctuation">)</span><br>p<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2023/06/27/20230627-NewCircos/rect_with_link.png" srcset="/img/loading.gif" lazyload alt="用bezier曲线连接表示标记在基因组和连锁图上的对应位置" title="用bezier曲线连接表示标记在基因组和连锁图上的对应位置"></p>
+<h3 id="坐标系变换"><a href="#坐标系变换" class="headerlink" title="坐标系变换"></a>坐标系变换</h3><p>使用<code>coord_polar()</code>函数将直角坐标系变成极坐标系。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs R">p <span class="hljs-operator">&lt;-</span> p <span class="hljs-operator">+</span> coord_polar<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><br>p<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2023/06/27/20230627-NewCircos/circos.png" srcset="/img/loading.gif" lazyload alt="新的circos图" title="新的circos图"></p>
+<p>和文章中的circos图对比发现，我们纠正了不同连锁群间比例和不同染色体间比例的问题，使其按照各自的大小比例分布。但同时一个新的问题出现了，由于A亚基因组的在物理图中所占比例较低，在遗传图中所占比例略大，C亚基因组相反，也就是在物理图和遗传图中不同染色体和不同连锁群比例不同，导致了标记在物理图和遗传图间的位置偏差越来越大，表现在图中就是中间曲线被越拉越长。因此需要根据个人偏好选择两种不同形式的circos图。</p>
+<p><strong>图片来源</strong><br><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.indcrop.2023.117054">A stable quantitative trait locus on chromosome A10 improves the oil content of a backbone parent in Brassica napus L.</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/R/">#R</a>
+      
+        <a href="/tags/%E7%BB%98%E5%9B%BE/">#绘图</a>
+      
+        <a href="/tags/circos/">#circos</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>R绘图 | 如何改变circos图中不同track中sector间的比例</div>
+      <div>http://laowang2023.cn/2023/06/27/20230627-NewCircos/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>老王</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/02/20230602-shinyBasics2UI/" title="R语言 | shiny基础（一）：shiny用户界面（UI）">
+                        <span class="hidden-mobile">R语言 | shiny基础（一）：shiny用户界面（UI）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"81Ynz10f9eqlTLw0V6ue4tBu-gzGzoHsz","appKey":"4Mxe0RlrV6wJ0n9C6ZDpYI6O","path":"window.location.pathname","placeholder":"你是不是想说点什么","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"https://81ynz10f.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
