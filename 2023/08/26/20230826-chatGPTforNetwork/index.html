@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="老王">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="ChatGPT是一款强大的语言模型，不仅可以回答问题和进行对话，还可以辅助编写代码。通过提供清晰的问题或指令，可以从ChatGPT获得代码段、算法示例以及编程建议。它支持多种编程语言和领域，为编程任务提供快速而可靠的帮助，无论是解决问题、学习新技术还是优化代码结构，ChatGPT都能助你一臂之力。 我们以绘制基因共表达网络图为例展示chatGPT在写代码方面的作用。首先提出问题“绘制共表达网络图”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用chatGPT绘制基因共表达网络图">
+<meta property="og:url" content="https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/index.html">
+<meta property="og:site_name" content="请叫我老王">
+<meta property="og:description" content="ChatGPT是一款强大的语言模型，不仅可以回答问题和进行对话，还可以辅助编写代码。通过提供清晰的问题或指令，可以从ChatGPT获得代码段、算法示例以及编程建议。它支持多种编程语言和领域，为编程任务提供快速而可靠的帮助，无论是解决问题、学习新技术还是优化代码结构，ChatGPT都能助你一臂之力。 我们以绘制基因共表达网络图为例展示chatGPT在写代码方面的作用。首先提出问题“绘制共表达网络图”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/chatGPT.png">
+<meta property="article:published_time" content="2023-08-26T13:50:41.000Z">
+<meta property="article:modified_time" content="2023-08-26T14:13:41.311Z">
+<meta property="article:author" content="老王">
+<meta property="article:tag" content="R">
+<meta property="article:tag" content="绘图">
+<meta property="article:tag" content="chatGPT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/chatGPT.png">
+  
+  
+  
+  <title>使用chatGPT绘制基因共表达网络图 - 请叫我老王</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"laowang2023.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2gDQrSMhKFxALJaFFpTbgc23-gzGzoHsz","app_key":"NBsdUEdxwrnzaL1XcLReQM4N","server_url":"https://2gdqrsmh.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>请叫我老王</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="使用chatGPT绘制基因共表达网络图"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-26 21:50" pubdate>
+          2023年8月26日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">使用chatGPT绘制基因共表达网络图</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>ChatGPT是一款强大的语言模型，不仅可以回答问题和进行对话，还可以辅助编写代码。通过提供清晰的问题或指令，可以从ChatGPT获得代码段、算法示例以及编程建议。它支持多种编程语言和领域，为编程任务提供快速而可靠的帮助，无论是解决问题、学习新技术还是优化代码结构，ChatGPT都能助你一臂之力。</p>
+<p>我们以绘制基因共表达网络图为例展示chatGPT在写代码方面的作用。首先提出问题“绘制共表达网络图”，描述数据格式并指定用R语言实现这一过程，chatGPT给出的方法是使用<code>igraph</code>包根据随机数据生成无向图对象并绘图。</p>
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/askQ.png" srcset="/img/loading.gif" lazyload alt="向chatGPT提问" title="向chatGPT提问"></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs r"><span class="hljs-comment"># 安装和加载所需的包</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;igraph&quot;</span><span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>igraph<span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 生成示例数据</span><br>set.seed<span class="hljs-punctuation">(</span><span class="hljs-number">123</span><span class="hljs-punctuation">)</span>  <span class="hljs-comment"># 设置随机种子以保持结果可复现</span><br>num_genes <span class="hljs-operator">&lt;-</span> 100<br>genes <span class="hljs-operator">&lt;-</span> paste0<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Gene&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span>num_genes<span class="hljs-punctuation">)</span><br>edges <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span><br>  gene1 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  gene2 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  weight <span class="hljs-operator">=</span> runif<span class="hljs-punctuation">(</span>num_genes<span class="hljs-punctuation">)</span><br><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 创建图对象</span><br>graph <span class="hljs-operator">&lt;-</span> graph.data.frame<span class="hljs-punctuation">(</span>edges<span class="hljs-punctuation">,</span> directed <span class="hljs-operator">=</span> <span class="hljs-literal">FALSE</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 绘制基因共表达网络图</span><br>plot<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">,</span><br>     layout <span class="hljs-operator">=</span> layout_with_fr<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span>  <span class="hljs-comment"># 使用Fruchterman-Reingold布局</span><br>     vertex.label <span class="hljs-operator">=</span> <span class="hljs-literal">NA</span><span class="hljs-punctuation">,</span>                <span class="hljs-comment"># 不显示顶点标签</span><br>     edge.color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;gray&quot;</span><span class="hljs-punctuation">,</span><br>     edge.width <span class="hljs-operator">=</span> edges<span class="hljs-operator">$</span>weight <span class="hljs-operator">*</span> <span class="hljs-number">3</span><span class="hljs-punctuation">,</span>    <span class="hljs-comment"># 根据权重设置边的宽度</span><br>     main <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Gene Co-expression Network&quot;</span><br><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/network1.png" srcset="/img/loading.gif" lazyload alt="生成一个网络图" title="生成一个网络图"></p>
+<p>这个图中的边的宽度根据权重大小变化，但是其变化程度并不明显，因此向chatGPT进一步提出增加边宽度变化程度。</p>
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/askWidth.png" srcset="/img/loading.gif" lazyload alt="要求修改边的宽度变化程度" title="要求修改边的宽度变化程度"></p>
+<details>
+<summary>点击展开代码块</summary>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs r"><span class="hljs-comment"># 安装和加载所需的包</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;igraph&quot;</span><span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>igraph<span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 生成示例数据</span><br>set.seed<span class="hljs-punctuation">(</span><span class="hljs-number">123</span><span class="hljs-punctuation">)</span>  <span class="hljs-comment"># 设置随机种子以保持结果可复现</span><br>num_genes <span class="hljs-operator">&lt;-</span> 100<br>genes <span class="hljs-operator">&lt;-</span> paste0<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Gene&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span>num_genes<span class="hljs-punctuation">)</span><br>edges <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span><br>  gene1 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  gene2 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  weight <span class="hljs-operator">=</span> runif<span class="hljs-punctuation">(</span>num_genes<span class="hljs-punctuation">,</span> <span class="hljs-built_in">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.1</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-punctuation">)</span>  <span class="hljs-comment"># 调整权重范围</span><br><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 创建图对象</span><br>graph <span class="hljs-operator">&lt;-</span> graph.data.frame<span class="hljs-punctuation">(</span>edges<span class="hljs-punctuation">,</span> directed <span class="hljs-operator">=</span> <span class="hljs-literal">FALSE</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 计算边的宽度</span><br>max_weight <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">max</span><span class="hljs-punctuation">(</span>edges<span class="hljs-operator">$</span>weight<span class="hljs-punctuation">)</span><br>edge_widths <span class="hljs-operator">&lt;-</span> edges<span class="hljs-operator">$</span>weight <span class="hljs-operator">/</span> max_weight <span class="hljs-operator">*</span> <span class="hljs-number">5</span>  <span class="hljs-comment"># 进一步调整权重缩放系数</span><br><br><span class="hljs-comment"># 绘制基因共表达网络图</span><br>plot<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">,</span><br>     layout <span class="hljs-operator">=</span> layout_with_fr<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span>  <span class="hljs-comment"># 使用Fruchterman-Reingold布局</span><br>     vertex.label <span class="hljs-operator">=</span> <span class="hljs-literal">NA</span><span class="hljs-punctuation">,</span>                <span class="hljs-comment"># 不显示顶点标签</span><br>     edge.color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;gray&quot;</span><span class="hljs-punctuation">,</span><br>     edge.width <span class="hljs-operator">=</span> edge_widths<span class="hljs-punctuation">,</span>         <span class="hljs-comment"># 使用计算后的边宽度</span><br>     main <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Gene Co-expression Network&quot;</span><br><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+</details>
+
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/changeWidth.png" srcset="/img/loading.gif" lazyload alt="改变边变化程度" title="改变边变化程度"></p>
+<p>在新的代码中由原来的<code>edges$weight * 3</code>变成了<code>edges$weight / max_weight * 5</code>，对权重的范围进行了调整，并计算了边的宽度，使得权重大的边显示得更加明显。进一步我想将权重最大的三个基因挑选出来，标注Gene ID，并用不同颜色突出表示。</p>
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/askHighlight1.png" srcset="/img/loading.gif" lazyload alt="要求突出表示高权重基因" title="要求突出表示高权重基因"></p>
+<details>
+<summary>点击展开代码块</summary>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs r"><span class="hljs-comment"># 安装和加载所需的包</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;igraph&quot;</span><span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>igraph<span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 生成示例数据</span><br>set.seed<span class="hljs-punctuation">(</span><span class="hljs-number">123</span><span class="hljs-punctuation">)</span>  <span class="hljs-comment"># 设置随机种子以保持结果可复现</span><br>num_genes <span class="hljs-operator">&lt;-</span> 100<br>genes <span class="hljs-operator">&lt;-</span> paste0<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Gene&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span>num_genes<span class="hljs-punctuation">)</span><br>edges <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span><br>  gene1 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  gene2 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  weight <span class="hljs-operator">=</span> runif<span class="hljs-punctuation">(</span>num_genes<span class="hljs-punctuation">,</span> <span class="hljs-built_in">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.1</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-punctuation">)</span><br><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 创建图对象</span><br>graph <span class="hljs-operator">&lt;-</span> graph.data.frame<span class="hljs-punctuation">(</span>edges<span class="hljs-punctuation">,</span> directed <span class="hljs-operator">=</span> <span class="hljs-literal">FALSE</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 找出权重之和最高的三个基因</span><br>gene_weights <span class="hljs-operator">&lt;-</span> tapply<span class="hljs-punctuation">(</span>edges<span class="hljs-operator">$</span>weight<span class="hljs-punctuation">,</span> edges<span class="hljs-operator">$</span>gene1<span class="hljs-punctuation">,</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">)</span><br>top_genes <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>sort<span class="hljs-punctuation">(</span>gene_weights<span class="hljs-punctuation">,</span> decreasing <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 计算边的宽度</span><br>max_weight <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">max</span><span class="hljs-punctuation">(</span>edges<span class="hljs-operator">$</span>weight<span class="hljs-punctuation">)</span><br>edge_widths <span class="hljs-operator">&lt;-</span> edges<span class="hljs-operator">$</span>weight <span class="hljs-operator">/</span> max_weight <span class="hljs-operator">*</span> <span class="hljs-number">5</span><br><br><span class="hljs-comment"># 设置顶点的颜色</span><br>vertex_colors <span class="hljs-operator">&lt;-</span> ifelse<span class="hljs-punctuation">(</span>V<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-operator">$</span>name <span class="hljs-operator">%in%</span> top_genes<span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;red&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;blue&quot;</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 绘制基因共表达网络图</span><br>plot<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">,</span><br>     layout <span class="hljs-operator">=</span> layout_with_fr<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span>  <span class="hljs-comment"># 使用Fruchterman-Reingold布局</span><br>     vertex.label <span class="hljs-operator">=</span> <span class="hljs-literal">NA</span><span class="hljs-punctuation">,</span><br>     vertex.color <span class="hljs-operator">=</span> vertex_colors<span class="hljs-punctuation">,</span>     <span class="hljs-comment"># 使用顶点颜色向量</span><br>     edge.color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;gray&quot;</span><span class="hljs-punctuation">,</span><br>     edge.width <span class="hljs-operator">=</span> edge_widths<span class="hljs-punctuation">,</span><br>     main <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Gene Co-expression Network&quot;</span><br><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+</details>
+
+
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/highlight1.png" srcset="/img/loading.gif" lazyload alt="突出表示高权重基因" title="突出表示高权重基因"></p>
+<p>新的结果中使用<code>tapply</code>函数计算gene1列基因的weight之和随后排序选出前三个基因作为高权重基因。使用<code>vertex.color</code>参数，在图中将其用红色表示出来。但是<code>vertex.label</code>参数仍然未设置，我们要求的Gene ID并没有标注，因此我们将这一问题反馈给chatGPT。</p>
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/askHighlight2.png" srcset="/img/loading.gif" lazyload alt="要求标注高权重基因的Gene ID" title="要求标注高权重基因的Gene ID"></p>
+<details>
+<summary>点击展开代码块</summary>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs r"><span class="hljs-comment"># 安装和加载所需的包</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;igraph&quot;</span><span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>igraph<span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 生成示例数据</span><br>set.seed<span class="hljs-punctuation">(</span><span class="hljs-number">123</span><span class="hljs-punctuation">)</span>  <span class="hljs-comment"># 设置随机种子以保持结果可复现</span><br>num_genes <span class="hljs-operator">&lt;-</span> 100<br>genes <span class="hljs-operator">&lt;-</span> paste0<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Gene&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span>num_genes<span class="hljs-punctuation">)</span><br>edges <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span><br>  gene1 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  gene2 <span class="hljs-operator">=</span> sample<span class="hljs-punctuation">(</span>genes<span class="hljs-punctuation">,</span> num_genes<span class="hljs-punctuation">,</span> replace <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span><br>  weight <span class="hljs-operator">=</span> runif<span class="hljs-punctuation">(</span>num_genes<span class="hljs-punctuation">,</span> <span class="hljs-built_in">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">0.1</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-punctuation">)</span><br><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 创建图对象</span><br>graph <span class="hljs-operator">&lt;-</span> graph.data.frame<span class="hljs-punctuation">(</span>edges<span class="hljs-punctuation">,</span> directed <span class="hljs-operator">=</span> <span class="hljs-literal">FALSE</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 找出权重之和最高的三个基因</span><br>gene_weights <span class="hljs-operator">&lt;-</span> tapply<span class="hljs-punctuation">(</span>edges<span class="hljs-operator">$</span>weight<span class="hljs-punctuation">,</span> edges<span class="hljs-operator">$</span>gene1<span class="hljs-punctuation">,</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">)</span><br>top_genes <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>sort<span class="hljs-punctuation">(</span>gene_weights<span class="hljs-punctuation">,</span> decreasing <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 计算边的宽度</span><br>max_weight <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">max</span><span class="hljs-punctuation">(</span>edges<span class="hljs-operator">$</span>weight<span class="hljs-punctuation">)</span><br>edge_widths <span class="hljs-operator">&lt;-</span> edges<span class="hljs-operator">$</span>weight <span class="hljs-operator">/</span> max_weight <span class="hljs-operator">*</span> <span class="hljs-number">5</span><br><br><span class="hljs-comment"># 设置顶点的颜色和标签</span><br>vertex_colors <span class="hljs-operator">&lt;-</span> ifelse<span class="hljs-punctuation">(</span>V<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-operator">$</span>name <span class="hljs-operator">%in%</span> top_genes<span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;red&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;blue&quot;</span><span class="hljs-punctuation">)</span><br>vertex_labels <span class="hljs-operator">&lt;-</span> ifelse<span class="hljs-punctuation">(</span>V<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-operator">$</span>name <span class="hljs-operator">%in%</span> top_genes<span class="hljs-punctuation">,</span> V<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-operator">$</span>name<span class="hljs-punctuation">,</span> <span class="hljs-literal">NA</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 绘制基因共表达网络图</span><br>plot<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">,</span><br>     layout <span class="hljs-operator">=</span> layout_with_fr<span class="hljs-punctuation">(</span>graph<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span>  <span class="hljs-comment"># 使用Fruchterman-Reingold布局</span><br>     vertex.label <span class="hljs-operator">=</span> vertex_labels<span class="hljs-punctuation">,</span>     <span class="hljs-comment"># 使用顶点标签向量</span><br>     vertex.color <span class="hljs-operator">=</span> vertex_colors<span class="hljs-punctuation">,</span><br>     edge.color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;gray&quot;</span><span class="hljs-punctuation">,</span><br>     edge.width <span class="hljs-operator">=</span> edge_widths<span class="hljs-punctuation">,</span><br>     main <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Gene Co-expression Network&quot;</span><br><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+</details>
+
+<p><img src="/2023/08/26/20230826-chatGPTforNetwork/highlight2.png" srcset="/img/loading.gif" lazyload alt="进一步标注高权重基因的Gene ID" title="进一步标注高权重基因的Gene ID"></p>
+<p>最终我们得到一个基因共表达网络图，其中重要基因使用不同颜色突出显示，并标注出Gene ID。我们向chatGPT提出要求，可以实现快速编写代码，通过对chatGPT提出新的要求可以进一步对结果进行修改。但是chatGPT有时不能给出完全符合预期的结果，需要我们对其进行引导，而且给出的方案也并不一定完全正确，上述代码中挑选高权重基因的方法没有考虑gene2列。因此我们需要向chatGPT提出清晰明确的要求并不断引导，从而正确实现我们的目的，提高工作效率。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/R/">#R</a>
+      
+        <a href="/tags/%E7%BB%98%E5%9B%BE/">#绘图</a>
+      
+        <a href="/tags/chatGPT/">#chatGPT</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>使用chatGPT绘制基因共表达网络图</div>
+      <div>https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>老王</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/15/20230815-cucumberGraphBasedPanGenome/" title="Nat Commun. | 黄瓜graph-based pangenome与黄瓜农艺性状和驯化相关结构变异">
+                        <span class="hidden-mobile">Nat Commun. | 黄瓜graph-based pangenome与黄瓜农艺性状和驯化相关结构变异</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"81Ynz10f9eqlTLw0V6ue4tBu-gzGzoHsz","appKey":"4Mxe0RlrV6wJ0n9C6ZDpYI6O","path":"window.location.pathname","placeholder":"你是不是想说点什么","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"https://81ynz10f.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
