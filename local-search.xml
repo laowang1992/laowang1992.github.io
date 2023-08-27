@@ -298,11 +298,11 @@
       
       <tag>基因组</tag>
       
-      <tag>抗旱</tag>
+      <tag>结构变异</tag>
       
       <tag>玉米</tag>
       
-      <tag>结构变异</tag>
+      <tag>抗旱</tag>
       
     </tags>
     
@@ -356,13 +356,13 @@
       
       <tag>基因组</tag>
       
-      <tag>eQTL</tag>
-      
-      <tag>驯化</tag>
-      
       <tag>番茄</tag>
       
       <tag>结构变异</tag>
+      
+      <tag>eQTL</tag>
+      
+      <tag>驯化</tag>
       
     </tags>
     
