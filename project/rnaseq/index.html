@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="王鹏飞 wangpf0608@126.com" />
+
+
+<title>油菜（Brassica napus L.）转录组分析结果</title>
+
+<script src="libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.28/datatables.js"></script>
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">油菜（<em>Brassica napus</em>
+L.）转录组分析结果</h1>
+<h4 class="author">王鹏飞 <a href="mailto:wangpf0608@126.com"
+class="email">wangpf0608@126.com</a></h4>
+<h4 class="date">2023-08-16 21:23:55</h4>
+
+</div>
+
+
+<div id="样本信息" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> 样本信息</h1>
+<p>一共4组12个样本。</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-52db3618019524fd00c0" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-52db3618019524fd00c0">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["WT","WT","WT","WTE","WTE","WTE","MUT","MUT","MUT","MUTE","MUTE","MUTE"],["WT_rep1","WT_rep2","WT_rep3","WTE_rep1","WTE_rep2","WTE_rep3","MUT_rep1","MUT_rep2","MUT_rep3","MUTE_rep1","MUTE_rep2","MUTE_rep3"],["Z1_1_R1.fastq.gz","Z1_2_R1.fastq.gz","Z1_3_R1.fastq.gz","ZE1_1_R1.fastq.gz","ZE1_2_R1.fastq.gz","ZE1_3_R1.fastq.gz","G1_1_R1.fastq.gz","G1_2_R1.fastq.gz","G1_3_R1.fastq.gz","GE1_14_R1.fastq.gz","GE1_27_R1.fastq.gz","GE1_2_R1.fastq.gz"],["Z1_1_R2.fastq.gz","Z1_2_R2.fastq.gz","Z1_3_R2.fastq.gz","ZE1_1_R2.fastq.gz","ZE1_2_R2.fastq.gz","ZE1_3_R2.fastq.gz","G1_1_R2.fastq.gz","G1_2_R2.fastq.gz","G1_3_R2.fastq.gz","GE1_14_R2.fastq.gz","GE1_27_R2.fastq.gz","GE1_2_R2.fastq.gz"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Group<\/th>\n      <th>Sample<\/th>\n      <th>fq_1<\/th>\n      <th>fq_2<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="分析流程" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> 分析流程</h1>
+<div class="figure" style="text-align: center">
+<img src="image/%E8%BD%AC%E5%BD%95%E7%BB%84%E5%88%86%E6%9E%90%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="分析流程图" width="480" />
+<p class="caption">
+分析流程图
+</p>
+</div>
+<div id="数据过滤" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> 数据过滤</h2>
+<p>测序下机后的数据为raw data。使用fastp<sup><a
+href="#ref">1</a></sup>（version: 0.20.0）对raw
+data进行过滤，去除测序接头（adapter）、质量较低以及太短的reads得到clean
+data。统计过滤前后total bases、total reads、Q30、Q20、GC
+content以及有效数据比率，同时使用FastQC（version:
+0.11.8）对过滤前后的数据进行质量评估。</p>
+</div>
+<div id="比对到参考基因组" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> 比对到参考基因组</h2>
+<p>使用STAR<sup><a href="#ref">2</a></sup>（version: 2.7.3a）将clean
+reads比对到油菜ZS11参考基因组<sup><a href="#ref">3</a></sup>（<a
+href="http://cbi.hzau.edu.cn/bnapus/"
+class="uri">http://cbi.hzau.edu.cn/bnapus/</a> ）上，得到SAM（Sequence
+Alignment/Map）格式文件<sup><a
+href="#ref">4</a></sup>，然后使用sambamba<sup><a
+href="#ref">5</a></sup>（version:
+0.8.2）对比对结果（SAM文件）按照染色体和位置进行排序并转换为BAM（Binary
+Alignment/Map）格式文件<sup><a
+href="#ref">4</a></sup>。HISAT2可以使用更少资源的同时具有更快的速度。比对完成后，我们对比对结果进行评估，统计比对率和唯一比对率以及基因覆盖度。</p>
+</div>
+<div id="饱和曲线检查" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> 饱和曲线检查</h2>
+<p>利用转录组数据计算表达量的精度受到样本量（测序深度）的影响，因此需要进行饱和曲线检查。基本思想是分别取总的RNA
+reads
+5%、10%、…、95%、100%并计算RPKM值，如果测序深度饱和，则估计的RPKM值是稳定的或可重复的。具体的算法是通过计算“Percent
+Relative
+Error”反应reads子集估计的RPKM值（即RPKM<sub>obs</sub>）偏离真实表达水平（RPKM<sub>real</sub>）的程度，公式如下：</p>
+<p><span class="math display">\[{Percent Relative Error} =
+{\cfrac{\lvert
+RPKM_{obs}-RPKM_{real}\rvert}{RPKM_{real}}}\times100\]</span></p>
+</div>
+<div id="计算表达量" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> 计算表达量</h2>
+<p>根据比对结果（BAM文件），我们使用R（version:
+4.2.1）软件的扩展包Rsubread<sup><a href="#ref">6</a></sup>（version:
+2.10.5）中的featureCounts函数计算每个基因的表达量（read
+count）并进行归一化处理（normalization），得到TPM（Transcripts Per
+Kilobase of exon model per Million mapped reads）和TMM（trimmed mean of
+M value）表达矩阵。</p>
+</div>
+<div id="差异表达分析" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> 差异表达分析</h2>
+<p>根据基因表达矩阵（read
+count）文件，在有生物学重复的情况下，使用R（version:
+4.2.1）软件的扩展包DESeq2<sup><a href="#ref">7</a></sup>（version:
+1.36.0）进行差异表达分析，在没有生物学重复的情况下，则使用R扩展包edgeR<sup><a
+href="#ref">8</a></sup>（version:
+3.38.4）进行差异表达分析。首先过滤低表达量基因，保留至少在2个样本中表达量大于1
+CMP（Counts Per
+Million）的基因，然后对于log2FoldChange绝对值大于1`，并且padj小于0.05的基因则认为是差异表达基因。</p>
+</div>
+<div id="富集分析" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> 富集分析</h2>
+<p>在差异表达分析之后进行GO和KEGG富集分析。我们使用R（version:
+4.2.1）软件的扩展包clusterProfiler<sup><a
+href="#ref">9</a></sup>（version: 4.4.4）进行Over-representation
+analysis（ORA）和Gene Set Enrichment
+Analysis（GSEA）这两种形式的富集分析。ORA是指在按照一定的<em>p</em>-adjust和log2FoldChange标准得到差异表达基因并于基因组背景相比较，找到差异表达基因显著富集的GO
+term或KEGG pathway，此处以adjusted <em>p</em>-value &lt;
+0.05为筛选标准。GSEA的基本思想是将基因按照两组样本中差异表达程度排序，检验预先定义的基因集（GO或KEGG）是否排列在顶端或底端，GSEA可以充分利用基因差异表达程度的信息，排除人为筛选差异表达基因的主观性，是一种更先进富集方法，与over-representation富集方法互为补充，此处以<em>p</em>.adjust
+&lt; 0.05为筛选标准。</p>
+<div id="go富集分析" class="section level3 unnumbered">
+<h3 class="unnumbered">GO富集分析</h3>
+<p>Gene
+Ontology（简称GO）是一个国际标准化的基因功能分类体系，提供了一套动态更新的标准词汇表（controlled
+vocabulary）来全面描述生物体中基因和基因产物的属性。GO总共有三个ontology（本体），分别描述基因的分子功能（molecular
+function，MF）、所处的细胞位置（cellular
+component，CC）、参与的生物过程（biological
+process，BP）。GO的基本单位是term（词条、节点），每个term都对应一种或一类特定的功能<sup><a
+href="#ref">10</a></sup>。</p>
+</div>
+<div id="kegg富集分析" class="section level3 unnumbered">
+<h3 class="unnumbered">KEGG富集分析</h3>
+<p>KEGG（Kyoto Encyclopedia of Genes and
+Genomes）是系统分析基因产物在细胞中的代谢途径（Pathway）以及这些基因产物功能的主要公共数据库，利用KEGG可以进一步研究基因在生物学上的复杂行为<sup><a
+href="#ref">11</a></sup>。</p>
+</div>
+</div>
+</div>
+<div id="分析结果" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> 分析结果</h1>
+<div id="数据过滤-1" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> 数据过滤</h2>
+<p>对raw data过滤后得到clean data，结果统计如下（<a
+href="./result/00.data/data_stat.csv">./result/00.data/data_stat.csv</a>）：</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3a50b4d163add7b680de" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3a50b4d163add7b680de">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["MUT_rep1","MUT_rep2","MUT_rep3","MUTE_rep1","MUTE_rep2","MUTE_rep3","WT_rep1","WT_rep2","WT_rep3","WTE_rep1","WTE_rep2","WTE_rep3"],[47285474,46169702,44113734,47243840,43753958,45139866,43700680,50494686,40724578,51630168,45352180,51554410],[7092821100,6925455300,6617060100,7086576000,6563093700,6770979900,6555102000,7574202900,6108686700,7744525200,6802827000,7733161500],[6973537075,6816815803,6515935511,6976162920,6464878000,6666923402,6446484479,7453048789,6003712107,7626921017,6691830577,7595506442],[6765888997,6622014778,6332127200,6778577563,6290067374,6476055754,6251417952,7236710890,5822595065,7418037043,6501006274,7356590172],[0.983182,0.984313,0.984718,0.984419,0.985035,0.984632,0.98343,0.984004,0.982816,0.984815,0.983684,0.982199],[0.9539069999999999,0.956185,0.95694,0.956538,0.9584,0.956443,0.953672,0.955442,0.953166,0.957843,0.955633,0.951304],[150,150,150,150,150,150,150,150,150,150,150,150],[150,150,150,150,150,150,150,150,150,150,150,150],[0.486851,0.485791,0.485661,0.484493,0.484282,0.483659,0.487169,0.485773,0.485129,0.48751,0.488146,0.486508],[46669330,45602732,43599164,46668970,43181204,44621084,43153504,49876520,40149538,50998626,44739530,50848714],[6982650628,6825090077,6528606718,6984962920,6468004260,6684597209,6461229612,7467262572,6009785952,7634777914,6697586726,7604560611],[6897400137,6747071710,6454847062,6904953964,6399928549,6607520250,6382359363,7379096569,5935790559,7551155800,6620138067,7504417603],[6700674077,6562232719,6279965327,6717395813,6234652055,6425443643,6196839874,7173491446,5764615379,7353346631,6439928879,7278231136],[0.987791,0.988569,0.988702,0.988546,0.989475,0.988469,0.987793,0.988193,0.987688,0.989047,0.988436,0.986831],[0.959618,0.961487,0.961915,0.961694,0.9639219999999999,0.9612309999999999,0.959081,0.960659,0.959205,0.963138,0.96153,0.957088],[149,149,149,149,149,149,149,149,149,149,149,149],[149,149,149,149,149,149,149,149,149,149,149,149],[0.486507,0.48571,0.485742,0.484496,0.484424,0.483721,0.487065,0.485772,0.48503,0.487369,0.487965,0.48638],[0.9844673268299408,0.9855077798278477,0.9866325255229282,0.985661188139378,0.9855114913261104,0.9872422171863188,0.9856794924014912,0.9858809792380924,0.9838098182380184,0.9858290491455822,0.9845299205756666,0.9833702051871024]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sample<\/th>\n      <th>total_reads.raw<\/th>\n      <th>total_bases.raw<\/th>\n      <th>q20_bases.raw<\/th>\n      <th>q30_bases.raw<\/th>\n      <th>q20_rate.raw<\/th>\n      <th>q30_rate.raw<\/th>\n      <th>read1_mean_length.raw<\/th>\n      <th>read2_mean_length.raw<\/th>\n      <th>gc_content.raw<\/th>\n      <th>total_reads.clean<\/th>\n      <th>total_bases.clean<\/th>\n      <th>q20_bases.clean<\/th>\n      <th>q30_bases.clean<\/th>\n      <th>q20_rate.clean<\/th>\n      <th>q30_rate.clean<\/th>\n      <th>read1_mean_length.clean<\/th>\n      <th>read2_mean_length.clean<\/th>\n      <th>gc_content.clean<\/th>\n      <th>effective.rate<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="比对到参考基因组-1"
+class="section level2 tabset tabset-fade tabset-pills" number="3.2">
+<h2 class="tabset tabset-fade tabset-pills"><span
+class="header-section-number">3.2</span> 比对到参考基因组</h2>
+<p>将clean
+data比对到参考基因上，并统计比对率信息（./result/01.Mapping/align_stat.csv）以及基因覆盖度（./result/01.Mapping/&lt;sampleName&gt;.geneBody_coverage.geneBodyCoverage.curves.pdf）。</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-087e0b74096c8aaf71e2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-087e0b74096c8aaf71e2">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["WT_rep1","WT_rep2","WT_rep3","WTE_rep1","WTE_rep2","WTE_rep3","MUT_rep1","MUT_rep2","MUT_rep3","MUTE_rep1","MUTE_rep2","MUTE_rep3"],[21576752,24938260,20074769,25499313,22369765,25424357,23334665,22801366,21799582,23334485,21590602,22310542],[19104856,22627722,18238879,23142711,20121511,23004523,20513746,20255452,19731901,21086897,19489665,20156206],["88.54%","90.73%","90.85%","90.76%","89.95%","90.48%","87.91%","88.83%","90.52%","90.37%","90.27%","90.34%"],[1477053,1545546,1267869,1540508,1425830,1607875,1591493,1515393,1336073,1461903,1345616,1326571],["6.85%","6.20%","6.32%","6.04%","6.37%","6.32%","6.82%","6.65%","6.13%","6.26%","6.23%","5.95%"],[162843,26506,18382,25902,64112,35650,166753,139813,45668,23780,41276,23141],["0.75%","0.11%","0.09%","0.10%","0.29%","0.14%","0.71%","0.61%","0.21%","0.10%","0.19%","0.10%"],[0,0,0,0,0,0,0,0,0,0,0,0],["0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%"],[490307,686192,511634,718013,603315,649748,745200,597890,568192,707450,604012,752481],["2.27%","2.75%","2.55%","2.82%","2.70%","2.56%","3.19%","2.62%","2.61%","3.03%","2.80%","3.37%"],[341693,52294,38005,72179,154997,126561,317473,292818,117748,54455,110033,52143],["1.58%","0.21%","0.19%","0.28%","0.69%","0.50%","1.36%","1.28%","0.54%","0.23%","0.51%","0.23%"],[0,0,0,0,0,0,0,0,0,0,0,0],["0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sample<\/th>\n      <th>Number of input reads<\/th>\n      <th>Uniquely mapped reads number<\/th>\n      <th>Uniquely mapped reads %<\/th>\n      <th>Number of reads mapped to multiple loci<\/th>\n      <th>% of reads mapped to multiple loci<\/th>\n      <th>Number of reads mapped to too many loci<\/th>\n      <th>% of reads mapped to too many loci<\/th>\n      <th>Number of reads unmapped: too many mismatches<\/th>\n      <th>% of reads unmapped: too many mismatches<\/th>\n      <th>Number of reads unmapped: too short<\/th>\n      <th>% of reads unmapped: too short<\/th>\n      <th>Number of reads unmapped: other<\/th>\n      <th>% of reads unmapped: other<\/th>\n      <th>Number of chimeric reads<\/th>\n      <th>% of chimeric reads<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,5,7,9,11,13,15]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="wt_rep1" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_rep1</h3>
+<p><img src='result/01.Mapping/WT_rep1.geneBodyCoverage.curves.png' width='80%' alt='WT_rep1.geneBodyCoverage.curves'></p>
+</div>
+<div id="wt_rep2" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_rep2</h3>
+<p><img src='result/01.Mapping/WT_rep2.geneBodyCoverage.curves.png' width='80%' alt='WT_rep2.geneBodyCoverage.curves'></p>
+</div>
+<div id="wt_rep3" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_rep3</h3>
+<p><img src='result/01.Mapping/WT_rep3.geneBodyCoverage.curves.png' width='80%' alt='WT_rep3.geneBodyCoverage.curves'></p>
+</div>
+<div id="wte_rep1" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_rep1</h3>
+<p><img src='result/01.Mapping/WTE_rep1.geneBodyCoverage.curves.png' width='80%' alt='WTE_rep1.geneBodyCoverage.curves'></p>
+</div>
+<div id="wte_rep2" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_rep2</h3>
+<p><img src='result/01.Mapping/WTE_rep2.geneBodyCoverage.curves.png' width='80%' alt='WTE_rep2.geneBodyCoverage.curves'></p>
+</div>
+<div id="wte_rep3" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_rep3</h3>
+<p><img src='result/01.Mapping/WTE_rep3.geneBodyCoverage.curves.png' width='80%' alt='WTE_rep3.geneBodyCoverage.curves'></p>
+</div>
+<div id="mut_rep1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_rep1</h3>
+<p><img src='result/01.Mapping/MUT_rep1.geneBodyCoverage.curves.png' width='80%' alt='MUT_rep1.geneBodyCoverage.curves'></p>
+</div>
+<div id="mut_rep2" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_rep2</h3>
+<p><img src='result/01.Mapping/MUT_rep2.geneBodyCoverage.curves.png' width='80%' alt='MUT_rep2.geneBodyCoverage.curves'></p>
+</div>
+<div id="mut_rep3" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_rep3</h3>
+<p><img src='result/01.Mapping/MUT_rep3.geneBodyCoverage.curves.png' width='80%' alt='MUT_rep3.geneBodyCoverage.curves'></p>
+</div>
+<div id="mute_rep1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUTE_rep1</h3>
+<p><img src='result/01.Mapping/MUTE_rep1.geneBodyCoverage.curves.png' width='80%' alt='MUTE_rep1.geneBodyCoverage.curves'></p>
+</div>
+<div id="mute_rep2" class="section level3 unnumbered">
+<h3 class="unnumbered">MUTE_rep2</h3>
+<p><img src='result/01.Mapping/MUTE_rep2.geneBodyCoverage.curves.png' width='80%' alt='MUTE_rep2.geneBodyCoverage.curves'></p>
+</div>
+<div id="mute_rep3" class="section level3 unnumbered">
+<h3 class="unnumbered">MUTE_rep3</h3>
+<p><img src='result/01.Mapping/MUTE_rep3.geneBodyCoverage.curves.png' width='80%' alt='MUTE_rep3.geneBodyCoverage.curves'></p>
+</div>
+</div>
+<div id="饱和曲线检查-1"
+class="section level2 tabset tabset-fade tabset-pills" number="3.3">
+<h2 class="tabset tabset-fade tabset-pills"><span
+class="header-section-number">3.3</span> 饱和曲线检查</h2>
+<p>对样本进行饱和度检查，结果如下：</p>
+<div id="wt_rep1-1" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_rep1</h3>
+<p><img src='result/01.Mapping/WT_rep1.saturation.png' width='100%' alt='WT_rep1.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="wt_rep2-1" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_rep2</h3>
+<p><img src='result/01.Mapping/WT_rep2.saturation.png' width='100%' alt='WT_rep2.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="wt_rep3-1" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_rep3</h3>
+<p><img src='result/01.Mapping/WT_rep3.saturation.png' width='100%' alt='WT_rep3.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="wte_rep1-1" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_rep1</h3>
+<p><img src='result/01.Mapping/WTE_rep1.saturation.png' width='100%' alt='WTE_rep1.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="wte_rep2-1" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_rep2</h3>
+<p><img src='result/01.Mapping/WTE_rep2.saturation.png' width='100%' alt='WTE_rep2.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="wte_rep3-1" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_rep3</h3>
+<p><img src='result/01.Mapping/WTE_rep3.saturation.png' width='100%' alt='WTE_rep3.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="mut_rep1-1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_rep1</h3>
+<p><img src='result/01.Mapping/MUT_rep1.saturation.png' width='100%' alt='MUT_rep1.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="mut_rep2-1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_rep2</h3>
+<p><img src='result/01.Mapping/MUT_rep2.saturation.png' width='100%' alt='MUT_rep2.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="mut_rep3-1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_rep3</h3>
+<p><img src='result/01.Mapping/MUT_rep3.saturation.png' width='100%' alt='MUT_rep3.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="mute_rep1-1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUTE_rep1</h3>
+<p><img src='result/01.Mapping/MUTE_rep1.saturation.png' width='100%' alt='MUTE_rep1.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="mute_rep2-1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUTE_rep2</h3>
+<p><img src='result/01.Mapping/MUTE_rep2.saturation.png' width='100%' alt='MUTE_rep2.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+<div id="mute_rep3-1" class="section level3 unnumbered">
+<h3 class="unnumbered">MUTE_rep3</h3>
+<p><img src='result/01.Mapping/MUTE_rep3.saturation.png' width='100%' alt='MUTE_rep3.saturation'></p>
+<p><strong>说明：</strong>X轴代表总的RNA
+reads的抽样百分比，Y轴代表Percent Relative Error，
+Q1、Q2、Q3、Q4分别表示表达水平（RPKM）在0~25%百分位、25~50%百分位、50~75%百分位、75%~100%百分位的基因。</p>
+</div>
+</div>
+<div id="计算表达量-1" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> 计算表达量</h2>
+<p>根据比对结果进行表达定量得到read
+count表达量信息（./result/02.Expression/genes.counts.csv）以及标准化后的TPM（./result/02.Expression/genes.TPM.csv）和TMM（./result/02.Expression/genes.TMM.csv）表达量，同时我们对根据比对结果（BAM文件）进行表达定量的整体情况进行统计汇总（./result/02.Expression/Quantification_Stat.csv），结果如下表：</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fb461a72716e2f12037a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fb461a72716e2f12037a">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["WT_rep1","WT_rep2","WT_rep3","WTE_rep1","WTE_rep2","WTE_rep3","MUT_rep1","MUT_rep2","MUT_rep3","MUTE_rep1","MUTE_rep2","MUTE_rep3"],[18948489,22448448,18079893,22911273,19986814,22843323,20256271,19961415,19486591,20882870,19254157,19843133],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0],[1515884,1584123,1312823,1594177,1428712,1627561,1733472,1703282,1470964,1543755,1444218,1507789],[0,0,0,0,0,0,0,0,0,0,0,0],[117536,140697,114032,177769,131815,141514,115496,106148,110419,122175,136906,131855]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sample<\/th>\n      <th>Assigned<\/th>\n      <th>Unassigned_Unmapped<\/th>\n      <th>Unassigned_Read_Type<\/th>\n      <th>Unassigned_Singleton<\/th>\n      <th>Unassigned_MappingQuality<\/th>\n      <th>Unassigned_Chimera<\/th>\n      <th>Unassigned_FragmentLength<\/th>\n      <th>Unassigned_Duplicate<\/th>\n      <th>Unassigned_MultiMapping<\/th>\n      <th>Unassigned_Secondary<\/th>\n      <th>Unassigned_NonSplit<\/th>\n      <th>Unassigned_NoFeatures<\/th>\n      <th>Unassigned_Overlapping_Length<\/th>\n      <th>Unassigned_Ambiguity<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12,13,14,15]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="不同样本表达水平比较" class="section level3 unnumbered">
+<h3 class="unnumbered">不同样本表达水平比较</h3>
+<p>不同样本基因的TMM密度图反映了不同样本基因的表达模式。结果如图：</p>
+<div class="figure" style="text-align: center">
+<img src="result/02.Expression/genes.TMM.EXPR.density.png" alt="表达量分布密度图" width="60%" />
+<p class="caption">
+表达量分布密度图
+</p>
+</div>
+<p>不同样本的TMM箱线图从表达量总体的离散角度来衡量各样品之间的差异，结果如下：</p>
+<div class="figure" style="text-align: center">
+<img src="result/02.Expression/genes.TMM.EXPR.boxplot.png" alt="表达量分布boxplot" width="60%" />
+<p class="caption">
+表达量分布boxplot
+</p>
+</div>
+</div>
+<div id="相关性分析" class="section level3 unnumbered">
+<h3 class="unnumbered">相关性分析</h3>
+<p>相关性分析是检验生物学重复之间一致性以及不同样本分组之间差异的常用方法。一般认为，样品间相关性越高，两样品为重复样品的可能性越高。这里采用皮尔森相关系数(
+Pearson correlation coefficient，PCC）来衡量样品之间的相关性。</p>
+<div class="figure" style="text-align: center">
+<img src="result/02.Expression/correlation_without_Cluster.png" alt="样本表达量相关性" width="80%" />
+<p class="caption">
+样本表达量相关性
+</p>
+</div>
+</div>
+<div id="主成分分析" class="section level3 unnumbered">
+<h3 class="unnumbered">主成分分析</h3>
+<p>主成分分析（Principal Component
+Analysis，PCA）是一种通过正交变换将一组可能存在相关性的变量转换为一组线性不相关变量的统计方法。转换后的变量叫做主成分。这里以各样品的基因表达量为基础，用主成分分析的方法确定样品间基因表达差异的第一主成分（PC1）和第二主成分（PC2），并将其映射到坐标轴，绘制各样品（不同形状的点）的位置，从样品间在距离上的远近可以看出样本的聚类关系。</p>
+<div class="figure" style="text-align: center">
+<img src="result/02.Expression/PCAplot_PC1&PC2.png" alt="样本表达量PCA" width="50%" />
+<p class="caption">
+样本表达量PCA
+</p>
+</div>
+</div>
+</div>
+<div id="差异表达分析-1"
+class="section level2 tabset tabset-fade tabset-pills" number="3.5">
+<h2 class="tabset tabset-fade tabset-pills"><span
+class="header-section-number">3.5</span> 差异表达分析</h2>
+<p>去掉低表达量基因并按照log2FoldChange绝对值大于1，adjusted
+<em>p</em>-value小于0.05的标准筛选差异表达基因，结果如下：</p>
+<div id="wt_vs_wte" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_vs_WTE</h3>
+<p>WT_vs_WTE中共有167个上调表达基因，235个下调表达基因。（./result/03.DE_analysis/genes.counts.matrix.WT_vs_WTE.DESeq2.DE_results.csv）</p>
+<p><img src='result/03.DE_analysis/WT_vs_WTE.DESeq2.volcano.png' width='50%'><img src='result/03.DE_analysis/WT_vs_WTE.DESeq2.heatmap.png' width='50%'></p>
+</div>
+<div id="mut_vs_mute" class="section level3 unnumbered">
+<h3 class="unnumbered">MUT_vs_MUTE</h3>
+<p>MUT_vs_MUTE中共有409个上调表达基因，573个下调表达基因。（./result/03.DE_analysis/genes.counts.matrix.MUT_vs_MUTE.DESeq2.DE_results.csv）</p>
+<p><img src='result/03.DE_analysis/MUT_vs_MUTE.DESeq2.volcano.png' width='50%'><img src='result/03.DE_analysis/MUT_vs_MUTE.DESeq2.heatmap.png' width='50%'></p>
+</div>
+<div id="wt_vs_mut" class="section level3 unnumbered">
+<h3 class="unnumbered">WT_vs_MUT</h3>
+<p>WT_vs_MUT中共有2432个上调表达基因，2594个下调表达基因。（./result/03.DE_analysis/genes.counts.matrix.WT_vs_MUT.DESeq2.DE_results.csv）</p>
+<p><img src='result/03.DE_analysis/WT_vs_MUT.DESeq2.volcano.png' width='50%'><img src='result/03.DE_analysis/WT_vs_MUT.DESeq2.heatmap.png' width='50%'></p>
+</div>
+<div id="wte_vs_mute" class="section level3 unnumbered">
+<h3 class="unnumbered">WTE_vs_MUTE</h3>
+<p>WTE_vs_MUTE中共有2091个上调表达基因，2625个下调表达基因。（./result/03.DE_analysis/genes.counts.matrix.WTE_vs_MUTE.DESeq2.DE_results.csv）</p>
+<p><img src='result/03.DE_analysis/WTE_vs_MUTE.DESeq2.volcano.png' width='50%'><img src='result/03.DE_analysis/WTE_vs_MUTE.DESeq2.heatmap.png' width='50%'></p>
+</div>
+</div>
+<div id="富集分析-1" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> 富集分析</h2>
+<div id="ora" class="section level3 tabset tabset-fade tabset-pills"
+number="3.6.1">
+<h3 class="tabset tabset-fade tabset-pills"><span
+class="header-section-number">3.6.1</span> ORA</h3>
+<div id="wt_vs_wte-1"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">WT_vs_WTE</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行ORA
+(over-representation analysis)。</p>
+<div id="go" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.GO_result.csv）：</p>
+<table>
+<colgroup>
+<col width="1%" />
+<col width="1%" />
+<col width="6%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="82%" />
+<col width="0%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016144" class="uri">GO:0016144</a></td>
+<td align="left">S-glycoside biosynthetic process</td>
+<td align="left">26/204</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC02G0527500ZS/BnaC04G0359300ZS/BnaC09G0170500ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0244600ZS/BnaA03G0259200ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC03G0321400ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC05G0136700ZS/BnaA09G0155300ZS/BnaC03G0090500ZS</td>
+<td align="right">26</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019758" class="uri">GO:0019758</a></td>
+<td align="left">glycosinolate biosynthetic process</td>
+<td align="left">26/204</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC02G0527500ZS/BnaC04G0359300ZS/BnaC09G0170500ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0244600ZS/BnaA03G0259200ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC03G0321400ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC05G0136700ZS/BnaA09G0155300ZS/BnaC03G0090500ZS</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019761" class="uri">GO:0019761</a></td>
+<td align="left">glucosinolate biosynthetic process</td>
+<td align="left">26/204</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC02G0527500ZS/BnaC04G0359300ZS/BnaC09G0170500ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0244600ZS/BnaA03G0259200ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC03G0321400ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC05G0136700ZS/BnaA09G0155300ZS/BnaC03G0090500ZS</td>
+<td align="right">26</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901659" class="uri">GO:1901659</a></td>
+<td align="left">glycosyl compound biosynthetic process</td>
+<td align="left">27/204</td>
+<td align="left">264/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC02G0527500ZS/BnaC04G0359300ZS/BnaC09G0170500ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0244600ZS/BnaA03G0259200ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC03G0321400ZS/BnaC09G0288000ZS/BnaA03G0009700ZS/BnaA03G0359600ZS/BnaC05G0136700ZS/BnaA09G0155300ZS/BnaC03G0090500ZS</td>
+<td align="right">27</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0044272" class="uri">GO:0044272</a></td>
+<td align="left">sulfur compound biosynthetic process</td>
+<td align="left">29/204</td>
+<td align="left">379/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC02G0527500ZS/BnaC04G0359300ZS/BnaC09G0170500ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaC09G0113400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0244600ZS/BnaA03G0292400ZS/BnaA03G0259200ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC03G0321400ZS/BnaC09G0288000ZS/BnaC03G0351200ZS/BnaA03G0359600ZS/BnaC05G0136700ZS/BnaA09G0155300ZS/BnaC03G0090500ZS</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016143" class="uri">GO:0016143</a></td>
+<td align="left">S-glycoside metabolic process</td>
+<td align="left">26/204</td>
+<td align="left">331/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC02G0527500ZS/BnaC04G0359300ZS/BnaC09G0170500ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0244600ZS/BnaA03G0259200ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC03G0321400ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC05G0136700ZS/BnaA09G0155300ZS/BnaC03G0090500ZS</td>
+<td align="right">26</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该GO
+term的差异基因ID；<br>Count：富集到该GO term的差异基因数目。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.GO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.GO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.GO_BP_DAG.png' width='33%'><img src='result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.GO_MF_DAG.png' width='33%'></p>
+<p><strong>说明：</strong>GO有向无环图（DAG
+graph）能直观展示差异基因富集的GO
+term及其层级关系，分支代表包含关系，从上至下所定义的功能范围越来越具体。对GO三大分类(CC细胞成分，MF
+分子功能，BP生物学过程)的每一类都取富集程度最高的前10位作为有向无环图的主节点，用方框表示，并通过包含关系将相关联的GO
+Term一起展示，颜色的深浅代表富集程度，颜色越深代表富集程度越高。</p>
+</div>
+<div id="kegg" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05
+的标准进行KEGG富集分析。部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.KEGG_result.csv）：</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="9%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="75%" />
+<col width="1%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00966</td>
+<td align="left">Glucosinolate biosynthesis</td>
+<td align="left">20/116</td>
+<td align="left">183/21367</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC04G0153200ZS/BnaC04G0359300ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaA04G0267400ZS/BnaA05G0121200ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaA05G0362200ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC05G0210800ZS/BnaA09G0448300ZS/BnaC04G0039400ZS/BnaC07G0005900ZS/BnaC05G0078800ZS/BnaA03G0359600ZS/BnaC05G0136700ZS</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left">bna00290</td>
+<td align="left">Valine, leucine and isoleucine biosynthesis</td>
+<td align="left">9/116</td>
+<td align="left">115/21367</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000004</td>
+<td align="right">0.0000003</td>
+<td
+align="left">BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaA05G0362200ZS/BnaC05G0396400ZS/BnaC03G0438900ZS/BnaC04G0039400ZS/BnaC05G0078800ZS/BnaA03G0359600ZS</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00380</td>
+<td align="left">Tryptophan metabolism</td>
+<td align="left">13/116</td>
+<td align="left">390/21367</td>
+<td align="right">0.0000002</td>
+<td align="right">0.0000038</td>
+<td align="right">0.0000031</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC04G0153200ZS/BnaC04G0359300ZS/BnaA04G0267400ZS/BnaA05G0121200ZS/BnaC06G0404300ZS/BnaA06G0110600ZS/BnaC01G0254400ZS/BnaC05G0210800ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0136700ZS/BnaC05G0176000ZS</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left">bna00261</td>
+<td align="left">Monobactam biosynthesis</td>
+<td align="left">5/116</td>
+<td align="left">52/21367</td>
+<td align="right">0.0000092</td>
+<td align="right">0.0001283</td>
+<td align="right">0.0001037</td>
+<td
+align="left">BnaC03G0458000ZS/BnaA03G0374300ZS/BnaC02G0163200ZS/BnaA05G0052800ZS/BnaA02G0130700ZS</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00920</td>
+<td align="left">Sulfur metabolism</td>
+<td align="left">7/116</td>
+<td align="left">201/21367</td>
+<td align="right">0.0001152</td>
+<td align="right">0.0012906</td>
+<td align="right">0.0010431</td>
+<td
+align="left">BnaC03G0458000ZS/BnaA03G0374300ZS/BnaC03G0487200ZS/BnaA02G0133400ZS/BnaC09G0439900ZS/BnaA03G0463700ZS/BnaA08G0081800ZS</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">bna00660</td>
+<td align="left">C5-Branched dibasic acid metabolism</td>
+<td align="left">4/116</td>
+<td align="left">49/21367</td>
+<td align="right">0.0001447</td>
+<td align="right">0.0013506</td>
+<td align="right">0.0010916</td>
+<td
+align="left">BnaA02G0052200ZS/BnaA05G0036500ZS/BnaC02G0060000ZS/BnaC04G0039400ZS</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该KEGG
+pathway的差异基因ID；<br>Count：富集到该KEGG pathway的差异基因数目。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.KEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/01.ORA/WT_vs_WTE.DESeq2.DE_results.KEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+</div>
+</div>
+<div id="mut_vs_mute-1"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">MUT_vs_MUTE</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行ORA
+(over-representation analysis)。</p>
+<div id="go-1" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.GO_result.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="0%" />
+<col width="3%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="90%" />
+<col width="0%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016144" class="uri">GO:0016144</a></td>
+<td align="left">S-glycoside biosynthetic process</td>
+<td align="left">45/510</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC03G0090500ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC02G0527500ZS/BnaC06G0404300ZS/BnaA02G0394700ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155300ZS/BnaC09G0170500ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaC03G0308400ZS/BnaA06G0110600ZS/BnaC09G0288000ZS/BnaA03G0259200ZS/BnaC05G0396400ZS/BnaC05G0136700ZS/BnaA09G0244600ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaC03G0308500ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaC03G0321400ZS/BnaA10G0029300ZS/BnaC04G0504200ZS/BnaC05G0030600ZS/BnaC08G0014000ZS/BnaA02G0257300ZS/BnaC02G0488500ZS/BnaA08G0313100ZS/BnaC06G0265000ZS/BnaC09G0578500ZS</td>
+<td align="right">45</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019758" class="uri">GO:0019758</a></td>
+<td align="left">glycosinolate biosynthetic process</td>
+<td align="left">45/510</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC03G0090500ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC02G0527500ZS/BnaC06G0404300ZS/BnaA02G0394700ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155300ZS/BnaC09G0170500ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaC03G0308400ZS/BnaA06G0110600ZS/BnaC09G0288000ZS/BnaA03G0259200ZS/BnaC05G0396400ZS/BnaC05G0136700ZS/BnaA09G0244600ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaC03G0308500ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaC03G0321400ZS/BnaA10G0029300ZS/BnaC04G0504200ZS/BnaC05G0030600ZS/BnaC08G0014000ZS/BnaA02G0257300ZS/BnaC02G0488500ZS/BnaA08G0313100ZS/BnaC06G0265000ZS/BnaC09G0578500ZS</td>
+<td align="right">45</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019761" class="uri">GO:0019761</a></td>
+<td align="left">glucosinolate biosynthetic process</td>
+<td align="left">45/510</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC03G0090500ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC02G0527500ZS/BnaC06G0404300ZS/BnaA02G0394700ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155300ZS/BnaC09G0170500ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaC03G0308400ZS/BnaA06G0110600ZS/BnaC09G0288000ZS/BnaA03G0259200ZS/BnaC05G0396400ZS/BnaC05G0136700ZS/BnaA09G0244600ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaC03G0308500ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaC03G0321400ZS/BnaA10G0029300ZS/BnaC04G0504200ZS/BnaC05G0030600ZS/BnaC08G0014000ZS/BnaA02G0257300ZS/BnaC02G0488500ZS/BnaA08G0313100ZS/BnaC06G0265000ZS/BnaC09G0578500ZS</td>
+<td align="right">45</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0044272" class="uri">GO:0044272</a></td>
+<td align="left">sulfur compound biosynthetic process</td>
+<td align="left">62/510</td>
+<td align="left">379/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC03G0090500ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaC03G0351200ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA03G0292400ZS/BnaA04G0076900ZS/BnaC02G0527500ZS/BnaC06G0404300ZS/BnaA04G0031500ZS/BnaC05G0564300ZS/BnaC04G0302800ZS/BnaA02G0394700ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC08G0074300ZS/BnaC08G0130400ZS/BnaC04G0361900ZS/BnaA05G0479500ZS/BnaC09G0113400ZS/BnaA08G0091500ZS/BnaA09G0111100ZS/BnaA01G0068200ZS/BnaC01G0080800ZS/BnaA09G0056000ZS/BnaA09G0155300ZS/BnaC09G0170500ZS/BnaC02G0280500ZS/BnaC05G0542100ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaC03G0308400ZS/BnaA06G0110600ZS/BnaC09G0288000ZS/BnaA03G0259200ZS/BnaC05G0396400ZS/BnaC05G0136700ZS/BnaA09G0244600ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaC03G0308500ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaC03G0321400ZS/BnaC06G0142700ZS/BnaA10G0029300ZS/BnaC04G0504200ZS/BnaC05G0030600ZS/BnaC08G0014000ZS/BnaA02G0257300ZS/BnaC02G0488500ZS/BnaA08G0313100ZS/BnaC04G0498800ZS/BnaC06G0265000ZS/BnaC09G0578500ZS/BnaC05G0541900ZS</td>
+<td align="right">62</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016143" class="uri">GO:0016143</a></td>
+<td align="left">S-glycoside metabolic process</td>
+<td align="left">49/510</td>
+<td align="left">331/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC03G0090500ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC02G0527500ZS/BnaC06G0404300ZS/BnaA02G0394700ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA01G0068200ZS/BnaC01G0080800ZS/BnaA09G0155300ZS/BnaC09G0170500ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaC03G0308400ZS/BnaA06G0110600ZS/BnaC09G0288000ZS/BnaA03G0259200ZS/BnaC05G0396400ZS/BnaC05G0136700ZS/BnaA09G0244600ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaC03G0308500ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaC03G0321400ZS/BnaA10G0029300ZS/BnaC04G0504200ZS/BnaC05G0030600ZS/BnaC08G0014000ZS/BnaA02G0257300ZS/BnaA05G0409000ZS/BnaC02G0488500ZS/BnaC06G0083100ZS/BnaA08G0313100ZS/BnaC06G0265000ZS/BnaC09G0578500ZS</td>
+<td align="right">49</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901659" class="uri">GO:1901659</a></td>
+<td align="left">glycosyl compound biosynthetic process</td>
+<td align="left">45/510</td>
+<td align="left">264/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA04G0074700ZS/BnaC03G0090500ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC02G0527500ZS/BnaC06G0404300ZS/BnaA02G0394700ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155300ZS/BnaC09G0170500ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaC03G0308400ZS/BnaA06G0110600ZS/BnaC09G0288000ZS/BnaA03G0259200ZS/BnaC05G0396400ZS/BnaC05G0136700ZS/BnaA09G0244600ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaC03G0308500ZS/BnaA09G0155200ZS/BnaA05G0362200ZS/BnaC03G0321400ZS/BnaA10G0029300ZS/BnaC04G0504200ZS/BnaC05G0030600ZS/BnaC08G0014000ZS/BnaA02G0257300ZS/BnaC02G0488500ZS/BnaA08G0313100ZS/BnaC06G0265000ZS/BnaC09G0578500ZS</td>
+<td align="right">45</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该GO
+term的差异基因ID；<br>Count：富集到该GO term的差异基因数目。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.GO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.GO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+<p><img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.GO_BP_DAG.png' width='33%'><img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.GO_CC_DAG.png' width='33%'><img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.GO_MF_DAG.png' width='33%'></p>
+<p><strong>说明：</strong>GO有向无环图（DAG
+graph）能直观展示差异基因富集的GO
+term及其层级关系，分支代表包含关系，从上至下所定义的功能范围越来越具体。对GO三大分类(CC细胞成分，MF
+分子功能，BP生物学过程)的每一类都取富集程度最高的前10位作为有向无环图的主节点，用方框表示，并通过包含关系将相关联的GO
+Term一起展示，颜色的深浅代表富集程度，颜色越深代表富集程度越高。</p>
+</div>
+<div id="kegg-1" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05
+的标准进行KEGG富集分析。部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.KEGG_result.csv）：</p>
+<table>
+<colgroup>
+<col width="1%" />
+<col width="6%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="86%" />
+<col width="0%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00920</td>
+<td align="left">Sulfur metabolism</td>
+<td align="left">40/357</td>
+<td align="left">201/21367</td>
+<td align="right">0</td>
+<td align="right">0e+00</td>
+<td align="right">0e+00</td>
+<td
+align="left">BnaC08G0115700ZS/BnaA08G0081800ZS/BnaC09G0106200ZS/BnaA09G0105100ZS/BnaA01G0203700ZS/BnaC05G0564300ZS/BnaC01G0010100ZS/BnaA03G0393500ZS/BnaC03G0487200ZS/BnaA03G0567200ZS/BnaA02G0133400ZS/BnaC05G0353000ZS/BnaC07G0541600ZS/BnaC08G0130400ZS/BnaA05G0479500ZS/BnaA01G0008600ZS/BnaA06G0290900ZS/BnaA08G0091500ZS/BnaC03G0536100ZS/BnaC03G0382900ZS/BnaA10G0282200ZS/BnaA05G0332300ZS/BnaA03G0374300ZS/BnaC05G0542100ZS/BnaC02G0167400ZS/BnaC09G0080800ZS/BnaC03G0458000ZS/BnaC04G0240200ZS/BnaA09G0086600ZS/BnaA01G0378900ZS/BnaA08G0081600ZS/BnaC06G0142700ZS/BnaC03G0681000ZS/BnaA08G0192300ZS/BnaA03G0586600ZS/BnaA08G0081900ZS/BnaA09G0236600ZS/BnaC08G0115800ZS/BnaC05G0541900ZS/BnaC06G0448400ZS</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">bna00966</td>
+<td align="left">Glucosinolate biosynthesis</td>
+<td align="left">34/357</td>
+<td align="left">183/21367</td>
+<td align="right">0</td>
+<td align="right">0e+00</td>
+<td align="right">0e+00</td>
+<td
+align="left">BnaC04G0153200ZS/BnaA04G0074700ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaC08G0458300ZS/BnaA04G0267400ZS/BnaA08G0054300ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaA09G0604200ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA05G0121200ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA05G0036500ZS/BnaA06G0128100ZS/BnaA06G0110600ZS/BnaC05G0396400ZS/BnaC04G0584500ZS/BnaC05G0136700ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC07G0006100ZS/BnaA05G0362200ZS/BnaC04G0513800ZS/BnaA03G0153800ZS/BnaC04G0513700ZS/BnaA03G0213900ZS</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00380</td>
+<td align="left">Tryptophan metabolism</td>
+<td align="left">29/357</td>
+<td align="left">390/21367</td>
+<td align="right">0</td>
+<td align="right">0e+00</td>
+<td align="right">0e+00</td>
+<td
+align="left">BnaC04G0153200ZS/BnaA04G0074700ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaC06G0404300ZS/BnaC08G0458300ZS/BnaA04G0267400ZS/BnaA09G0604200ZS/BnaA05G0121200ZS/BnaC02G0280500ZS/BnaC05G0156200ZS/BnaA06G0128100ZS/BnaA06G0110600ZS/BnaC04G0584500ZS/BnaC05G0136700ZS/BnaC07G0006100ZS/BnaC01G0254400ZS/BnaC04G0513800ZS/BnaA03G0153800ZS/BnaC04G0513700ZS/BnaC08G0179700ZS/BnaA03G0213900ZS/BnaA03G0148600ZS/BnaC01G0102000ZS/BnaC01G0100800ZS/BnaA01G0083200ZS</td>
+<td align="right">29</td>
+</tr>
+<tr class="even">
+<td align="left">bna00261</td>
+<td align="left">Monobactam biosynthesis</td>
+<td align="left">12/357</td>
+<td align="left">52/21367</td>
+<td align="right">0</td>
+<td align="right">0e+00</td>
+<td align="right">0e+00</td>
+<td
+align="left">BnaA01G0203700ZS/BnaC05G0353000ZS/BnaA02G0047400ZS/BnaA05G0332300ZS/BnaA03G0374300ZS/BnaA09G0400800ZS/BnaC02G0163200ZS/BnaA02G0130700ZS/BnaC03G0458000ZS/BnaC08G0231200ZS/BnaA08G0270300ZS/BnaC02G0054300ZS</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00480</td>
+<td align="left">Glutathione metabolism</td>
+<td align="left">27/357</td>
+<td align="left">396/21367</td>
+<td align="right">0</td>
+<td align="right">0e+00</td>
+<td align="right">0e+00</td>
+<td
+align="left">BnaC03G0173300ZS/BnaA03G0148800ZS/BnaA05G0489300ZS/BnaC04G0504700ZS/BnaA04G0199400ZS/BnaA04G0159800ZS/BnaA03G0148900ZS/BnaC06G0255500ZS/BnaA09G0056000ZS/BnaA07G0235200ZS/BnaA06G0045900ZS/BnaA07G0072000ZS/BnaC04G0455000ZS/BnaA07G0235400ZS/Bnascaffold0025G0000700ZS/BnaC05G0057800ZS/BnaC05G0546700ZS/BnaC02G0203000ZS/BnaA02G0158900ZS/BnaC06G0255700ZS/BnaC03G0173400ZS/BnaA09G0619200ZS/BnaC01G0499100ZS/BnaC05G0568000ZS/BnaA07G0235300ZS/BnaC06G0255600ZS/BnaC06G0440400ZS</td>
+<td align="right">27</td>
+</tr>
+<tr class="even">
+<td align="left">bna00400</td>
+<td align="left">Phenylalanine, tyrosine and tryptophan
+biosynthesis</td>
+<td align="left">19/357</td>
+<td align="left">232/21367</td>
+<td align="right">0</td>
+<td align="right">2e-07</td>
+<td align="right">1e-07</td>
+<td
+align="left">BnaA07G0001300ZS/BnaC07G0005900ZS/BnaC08G0458300ZS/BnaA09G0604200ZS/BnaA09G0101800ZS/BnaC08G0346300ZS/BnaA03G0021000ZS/BnaA09G0505300ZS/BnaC03G0025600ZS/BnaC03G0259200ZS/BnaA02G0072600ZS/BnaC03G0633000ZS/BnaC04G0479500ZS/BnaC07G0006100ZS/BnaA02G0020300ZS/BnaA04G0285700ZS/BnaC09G0373500ZS/BnaC04G0603700ZS/BnaA10G0190900ZS</td>
+<td align="right">19</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该KEGG
+pathway的差异基因ID；<br>Count：富集到该KEGG pathway的差异基因数目。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.KEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/01.ORA/MUT_vs_MUTE.DESeq2.DE_results.KEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+</div>
+</div>
+<div id="wt_vs_mut-1"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">WT_vs_MUT</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行ORA
+(over-representation analysis)。</p>
+<div id="go-2" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.GO_result.csv）：</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="3%" />
+<col width="16%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="62%" />
+<col width="1%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019419" class="uri">GO:0019419</a></td>
+<td align="left">sulfate reduction</td>
+<td align="left">10/2289</td>
+<td align="left">17/39382</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.0000213</td>
+<td align="right">0.0000209</td>
+<td
+align="left">BnaA03G0319400ZS/BnaA03G0586600ZS/BnaC07G0439600ZS/BnaC01G0148400ZS/BnaA03G0463700ZS/BnaC01G0476300ZS/BnaA01G0120900ZS/BnaA09G0236600ZS/BnaA01G0378900ZS/BnaC09G0278900ZS</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0055070" class="uri">GO:0055070</a></td>
+<td align="left">copper ion homeostasis</td>
+<td align="left">12/2289</td>
+<td align="left">48/39382</td>
+<td align="right">1.42e-05</td>
+<td align="right">0.0261911</td>
+<td align="right">0.0256477</td>
+<td
+align="left">BnaC02G0005000ZS/BnaA07G0132900ZS/BnaA08G0247900ZS/BnaC08G0259500ZS/BnaC03G0411500ZS/BnaA08G0278700ZS/BnaA07G0134200ZS/BnaA09G0518600ZS/BnaC01G0432100ZS/BnaC02G0017200ZS/BnaC08G0217500ZS/BnaA01G0349100ZS</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0046688" class="uri">GO:0046688</a></td>
+<td align="left">response to copper ion</td>
+<td align="left">13/2289</td>
+<td align="left">59/39382</td>
+<td align="right">2.72e-05</td>
+<td align="right">0.0335917</td>
+<td align="right">0.0328947</td>
+<td
+align="left">BnaC02G0005000ZS/BnaA04G0182200ZS/BnaA07G0132900ZS/BnaC04G0482300ZS/BnaA08G0247900ZS/BnaC08G0259500ZS/BnaA09G0664700ZS/BnaC07G0462000ZS/BnaC08G0529200ZS/BnaC06G0378800ZS/BnaA07G0134200ZS/BnaA03G0457300ZS/BnaA07G0323900ZS</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0071280" class="uri">GO:0071280</a></td>
+<td align="left">cellular response to copper ion</td>
+<td align="left">6/2289</td>
+<td align="left">13/39382</td>
+<td align="right">4.61e-05</td>
+<td align="right">0.0426319</td>
+<td align="right">0.0417474</td>
+<td
+align="left">BnaC02G0005000ZS/BnaA09G0664700ZS/BnaC08G0529200ZS/BnaC06G0378800ZS/BnaA03G0457300ZS/BnaA07G0323900ZS</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">MF</td>
+<td align="left"><a href="GO:0004604" class="uri">GO:0004604</a></td>
+<td align="left">phosphoadenylyl-sulfate reductase (thioredoxin)
+activity</td>
+<td align="left">7/2030</td>
+<td align="left">11/33949</td>
+<td align="right">7.00e-07</td>
+<td align="right">0.0003638</td>
+<td align="right">0.0003416</td>
+<td
+align="left">BnaA03G0586600ZS/BnaC07G0439600ZS/BnaC01G0148400ZS/BnaA03G0463700ZS/BnaA01G0120900ZS/BnaA09G0236600ZS/BnaC09G0278900ZS</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">MF</td>
+<td align="left"><a href="GO:0009973" class="uri">GO:0009973</a></td>
+<td align="left">adenylyl-sulfate reductase activity</td>
+<td align="left">7/2030</td>
+<td align="left">11/33949</td>
+<td align="right">7.00e-07</td>
+<td align="right">0.0003638</td>
+<td align="right">0.0003416</td>
+<td
+align="left">BnaA03G0586600ZS/BnaC07G0439600ZS/BnaC01G0148400ZS/BnaA03G0463700ZS/BnaA01G0120900ZS/BnaA09G0236600ZS/BnaC09G0278900ZS</td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该GO
+term的差异基因ID；<br>Count：富集到该GO term的差异基因数目。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.GO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.GO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.GO_BP_DAG.png' width='33%'><img src='result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.GO_MF_DAG.png' width='33%'></p>
+<p><strong>说明：</strong>GO有向无环图（DAG
+graph）能直观展示差异基因富集的GO
+term及其层级关系，分支代表包含关系，从上至下所定义的功能范围越来越具体。对GO三大分类(CC细胞成分，MF
+分子功能，BP生物学过程)的每一类都取富集程度最高的前10位作为有向无环图的主节点，用方框表示，并通过包含关系将相关联的GO
+Term一起展示，颜色的深浅代表富集程度，颜色越深代表富集程度越高。</p>
+</div>
+<div id="kegg-2" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05
+的标准进行KEGG富集分析。部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.KEGG_result.csv）：</p>
+<table style="width:100%;">
+<colgroup>
+<col width="1%" />
+<col width="3%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="84%" />
+<col width="1%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00920</td>
+<td align="left">Sulfur metabolism</td>
+<td align="left">27/1388</td>
+<td align="left">201/21367</td>
+<td align="right">0.0002664</td>
+<td align="right">0.0274412</td>
+<td align="right">0.0243984</td>
+<td
+align="left">BnaA03G0319400ZS/BnaA03G0586600ZS/BnaC04G0269000ZS/BnaC03G0342900ZS/BnaA01G0201200ZS/BnaC06G0448400ZS/BnaC03G0132800ZS/BnaC01G0507200ZS/BnaC07G0439600ZS/BnaC02G0317300ZS/BnaC03G0535900ZS/BnaC01G0148400ZS/BnaA03G0463700ZS/BnaC01G0476300ZS/BnaC02G0317400ZS/BnaA03G0404600ZS/BnaA01G0120900ZS/Bnascaffold0709G0000100ZS/BnaA09G0236600ZS/BnaA01G0378900ZS/BnaC09G0278900ZS/BnaA07G0050800ZS/BnaC05G0541900ZS/BnaA06G0001100ZS/BnaC07G0341400ZS/BnaA10G0209600ZS/BnaC07G0541600ZS</td>
+<td align="right">27</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该KEGG
+pathway的差异基因ID；<br>Count：富集到该KEGG pathway的差异基因数目。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.KEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/01.ORA/WT_vs_MUT.DESeq2.DE_results.KEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+</div>
+</div>
+<div id="wte_vs_mute-1"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">WTE_vs_MUTE</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行ORA
+(over-representation analysis)。</p>
+<div id="go-3" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.GO_result.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="92%" />
+<col width="0%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016144" class="uri">GO:0016144</a></td>
+<td align="left">S-glycoside biosynthetic process</td>
+<td align="left">47/2225</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA02G0394700ZS/BnaA02G0052200ZS/BnaA03G0259200ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaC05G0210800ZS/BnaC03G0308500ZS/BnaA09G0448300ZS/BnaC03G0090500ZS/BnaC04G0359300ZS/BnaC09G0288000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155200ZS/BnaA09G0155300ZS/BnaA09G0244600ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaC05G0156200ZS/BnaC08G0056100ZS/BnaC03G0308400ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaA05G0036500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0438900ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC04G0504200ZS/BnaA09G0018800ZS/BnaC02G0060000ZS/BnaC09G0001500ZS/BnaA03G0359600ZS/BnaC03G0321400ZS/BnaC05G0156000ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaA10G0029300ZS/BnaC05G0030600ZS/BnaA06G0032400ZS/BnaC08G0014000ZS/BnaC04G0436200ZS</td>
+<td align="right">47</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019758" class="uri">GO:0019758</a></td>
+<td align="left">glycosinolate biosynthetic process</td>
+<td align="left">47/2225</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA02G0394700ZS/BnaA02G0052200ZS/BnaA03G0259200ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaC05G0210800ZS/BnaC03G0308500ZS/BnaA09G0448300ZS/BnaC03G0090500ZS/BnaC04G0359300ZS/BnaC09G0288000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155200ZS/BnaA09G0155300ZS/BnaA09G0244600ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaC05G0156200ZS/BnaC08G0056100ZS/BnaC03G0308400ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaA05G0036500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0438900ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC04G0504200ZS/BnaA09G0018800ZS/BnaC02G0060000ZS/BnaC09G0001500ZS/BnaA03G0359600ZS/BnaC03G0321400ZS/BnaC05G0156000ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaA10G0029300ZS/BnaC05G0030600ZS/BnaA06G0032400ZS/BnaC08G0014000ZS/BnaC04G0436200ZS</td>
+<td align="right">47</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019761" class="uri">GO:0019761</a></td>
+<td align="left">glucosinolate biosynthetic process</td>
+<td align="left">47/2225</td>
+<td align="left">138/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA02G0394700ZS/BnaA02G0052200ZS/BnaA03G0259200ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaC05G0210800ZS/BnaC03G0308500ZS/BnaA09G0448300ZS/BnaC03G0090500ZS/BnaC04G0359300ZS/BnaC09G0288000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155200ZS/BnaA09G0155300ZS/BnaA09G0244600ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaC05G0156200ZS/BnaC08G0056100ZS/BnaC03G0308400ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaA05G0036500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0438900ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC04G0504200ZS/BnaA09G0018800ZS/BnaC02G0060000ZS/BnaC09G0001500ZS/BnaA03G0359600ZS/BnaC03G0321400ZS/BnaC05G0156000ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaA10G0029300ZS/BnaC05G0030600ZS/BnaA06G0032400ZS/BnaC08G0014000ZS/BnaC04G0436200ZS</td>
+<td align="right">47</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0044272" class="uri">GO:0044272</a></td>
+<td align="left">sulfur compound biosynthetic process</td>
+<td align="left">74/2225</td>
+<td align="left">379/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA02G0394700ZS/BnaA02G0052200ZS/BnaA03G0259200ZS/BnaC05G0564300ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaA03G0292400ZS/BnaC06G0404300ZS/BnaC03G0351200ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaA04G0031500ZS/BnaA09G0056000ZS/BnaC05G0210800ZS/BnaC03G0308500ZS/BnaA09G0448300ZS/BnaA05G0479500ZS/BnaC03G0090500ZS/BnaC04G0359300ZS/BnaC09G0113400ZS/BnaC09G0288000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0111100ZS/BnaC03G0342900ZS/BnaC04G0302800ZS/BnaA09G0155200ZS/BnaA09G0155300ZS/BnaA09G0244600ZS/BnaC04G0039400ZS/BnaA01G0068200ZS/BnaC01G0080800ZS/BnaC09G0170500ZS/BnaC08G0130400ZS/BnaC05G0156200ZS/BnaA08G0091500ZS/BnaC08G0056100ZS/BnaC05G0542100ZS/BnaC03G0132800ZS/BnaC03G0308400ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaC04G0269000ZS/BnaC02G0164500ZS/BnaA05G0036500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0438900ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC04G0504200ZS/BnaA09G0018800ZS/BnaC02G0060000ZS/BnaC09G0001500ZS/BnaA03G0359600ZS/BnaC06G0142700ZS/BnaC03G0321400ZS/BnaC05G0156000ZS/BnaA05G0362200ZS/BnaA08G0294700ZS/BnaC07G0293000ZS/BnaA03G0120100ZS/BnaA02G0257300ZS/BnaA10G0029300ZS/BnaC04G0498800ZS/BnaC05G0030600ZS/BnaC03G0772700ZS/BnaC03G0217300ZS/BnaA06G0032400ZS/BnaA10G0170100ZS/BnaC08G0014000ZS/BnaA10G0117100ZS/BnaC04G0436200ZS</td>
+<td align="right">74</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901659" class="uri">GO:1901659</a></td>
+<td align="left">glycosyl compound biosynthetic process</td>
+<td align="left">54/2225</td>
+<td align="left">264/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA02G0394700ZS/BnaA02G0052200ZS/BnaA03G0009700ZS/BnaA03G0259200ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaC05G0210800ZS/BnaC03G0308500ZS/BnaA09G0448300ZS/BnaC03G0090500ZS/BnaC04G0359300ZS/BnaC09G0288000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155200ZS/BnaA09G0155300ZS/BnaA09G0244600ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaC05G0156200ZS/BnaC08G0056100ZS/BnaC03G0308400ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaA05G0036500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0438900ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC04G0504200ZS/BnaC08G0375100ZS/BnaA09G0018800ZS/BnaC02G0060000ZS/BnaC09G0001500ZS/BnaA03G0359600ZS/BnaA05G0424300ZS/BnaC05G0375000ZS/BnaC03G0321400ZS/BnaC05G0156000ZS/BnaA05G0362200ZS/BnaA02G0257300ZS/BnaA08G0002600ZS/BnaC01G0310300ZS/BnaA10G0029300ZS/BnaC05G0030600ZS/BnaC07G0433300ZS/BnaA06G0032400ZS/BnaC08G0014000ZS/BnaC04G0436200ZS</td>
+<td align="right">54</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016143" class="uri">GO:0016143</a></td>
+<td align="left">S-glycoside metabolic process</td>
+<td align="left">55/2225</td>
+<td align="left">331/39382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td
+align="left">BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC05G0460800ZS/BnaA03G0259200ZS/BnaC05G0460300ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaC05G0210800ZS/BnaC03G0308500ZS/BnaA09G0448300ZS/BnaC03G0090500ZS/BnaC04G0359300ZS/BnaC09G0288000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaA09G0155200ZS/BnaA09G0155300ZS/BnaA09G0244600ZS/BnaC04G0039400ZS/BnaA01G0068200ZS/BnaC01G0080800ZS/BnaC09G0170500ZS/BnaC05G0156200ZS/BnaA04G0281800ZS/BnaC08G0056100ZS/BnaC03G0308400ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaA05G0036500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0438900ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC04G0504200ZS/BnaA09G0018800ZS/BnaC02G0060000ZS/BnaC09G0001500ZS/BnaA03G0359600ZS/BnaC03G0321400ZS/BnaC05G0156000ZS/BnaA05G0362200ZS/BnaA05G0143900ZS/BnaA09G0043100ZS/BnaA02G0257300ZS/BnaA10G0029300ZS/BnaC05G0030600ZS/BnaC03G0772700ZS/BnaA06G0032400ZS/BnaC08G0014000ZS/BnaC04G0436200ZS</td>
+<td align="right">55</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该GO
+term的差异基因ID；<br>Count：富集到该GO term的差异基因数目。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.GO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.GO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+<p><img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.GO_BP_DAG.png' width='33%'><img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.GO_CC_DAG.png' width='33%'><img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.GO_MF_DAG.png' width='33%'></p>
+<p><strong>说明：</strong>GO有向无环图（DAG
+graph）能直观展示差异基因富集的GO
+term及其层级关系，分支代表包含关系，从上至下所定义的功能范围越来越具体。对GO三大分类(CC细胞成分，MF
+分子功能，BP生物学过程)的每一类都取富集程度最高的前10位作为有向无环图的主节点，用方框表示，并通过包含关系将相关联的GO
+Term一起展示，颜色的深浅代表富集程度，颜色越深代表富集程度越高。</p>
+</div>
+<div id="kegg-3" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05
+的标准进行KEGG富集分析。部分结果如下表（全部结果见./result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.KEGG_result.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="5%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="87%" />
+<col width="0%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="left">GeneRatio</th>
+<th align="left">BgRatio</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="left">geneID</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00920</td>
+<td align="left">Sulfur metabolism</td>
+<td align="left">44/1344</td>
+<td align="left">201/21367</td>
+<td align="right">0.0e+00</td>
+<td align="right">0.0000000</td>
+<td align="right">0.00e+00</td>
+<td
+align="left">BnaA03G0319400ZS/BnaC08G0115700ZS/BnaC05G0564300ZS/BnaC09G0106200ZS/BnaC01G0476300ZS/BnaA08G0081800ZS/BnaA09G0105100ZS/BnaA05G0479500ZS/BnaA01G0008600ZS/BnaC05G0353000ZS/BnaA02G0133400ZS/BnaC03G0487200ZS/BnaA01G0203700ZS/BnaC03G0342900ZS/BnaA10G0282200ZS/BnaA06G0290900ZS/BnaC03G0535900ZS/BnaC03G0536100ZS/BnaA05G0332300ZS/BnaC08G0130400ZS/BnaA08G0091500ZS/BnaC05G0542100ZS/BnaC03G0132800ZS/BnaC01G0010100ZS/BnaC09G0080800ZS/BnaC03G0382900ZS/BnaC04G0269000ZS/BnaA03G0374300ZS/BnaA03G0393500ZS/BnaA03G0567200ZS/BnaC02G0317300ZS/BnaA09G0086600ZS/BnaC09G0439900ZS/BnaA08G0081600ZS/BnaA03G0404600ZS/BnaC06G0078600ZS/BnaC07G0089200ZS/BnaC07G0541600ZS/BnaC06G0142700ZS/BnaA03G0586600ZS/BnaC04G0240200ZS/Bnascaffold0709G0000100ZS/BnaA08G0081900ZS/BnaC03G0681000ZS</td>
+<td align="right">44</td>
+</tr>
+<tr class="even">
+<td align="left">bna00966</td>
+<td align="left">Glucosinolate biosynthesis</td>
+<td align="left">41/1344</td>
+<td align="left">183/21367</td>
+<td align="right">0.0e+00</td>
+<td align="right">0.0000000</td>
+<td align="right">0.00e+00</td>
+<td
+align="left">BnaA02G0052200ZS/BnaC07G0005900ZS/BnaA04G0076900ZS/BnaC06G0404300ZS/BnaA04G0267400ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaA09G0604200ZS/BnaC05G0210800ZS/BnaC08G0458300ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC04G0361900ZS/BnaC04G0584500ZS/BnaA05G0121200ZS/BnaC04G0039400ZS/BnaC05G0156200ZS/BnaC03G0736800ZS/BnaC07G0006100ZS/BnaA06G0110600ZS/BnaA05G0036500ZS/Bnascaffold0026G0068500ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaC03G0736200ZS/BnaC03G0438900ZS/BnaC04G0513800ZS/BnaC02G0171200ZS/BnaC02G0280500ZS/BnaC05G0396400ZS/BnaC02G0060000ZS/BnaA03G0359600ZS/BnaA03G0213900ZS/BnaA05G0362200ZS/BnaC04G0513700ZS/BnaA06G0032400ZS/BnaA02G0135900ZS/BnaC04G0436200ZS/BnaC03G0252400ZS</td>
+<td align="right">41</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00196</td>
+<td align="left">Photosynthesis - antenna proteins</td>
+<td align="left">18/1344</td>
+<td align="left">74/21367</td>
+<td align="right">5.0e-07</td>
+<td align="right">0.0000186</td>
+<td align="right">1.48e-05</td>
+<td
+align="left">BnaA06G0106800ZS/BnaA05G0100800ZS/BnaA02G0004400ZS/BnaA03G0254400ZS/BnaA09G0625000ZS/BnaA09G0507700ZS/BnaC02G0465500ZS/BnaA06G0381100ZS/BnaA08G0207100ZS/BnaC05G0507600ZS/BnaA09G0040000ZS/BnaC08G0234600ZS/BnaC09G0366900ZS/BnaA10G0105600ZS/BnaC07G0308900ZS/BnaC09G0025500ZS/BnaA02G0345900ZS/BnaC02G0169300ZS</td>
+<td align="right">18</td>
+</tr>
+<tr class="even">
+<td align="left">bna00380</td>
+<td align="left">Tryptophan metabolism</td>
+<td align="left">49/1344</td>
+<td align="left">390/21367</td>
+<td align="right">3.0e-06</td>
+<td align="right">0.0000765</td>
+<td align="right">6.08e-05</td>
+<td
+align="left">BnaC07G0005900ZS/BnaC06G0404300ZS/BnaA04G0267400ZS/BnaA04G0074700ZS/BnaA07G0001300ZS/BnaA09G0604200ZS/BnaC05G0210800ZS/BnaC08G0458300ZS/BnaA09G0448300ZS/BnaC04G0359300ZS/BnaC04G0584500ZS/BnaC09G0365700ZS/BnaA05G0121200ZS/BnaA06G0190300ZS/BnaC05G0156200ZS/BnaC03G0736800ZS/BnaC07G0006100ZS/BnaA08G0247000ZS/BnaA06G0110600ZS/BnaA01G0083700ZS/BnaA10G0104700ZS/Bnascaffold0026G0068500ZS/BnaC07G0530700ZS/BnaA02G0068000ZS/BnaA10G0111900ZS/BnaC05G0136700ZS/BnaA06G0263900ZS/BnaA06G0128100ZS/BnaC03G0736200ZS/BnaC04G0513800ZS/BnaC03G0147500ZS/BnaA05G0455900ZS/BnaC02G0171200ZS/BnaC02G0280500ZS/BnaC01G0254400ZS/BnaA06G0262600ZS/BnaC01G0100800ZS/BnaC03G0571600ZS/BnaC01G0374300ZS/BnaA03G0213900ZS/BnaA08G0281900ZS/BnaC04G0513700ZS/BnaA09G0156600ZS/BnaC02G0312700ZS/BnaA02G0135900ZS/BnaC09G0131800ZS/BnaA07G0003700ZS/BnaC04G0436200ZS/BnaC03G0252400ZS</td>
+<td align="right">49</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00400</td>
+<td align="left">Phenylalanine, tyrosine and tryptophan
+biosynthesis</td>
+<td align="left">34/1344</td>
+<td align="left">232/21367</td>
+<td align="right">3.6e-06</td>
+<td align="right">0.0000765</td>
+<td align="right">6.08e-05</td>
+<td
+align="left">BnaC07G0005900ZS/BnaA03G0220100ZS/BnaA07G0001300ZS/BnaA09G0604200ZS/BnaC08G0458300ZS/BnaA09G0129100ZS/BnaA09G0044300ZS/BnaC02G0021200ZS/BnaA09G0101800ZS/BnaA03G0021000ZS/BnaC03G0736800ZS/BnaC03G0259200ZS/BnaC07G0006100ZS/BnaA03G0529900ZS/BnaA02G0080200ZS/BnaA08G0224800ZS/BnaC03G0025600ZS/BnaC08G0346300ZS/BnaA05G0129900ZS/BnaC09G0590700ZS/BnaA02G0020300ZS/BnaC03G0270600ZS/Bnascaffold0026G0068500ZS/BnaC03G0736200ZS/BnaC02G0171200ZS/BnaA10G0190900ZS/BnaA03G0193700ZS/BnaC09G0119600ZS/BnaC02G0042400ZS/BnaC03G0371600ZS/BnaC03G0578100ZS/BnaC03G0270700ZS/BnaA02G0037900ZS/BnaA02G0135900ZS</td>
+<td align="right">34</td>
+</tr>
+<tr class="even">
+<td align="left">bna00960</td>
+<td align="left">Tropane, piperidine and pyridine alkaloid
+biosynthesis</td>
+<td align="left">31/1344</td>
+<td align="left">208/21367</td>
+<td align="right">6.7e-06</td>
+<td align="right">0.0001191</td>
+<td align="right">9.47e-05</td>
+<td
+align="left">BnaC07G0005900ZS/BnaA07G0001300ZS/BnaA09G0604200ZS/BnaC08G0458300ZS/BnaA04G0189000ZS/BnaA09G0129100ZS/BnaC03G0271400ZS/BnaC02G0022500ZS/BnaC03G0736800ZS/BnaC07G0006100ZS/BnaA03G0529900ZS/BnaA02G0080200ZS/BnaA02G0159800ZS/BnaA04G0270900ZS/BnaA05G0129900ZS/Bnascaffold0026G0068500ZS/BnaC04G0492200ZS/BnaC03G0736200ZS/BnaC03G0271600ZS/BnaC02G0171200ZS/BnaC02G0357300ZS/BnaA05G0141600ZS/BnaA04G0189200ZS/BnaA03G0230200ZS/BnaC03G0271500ZS/BnaC04G0588200ZS/BnaA10G0053700ZS/BnaC04G0187400ZS/BnaA02G0135900ZS/BnaC08G0371300ZS/BnaC09G0207100ZS</td>
+<td align="right">31</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>GeneRatio：富集到该条目的差异基因数/有功能注释结果的差异基因总数；<br>BgRatio：注释到该条目的背景基因数/有功能注释结果的背景基因总数；<br>pvalue：统计检验中的p值；<br>p.adjust：Bonferroni校正之后的p值；<br>geneID：富集到该KEGG
+pathway的差异基因ID；<br>Count：富集到该KEGG pathway的差异基因数目。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.KEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>点的大小代表基因数目，颜色代表p.adjust，横坐标代表GeneRatio，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/01.ORA/WTE_vs_MUTE.DESeq2.DE_results.KEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+</div>
+</div>
+</div>
+<div id="gsea" class="section level3 tabset tabset-fade tabset-pills"
+number="3.6.2">
+<h3 class="tabset tabset-fade tabset-pills"><span
+class="header-section-number">3.6.2</span> GSEA</h3>
+<div id="wt_vs_wte-2"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">WT_vs_WTE</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行GSEA (gene set
+enrichment analysis)。</p>
+<div id="go-4" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/02.GSEA/WT_vs_WTE.DESeq2.DE_results.gseGO.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="1%" />
+<col width="3%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="right">setSize</th>
+<th align="right">enrichmentScore</th>
+<th align="right">NES</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="right">rank</th>
+<th align="left">leading_edge</th>
+<th align="left">core_enrichment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0044272" class="uri">GO:0044272</a></td>
+<td align="left">sulfur compound biosynthetic process</td>
+<td align="right">245</td>
+<td align="right">-0.9026122</td>
+<td align="right">-2.439249</td>
+<td align="right">0</td>
+<td align="right">1e-07</td>
+<td align="right">1e-07</td>
+<td align="right">992</td>
+<td align="left">tags=20%, list=2%, signal=20%</td>
+<td
+align="left">Bnascaffold0025G0009100ZS/BnaA08G0054300ZS/BnaC05G0564300ZS/BnaA07G0255500ZS/BnaA02G0131600ZS/BnaC04G0361900ZS/BnaC03G0681300ZS/BnaC06G0283400ZS/BnaC02G0164500ZS/BnaC08G0074300ZS/BnaC04G0043900ZS/BnaA03G0120100ZS/BnaA08G0091500ZS/BnaA09G0111100ZS/BnaA10G0029300ZS/BnaC08G0130400ZS/BnaA04G0031500ZS/BnaA05G0040200ZS/BnaA04G0076900ZS/BnaC04G0302800ZS/BnaA07G0001300ZS/BnaC09G0113400ZS/BnaC03G0351200ZS/BnaC03G0090500ZS/BnaC07G0005900ZS/BnaA09G0155300ZS/BnaA03G0292400ZS/BnaC03G0321400ZS/BnaC02G0527500ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA09G0155200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC09G0170500ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC03G0438900ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016143" class="uri">GO:0016143</a></td>
+<td align="left">S-glycoside metabolic process</td>
+<td align="right">184</td>
+<td align="right">-0.9137740</td>
+<td align="right">-2.394489</td>
+<td align="right">0</td>
+<td align="right">1e-07</td>
+<td align="right">1e-07</td>
+<td align="right">992</td>
+<td align="left">tags=23%, list=2%, signal=22%</td>
+<td
+align="left">BnaA03G0209300ZS/BnaA05G0409000ZS/Bnascaffold0025G0009100ZS/BnaA08G0054300ZS/BnaC02G0538500ZS/BnaC04G0361900ZS/BnaC07G0252900ZS/BnaC09G0028700ZS/BnaC03G0681300ZS/BnaC08G0074300ZS/BnaA09G0076100ZS/BnaA10G0029300ZS/BnaC05G0295000ZS/BnaA04G0076900ZS/BnaC04G0050000ZS/BnaA07G0001300ZS/BnaC03G0090500ZS/BnaC07G0005900ZS/BnaA09G0155300ZS/BnaC03G0321400ZS/BnaC02G0527500ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA09G0155200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC09G0170500ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC03G0438900ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019757" class="uri">GO:0019757</a></td>
+<td align="left">glycosinolate metabolic process</td>
+<td align="right">184</td>
+<td align="right">-0.9137740</td>
+<td align="right">-2.394489</td>
+<td align="right">0</td>
+<td align="right">1e-07</td>
+<td align="right">1e-07</td>
+<td align="right">992</td>
+<td align="left">tags=23%, list=2%, signal=22%</td>
+<td
+align="left">BnaA03G0209300ZS/BnaA05G0409000ZS/Bnascaffold0025G0009100ZS/BnaA08G0054300ZS/BnaC02G0538500ZS/BnaC04G0361900ZS/BnaC07G0252900ZS/BnaC09G0028700ZS/BnaC03G0681300ZS/BnaC08G0074300ZS/BnaA09G0076100ZS/BnaA10G0029300ZS/BnaC05G0295000ZS/BnaA04G0076900ZS/BnaC04G0050000ZS/BnaA07G0001300ZS/BnaC03G0090500ZS/BnaC07G0005900ZS/BnaA09G0155300ZS/BnaC03G0321400ZS/BnaC02G0527500ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA09G0155200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC09G0170500ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC03G0438900ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019760" class="uri">GO:0019760</a></td>
+<td align="left">glucosinolate metabolic process</td>
+<td align="right">184</td>
+<td align="right">-0.9137740</td>
+<td align="right">-2.394489</td>
+<td align="right">0</td>
+<td align="right">1e-07</td>
+<td align="right">1e-07</td>
+<td align="right">992</td>
+<td align="left">tags=23%, list=2%, signal=22%</td>
+<td
+align="left">BnaA03G0209300ZS/BnaA05G0409000ZS/Bnascaffold0025G0009100ZS/BnaA08G0054300ZS/BnaC02G0538500ZS/BnaC04G0361900ZS/BnaC07G0252900ZS/BnaC09G0028700ZS/BnaC03G0681300ZS/BnaC08G0074300ZS/BnaA09G0076100ZS/BnaA10G0029300ZS/BnaC05G0295000ZS/BnaA04G0076900ZS/BnaC04G0050000ZS/BnaA07G0001300ZS/BnaC03G0090500ZS/BnaC07G0005900ZS/BnaA09G0155300ZS/BnaC03G0321400ZS/BnaC02G0527500ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA09G0155200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC09G0170500ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC03G0438900ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901659" class="uri">GO:1901659</a></td>
+<td align="left">glycosyl compound biosynthetic process</td>
+<td align="right">180</td>
+<td align="right">-0.9026436</td>
+<td align="right">-2.364498</td>
+<td align="right">0</td>
+<td align="right">1e-07</td>
+<td align="right">1e-07</td>
+<td align="right">835</td>
+<td align="left">tags=19%, list=2%, signal=19%</td>
+<td
+align="left">BnaA07G0189400ZS/BnaC04G0361900ZS/BnaC03G0681300ZS/BnaC08G0074300ZS/BnaA10G0029300ZS/BnaC05G0375000ZS/BnaA04G0076900ZS/BnaA07G0001300ZS/BnaC03G0090500ZS/BnaC07G0005900ZS/BnaA09G0155300ZS/BnaC03G0321400ZS/BnaC02G0527500ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA09G0155200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC09G0170500ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC03G0438900ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901657" class="uri">GO:1901657</a></td>
+<td align="left">glycosyl compound metabolic process</td>
+<td align="right">374</td>
+<td align="right">-0.8335578</td>
+<td align="right">-2.345667</td>
+<td align="right">0</td>
+<td align="right">1e-07</td>
+<td align="right">1e-07</td>
+<td align="right">1159</td>
+<td align="left">tags=13%, list=3%, signal=13%</td>
+<td
+align="left">BnaA03G0209300ZS/BnaA02G0192700ZS/BnaA05G0409000ZS/Bnascaffold0025G0009100ZS/BnaA08G0054300ZS/BnaC02G0538500ZS/BnaA07G0189400ZS/BnaC04G0361900ZS/BnaC07G0252900ZS/BnaC09G0028700ZS/BnaC03G0681300ZS/BnaC08G0074300ZS/BnaA09G0076100ZS/BnaA10G0029300ZS/BnaC05G0375000ZS/BnaC05G0295000ZS/BnaA04G0076900ZS/BnaC04G0050000ZS/BnaC06G0067000ZS/BnaA07G0001300ZS/BnaA05G0040300ZS/BnaA06G0018600ZS/BnaC03G0090500ZS/BnaC07G0005900ZS/BnaA09G0155300ZS/BnaC03G0321400ZS/BnaC02G0527500ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA09G0155200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC09G0170500ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaC09G0288000ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC03G0438900ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaA02G0257300ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>setSize：富集到该GO
+term的基因个数。enrichmentScore：富集分数，也就是ES。NES：标准化以后的ES（normalized
+enrichment
+score）。<br>pvalue：富集的P值。<br>p.adjust：校正后的P值。<br>core_enrichment：富集到该GO
+term的基因列表。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/02.GSEA/WT_vs_WTE.DESeq2.DE_results.gseGO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>颜色代表p.adjust，横坐标代表NES，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/02.GSEA/WT_vs_WTE.DESeq2.DE_results.gseGO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+</div>
+<div id="kegg-4" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/02.GSEA/WT_vs_WTE.DESeq2.DE_results.gseKEGG.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="4%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="right">setSize</th>
+<th align="right">enrichmentScore</th>
+<th align="right">NES</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="right">rank</th>
+<th align="left">leading_edge</th>
+<th align="left">core_enrichment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00966</td>
+<td align="left">Glucosinolate biosynthesis</td>
+<td align="right">84</td>
+<td align="right">-0.9353191</td>
+<td align="right">-2.269004</td>
+<td align="right">0.0e+00</td>
+<td align="right">0.0000000</td>
+<td align="right">0.00e+00</td>
+<td align="right">968</td>
+<td align="left">tags=33%, list=2%, signal=33%</td>
+<td
+align="left">BnaC08G0019300ZS/BnaA08G0054300ZS/BnaC04G0361900ZS/BnaC03G0681300ZS/BnaC08G0074300ZS/BnaC08G0458300ZS/BnaA04G0076900ZS/BnaA07G0001300ZS/BnaC05G0078800ZS/BnaC07G0005900ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA05G0121200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC04G0153200ZS/BnaA04G0267400ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaC05G0136700ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC03G0438900ZS/BnaA06G0110600ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00270</td>
+<td align="left">Cysteine and methionine metabolism</td>
+<td align="right">316</td>
+<td align="right">-0.8060476</td>
+<td align="right">-2.193393</td>
+<td align="right">0.0e+00</td>
+<td align="right">0.0000000</td>
+<td align="right">0.00e+00</td>
+<td align="right">1876</td>
+<td align="left">tags=16%, list=4%, signal=15%</td>
+<td
+align="left">BnaA02G0047400ZS/BnaA06G0063200ZS/BnaA09G0191600ZS/BnaA08G0315200ZS/BnaC04G0009200ZS/BnaC08G0068100ZS/BnaA09G0056000ZS/BnaC01G0014700ZS/BnaC03G0816400ZS/BnaC02G0054300ZS/BnaA08G0270300ZS/BnaC05G0069500ZS/BnaA01G0012400ZS/BnaC05G0137000ZS/BnaA08G0051900ZS/BnaA01G0039900ZS/BnaA07G0074000ZS/BnaC05G0564300ZS/BnaA09G0250600ZS/BnaC08G0231200ZS/BnaC04G0043900ZS/BnaC05G0033200ZS/BnaA08G0091500ZS/BnaA06G0316300ZS/BnaC08G0458300ZS/BnaA10G0031700ZS/BnaC03G0619400ZS/BnaC07G0115300ZS/BnaC08G0130400ZS/BnaA05G0007400ZS/BnaA04G0031500ZS/BnaA05G0040200ZS/BnaA06G0175200ZS/BnaA05G0083500ZS/BnaC04G0302800ZS/BnaA07G0001300ZS/BnaC05G0078800ZS/BnaC03G0351200ZS/BnaC07G0005900ZS/BnaA03G0292400ZS/BnaA02G0130700ZS/BnaA03G0359600ZS/BnaA05G0334000ZS/BnaC02G0163200ZS/BnaC03G0438900ZS/BnaC09G0439900ZS/BnaC05G0354800ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00290</td>
+<td align="left">Valine, leucine and isoleucine biosynthesis</td>
+<td align="right">75</td>
+<td align="right">-0.9202752</td>
+<td align="right">-2.221403</td>
+<td align="right">0.0e+00</td>
+<td align="right">0.0000002</td>
+<td align="right">2.00e-07</td>
+<td align="right">957</td>
+<td align="left">tags=20%, list=2%, signal=20%</td>
+<td
+align="left">BnaA03G0209300ZS/BnaA08G0054300ZS/BnaC04G0361900ZS/BnaC08G0074300ZS/BnaC03G0374700ZS/BnaA04G0076900ZS/BnaC05G0078800ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC02G0060000ZS/BnaC03G0438900ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00380</td>
+<td align="left">Tryptophan metabolism</td>
+<td align="right">181</td>
+<td align="right">-0.8043358</td>
+<td align="right">-2.090327</td>
+<td align="right">1.6e-06</td>
+<td align="right">0.0000476</td>
+<td align="right">4.06e-05</td>
+<td align="right">2114</td>
+<td align="left">tags=23%, list=5%, signal=22%</td>
+<td
+align="left">BnaA09G0123400ZS/BnaA05G0328300ZS/BnaA04G0206500ZS/BnaC03G0252500ZS/BnaC01G0100800ZS/BnaC03G0252700ZS/BnaA07G0132100ZS/BnaA06G0190300ZS/BnaC02G0109900ZS/BnaC01G0181500ZS/BnaA06G0263900ZS/BnaA03G0153800ZS/BnaC08G0260800ZS/BnaC07G0194100ZS/Bnascaffold0025G0038400ZS/BnaC03G0147500ZS/BnaC08G0019300ZS/BnaC02G0250300ZS/BnaA03G0379900ZS/BnaC03G0681300ZS/BnaA02G0068000ZS/BnaA10G0104700ZS/BnaC08G0458300ZS/BnaA02G0189000ZS/BnaC05G0295000ZS/BnaA07G0003700ZS/BnaC09G0365700ZS/BnaA07G0001300ZS/BnaA06G0144600ZS/BnaC05G0176000ZS/BnaC07G0005900ZS/BnaA09G0448300ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaA05G0121200ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC01G0254400ZS/BnaC04G0153200ZS/BnaA04G0267400ZS/BnaC05G0136700ZS/BnaA06G0110600ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00770</td>
+<td align="left">Pantothenate and CoA biosynthesis</td>
+<td align="right">123</td>
+<td align="right">-0.8243458</td>
+<td align="right">-2.079021</td>
+<td align="right">4.7e-06</td>
+<td align="right">0.0001140</td>
+<td align="right">9.72e-05</td>
+<td align="right">191</td>
+<td align="left">tags=6%, list=0%, signal=6%</td>
+<td
+align="left">BnaC07G0332100ZS/BnaA03G0379900ZS/BnaC05G0078800ZS/BnaA03G0359600ZS/BnaC03G0438900ZS/BnaC05G0396400ZS/BnaA05G0362200ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00196</td>
+<td align="left">Photosynthesis - antenna proteins</td>
+<td align="right">68</td>
+<td align="right">-0.8787701</td>
+<td align="right">-2.094761</td>
+<td align="right">3.5e-05</td>
+<td align="right">0.0006851</td>
+<td align="right">5.84e-04</td>
+<td align="right">3250</td>
+<td align="left">tags=76%, list=7%, signal=71%</td>
+<td
+align="left">BnaA07G0086700ZS/BnaA09G0257700ZS/BnaA06G0381100ZS/BnaA05G0444600ZS/BnaC07G0308900ZS/BnaA08G0207100ZS/BnaC04G0125000ZS/BnaC02G0368500ZS/BnaC09G0303400ZS/BnaC08G0482400ZS/BnaC03G0660800ZS/BnaA06G0106800ZS/BnaC09G0177400ZS/BnaA04G0221200ZS/BnaC04G0235100ZS/BnaA09G0625000ZS/BnaC05G0507600ZS/BnaA02G0345900ZS/BnaA03G0582000ZS/BnaA01G0279800ZS/BnaA09G0160400ZS/BnaC08G0234600ZS/BnaA05G0100700ZS/BnaC04G0532900ZS/BnaC04G0124900ZS/BnaC05G0132200ZS/BnaA03G0165600ZS/BnaC05G0256200ZS/BnaC01G0342600ZS/BnaC02G0169300ZS/BnaC02G0465500ZS/BnaA09G0414200ZS/BnaA08G0267000ZS/BnaA06G0175800ZS/BnaC03G0618700ZS/BnaC06G0191500ZS/BnaA05G0100800ZS/BnaC03G0302000ZS/BnaA07G0190300ZS/BnaC08G0349200ZS/BnaA07G0086800ZS/BnaC03G0479400ZS/BnaA03G0387200ZS/BnaC09G0366900ZS/BnaA09G0507700ZS/BnaA10G0105600ZS/BnaA03G0254400ZS/BnaC07G0134600ZS/BnaC09G0025500ZS/BnaA09G0040000ZS/BnaC03G0191900ZS/BnaC07G0134500ZS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>setSize ：富集到该KEGG
+pathway的基因个数enrichmentScore：富集分数，也就是ES。NES：标准化以后的ES（normalized
+enrichment
+score）。<br>pvalue：富集的P值。<br>p.adjust：校正后的P值。<br>core_enrichment：富集到该KEGG
+pathway的基因列表。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/02.GSEA/WT_vs_WTE.DESeq2.DE_results.gseKEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>颜色代表p.adjust，横坐标代表NES，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/02.GSEA/WT_vs_WTE.DESeq2.DE_results.gseKEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+</div>
+</div>
+<div id="mut_vs_mute-2"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">MUT_vs_MUTE</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行GSEA (gene set
+enrichment analysis)。</p>
+<div id="go-5" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/02.GSEA/MUT_vs_MUTE.DESeq2.DE_results.gseGO.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="right">setSize</th>
+<th align="right">enrichmentScore</th>
+<th align="right">NES</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="right">rank</th>
+<th align="left">leading_edge</th>
+<th align="left">core_enrichment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0044272" class="uri">GO:0044272</a></td>
+<td align="left">sulfur compound biosynthetic process</td>
+<td align="right">252</td>
+<td align="right">-0.8769166</td>
+<td align="right">-2.921446</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1136</td>
+<td align="left">tags=29%, list=2%, signal=28%</td>
+<td
+align="left">BnaC07G0447700ZS/BnaA06G0184800ZS/BnaC06G0428100ZS/BnaA09G0649000ZS/BnaC03G0086800ZS/BnaA08G0154900ZS/BnaC03G0772700ZS/BnaC01G0161800ZS/BnaA06G0319200ZS/BnaA05G0420600ZS/BnaC04G0043900ZS/BnaA09G0556800ZS/BnaC09G0043300ZS/BnaA01G0129800ZS/BnaA05G0040200ZS/BnaC04G0498800ZS/BnaC05G0541900ZS/BnaA09G0056000ZS/BnaC09G0578500ZS/BnaA08G0091500ZS/BnaA01G0068200ZS/BnaC04G0361900ZS/BnaC06G0265000ZS/BnaC08G0130400ZS/BnaC02G0280500ZS/BnaA09G0111100ZS/BnaA08G0054300ZS/BnaC01G0080800ZS/BnaC08G0074300ZS/BnaC04G0302800ZS/BnaC05G0564300ZS/BnaC05G0542100ZS/BnaC06G0142700ZS/BnaA05G0479500ZS/BnaC09G0113400ZS/BnaA02G0394700ZS/BnaA04G0031500ZS/BnaC02G0527500ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA03G0292400ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC03G0351200ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA02G0257300ZS/BnaA09G0155300ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC03G0090500ZS/BnaA06G0128100ZS/BnaC04G0504200ZS/BnaC03G0308400ZS/BnaC03G0321400ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaA09G0155200ZS/BnaC03G0308500ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC09G0288000ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016143" class="uri">GO:0016143</a></td>
+<td align="left">S-glycoside metabolic process</td>
+<td align="right">189</td>
+<td align="right">-0.8911200</td>
+<td align="right">-2.880382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">314</td>
+<td align="left">tags=26%, list=1%, signal=26%</td>
+<td
+align="left">BnaC07G0447700ZS/BnaC06G0428100ZS/BnaA09G0649000ZS/BnaA08G0154900ZS/BnaC03G0772700ZS/BnaC01G0161800ZS/BnaA01G0129800ZS/BnaC09G0578500ZS/BnaA01G0068200ZS/BnaC04G0361900ZS/BnaC06G0265000ZS/BnaC02G0280500ZS/BnaA08G0054300ZS/BnaC01G0080800ZS/BnaC08G0074300ZS/BnaA02G0394700ZS/BnaC02G0527500ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA05G0409000ZS/BnaA02G0257300ZS/BnaA09G0155300ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC03G0090500ZS/BnaA06G0128100ZS/BnaC04G0504200ZS/BnaC03G0308400ZS/BnaC03G0321400ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaA09G0155200ZS/BnaC03G0308500ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC09G0288000ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019757" class="uri">GO:0019757</a></td>
+<td align="left">glycosinolate metabolic process</td>
+<td align="right">189</td>
+<td align="right">-0.8911200</td>
+<td align="right">-2.880382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">314</td>
+<td align="left">tags=26%, list=1%, signal=26%</td>
+<td
+align="left">BnaC07G0447700ZS/BnaC06G0428100ZS/BnaA09G0649000ZS/BnaA08G0154900ZS/BnaC03G0772700ZS/BnaC01G0161800ZS/BnaA01G0129800ZS/BnaC09G0578500ZS/BnaA01G0068200ZS/BnaC04G0361900ZS/BnaC06G0265000ZS/BnaC02G0280500ZS/BnaA08G0054300ZS/BnaC01G0080800ZS/BnaC08G0074300ZS/BnaA02G0394700ZS/BnaC02G0527500ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA05G0409000ZS/BnaA02G0257300ZS/BnaA09G0155300ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC03G0090500ZS/BnaA06G0128100ZS/BnaC04G0504200ZS/BnaC03G0308400ZS/BnaC03G0321400ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaA09G0155200ZS/BnaC03G0308500ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC09G0288000ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019760" class="uri">GO:0019760</a></td>
+<td align="left">glucosinolate metabolic process</td>
+<td align="right">189</td>
+<td align="right">-0.8911200</td>
+<td align="right">-2.880382</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">314</td>
+<td align="left">tags=26%, list=1%, signal=26%</td>
+<td
+align="left">BnaC07G0447700ZS/BnaC06G0428100ZS/BnaA09G0649000ZS/BnaA08G0154900ZS/BnaC03G0772700ZS/BnaC01G0161800ZS/BnaA01G0129800ZS/BnaC09G0578500ZS/BnaA01G0068200ZS/BnaC04G0361900ZS/BnaC06G0265000ZS/BnaC02G0280500ZS/BnaA08G0054300ZS/BnaC01G0080800ZS/BnaC08G0074300ZS/BnaA02G0394700ZS/BnaC02G0527500ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA05G0409000ZS/BnaA02G0257300ZS/BnaA09G0155300ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC03G0090500ZS/BnaA06G0128100ZS/BnaC04G0504200ZS/BnaC03G0308400ZS/BnaC03G0321400ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaA09G0155200ZS/BnaC03G0308500ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC09G0288000ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901659" class="uri">GO:1901659</a></td>
+<td align="left">glycosyl compound biosynthetic process</td>
+<td align="right">187</td>
+<td align="right">-0.8806551</td>
+<td align="right">-2.842403</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1136</td>
+<td align="left">tags=26%, list=2%, signal=26%</td>
+<td
+align="left">BnaC07G0447700ZS/BnaC06G0428100ZS/BnaA09G0649000ZS/BnaC01G0161800ZS/BnaA10G0291900ZS/BnaA05G0424300ZS/BnaC03G0013700ZS/BnaC09G0611400ZS/BnaA01G0129800ZS/BnaC09G0578500ZS/BnaC04G0361900ZS/BnaC06G0265000ZS/BnaC02G0280500ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA02G0394700ZS/BnaC02G0527500ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA02G0257300ZS/BnaA09G0155300ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC03G0090500ZS/BnaA06G0128100ZS/BnaC04G0504200ZS/BnaC03G0308400ZS/BnaC03G0321400ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaA09G0155200ZS/BnaC03G0308500ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC09G0288000ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:1901657" class="uri">GO:1901657</a></td>
+<td align="left">glycosyl compound metabolic process</td>
+<td align="right">379</td>
+<td align="right">-0.8052326</td>
+<td align="right">-2.771308</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1232</td>
+<td align="left">tags=17%, list=3%, signal=17%</td>
+<td
+align="left">BnaA09G0495300ZS/BnaC03G0516800ZS/BnaC07G0447700ZS/BnaC06G0428100ZS/BnaA09G0649000ZS/BnaA08G0154900ZS/BnaC03G0772700ZS/BnaC01G0161800ZS/BnaA10G0291900ZS/BnaA01G0288200ZS/BnaA05G0424300ZS/BnaC01G0353500ZS/BnaA05G0465100ZS/BnaA03G0228700ZS/BnaC03G0013700ZS/BnaC09G0611400ZS/BnaA01G0129800ZS/BnaA09G0680100ZS/BnaC04G0044000ZS/BnaC04G0597100ZS/BnaC09G0578500ZS/BnaA01G0068200ZS/BnaA05G0040300ZS/BnaC04G0361900ZS/BnaC06G0265000ZS/BnaC02G0280500ZS/BnaA08G0054300ZS/BnaC01G0080800ZS/BnaC08G0074300ZS/BnaA02G0394700ZS/BnaC02G0527500ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA05G0409000ZS/BnaA02G0257300ZS/BnaA09G0155300ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaC06G0404300ZS/BnaC03G0090500ZS/BnaA06G0128100ZS/BnaC04G0504200ZS/BnaC03G0308400ZS/BnaC03G0321400ZS/BnaC04G0039400ZS/BnaC09G0170500ZS/BnaA09G0155200ZS/BnaC03G0308500ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA09G0244600ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaA03G0259200ZS/BnaC09G0288000ZS/BnaC05G0136700ZS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>setSize：富集到该GO
+term的基因个数。enrichmentScore：富集分数，也就是ES。NES：标准化以后的ES（normalized
+enrichment
+score）。<br>pvalue：富集的P值。<br>p.adjust：校正后的P值。<br>core_enrichment：富集到该GO
+term的基因列表。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/02.GSEA/MUT_vs_MUTE.DESeq2.DE_results.gseGO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>颜色代表p.adjust，横坐标代表NES，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/02.GSEA/MUT_vs_MUTE.DESeq2.DE_results.gseGO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+</div>
+<div id="kegg-5" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/02.GSEA/MUT_vs_MUTE.DESeq2.DE_results.gseKEGG.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="3%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="right">setSize</th>
+<th align="right">enrichmentScore</th>
+<th align="right">NES</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="right">rank</th>
+<th align="left">leading_edge</th>
+<th align="left">core_enrichment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00966</td>
+<td align="left">Glucosinolate biosynthesis</td>
+<td align="right">89</td>
+<td align="right">-0.9308453</td>
+<td align="right">-2.721344</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">525</td>
+<td align="left">tags=37%, list=1%, signal=37%</td>
+<td
+align="left">BnaC04G0513800ZS/BnaA03G0153800ZS/BnaC04G0513700ZS/BnaC04G0361900ZS/BnaC02G0280500ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaC08G0458300ZS/BnaA04G0076900ZS/BnaC05G0156200ZS/BnaA09G0604200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaC04G0359300ZS/BnaA04G0267400ZS/BnaA05G0121200ZS/BnaC06G0404300ZS/BnaA06G0128100ZS/BnaC04G0039400ZS/BnaC04G0153200ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaC04G0584500ZS/BnaA06G0110600ZS/BnaC02G0060000ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00920</td>
+<td align="left">Sulfur metabolism</td>
+<td align="right">127</td>
+<td align="right">-0.8454723</td>
+<td align="right">-2.593656</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1563</td>
+<td align="left">tags=39%, list=3%, signal=37%</td>
+<td
+align="left">BnaC09G0600300ZS/BnaC09G0041700ZS/BnaC08G0403700ZS/BnaA09G0054700ZS/BnaA06G0140400ZS/BnaA03G0463700ZS/BnaA05G0420600ZS/BnaC04G0043900ZS/BnaA09G0556800ZS/BnaA05G0040200ZS/BnaA03G0319400ZS/BnaC06G0448400ZS/BnaA03G0586600ZS/BnaC08G0115800ZS/BnaA01G0378900ZS/BnaA10G0282200ZS/BnaC03G0382900ZS/BnaC05G0541900ZS/BnaA09G0086600ZS/BnaC03G0458000ZS/BnaC09G0080800ZS/BnaA08G0091500ZS/BnaC08G0130400ZS/BnaC03G0536100ZS/BnaA05G0332300ZS/BnaC05G0353000ZS/BnaC02G0167400ZS/BnaA08G0081900ZS/BnaA03G0374300ZS/BnaC05G0564300ZS/BnaA06G0290900ZS/BnaC05G0542100ZS/BnaC06G0142700ZS/BnaA05G0479500ZS/BnaA01G0203700ZS/BnaC03G0487200ZS/BnaA02G0133400ZS/BnaA09G0105100ZS/BnaC08G0115700ZS/BnaC09G0106200ZS/BnaA03G0567200ZS/BnaA08G0081800ZS/BnaA08G0081600ZS/BnaA03G0393500ZS/BnaC07G0541600ZS/BnaC01G0010100ZS/BnaA01G0008600ZS/BnaA08G0192300ZS/BnaC03G0681000ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00270</td>
+<td align="left">Cysteine and methionine metabolism</td>
+<td align="right">324</td>
+<td align="right">-0.7474117</td>
+<td align="right">-2.560519</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1585</td>
+<td align="left">tags=23%, list=3%, signal=22%</td>
+<td
+align="left">BnaC01G0045700ZS/BnaA10G0191100ZS/BnaC09G0041700ZS/BnaA06G0350500ZS/BnaC08G0403700ZS/BnaC08G0241700ZS/BnaA02G0032600ZS/BnaC07G0115300ZS/BnaA03G0075900ZS/BnaA09G0054700ZS/BnaC01G0500000ZS/BnaA03G0543100ZS/BnaC07G0447700ZS/BnaA07G0074000ZS/BnaA01G0057000ZS/BnaC03G0086800ZS/BnaA06G0156700ZS/BnaA08G0051900ZS/BnaA10G0205400ZS/BnaC01G0161800ZS/BnaA05G0420600ZS/BnaC04G0043900ZS/BnaA09G0556800ZS/BnaA01G0217100ZS/BnaA01G0288200ZS/BnaC01G0353500ZS/BnaC08G0068100ZS/BnaA07G0010300ZS/BnaC09G0043300ZS/BnaA01G0129800ZS/BnaA05G0040200ZS/BnaA08G0179200ZS/BnaC05G0272200ZS/BnaA08G0270300ZS/BnaA02G0072300ZS/BnaC06G0448400ZS/BnaC08G0231200ZS/BnaA04G0150800ZS/BnaA09G0400800ZS/BnaC02G0054300ZS/BnaC05G0541900ZS/BnaA09G0056000ZS/BnaC03G0699200ZS/BnaC07G0519100ZS/BnaA08G0091500ZS/BnaA06G0175200ZS/BnaC08G0130400ZS/BnaC03G0619400ZS/BnaA06G0344700ZS/BnaC07G0350300ZS/BnaA02G0047400ZS/BnaC04G0302800ZS/BnaC05G0564300ZS/BnaC05G0542100ZS/BnaC08G0458300ZS/BnaC06G0142700ZS/BnaA05G0479500ZS/BnaA04G0031500ZS/BnaA01G0039900ZS/BnaC04G0443400ZS/BnaA03G0292400ZS/BnaA09G0604200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaC03G0351200ZS/BnaC07G0005900ZS/BnaA05G0334000ZS/BnaA05G0362200ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaA02G0130700ZS/BnaC02G0163200ZS/BnaC05G0354800ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00480</td>
+<td align="left">Glutathione metabolism</td>
+<td align="right">220</td>
+<td align="right">-0.7421732</td>
+<td align="right">-2.450102</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2960</td>
+<td align="left">tags=24%, list=6%, signal=22%</td>
+<td
+align="left">BnaA06G0042100ZS/BnaA03G0059700ZS/BnaA09G0505500ZS/BnaC05G0570800ZS/BnaC06G0325800ZS/BnaC03G0463000ZS/BnaC09G0314300ZS/BnaC04G0323500ZS/BnaA03G0399300ZS/BnaC03G0059700ZS/BnaC08G0533800ZS/BnaA09G0267000ZS/BnaA02G0158300ZS/BnaA06G0350500ZS/BnaA07G0235100ZS/BnaC08G0346500ZS/BnaA09G0668700ZS/BnaA07G0284100ZS/BnaC07G0447700ZS/BnaC06G0255200ZS/BnaC01G0161800ZS/BnaA09G0446200ZS/BnaC09G0043300ZS/BnaC05G0214400ZS/BnaA01G0129800ZS/BnaC05G0568000ZS/BnaA02G0158900ZS/BnaC05G0057800ZS/BnaC03G0173400ZS/BnaC02G0203000ZS/BnaC04G0455000ZS/Bnascaffold0025G0000700ZS/BnaA06G0045900ZS/BnaA07G0235200ZS/BnaC06G0255500ZS/BnaA09G0056000ZS/BnaA07G0235300ZS/BnaA04G0159800ZS/BnaA07G0072000ZS/BnaA03G0148900ZS/BnaC06G0440400ZS/BnaA04G0199400ZS/BnaC04G0504700ZS/BnaC06G0255600ZS/BnaC03G0173300ZS/BnaA03G0148800ZS/BnaA09G0619200ZS/BnaA05G0489300ZS/BnaC05G0546700ZS/BnaC01G0499100ZS/BnaA07G0235400ZS/BnaC06G0255700ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00380</td>
+<td align="left">Tryptophan metabolism</td>
+<td align="right">189</td>
+<td align="right">-0.7378893</td>
+<td align="right">-2.365292</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">804</td>
+<td align="left">tags=14%, list=2%, signal=14%</td>
+<td
+align="left">BnaC03G0740800ZS/BnaA02G0130100ZS/BnaA08G0244400ZS/BnaC04G0513800ZS/BnaA03G0153800ZS/BnaC04G0513700ZS/BnaC02G0280500ZS/BnaC01G0102000ZS/BnaC08G0458300ZS/BnaC05G0156200ZS/BnaA09G0604200ZS/BnaA07G0001300ZS/BnaC07G0006100ZS/BnaA09G0448300ZS/BnaC07G0005900ZS/BnaC05G0210800ZS/BnaA04G0074700ZS/BnaC01G0254400ZS/BnaC04G0359300ZS/BnaA04G0267400ZS/BnaA05G0121200ZS/BnaC06G0404300ZS/BnaA06G0128100ZS/BnaC04G0153200ZS/BnaC04G0584500ZS/BnaA06G0110600ZS/BnaC05G0136700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00290</td>
+<td align="left">Valine, leucine and isoleucine biosynthesis</td>
+<td align="right">74</td>
+<td align="right">-0.8583482</td>
+<td align="right">-2.456465</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1055</td>
+<td align="left">tags=19%, list=2%, signal=19%</td>
+<td
+align="left">BnaA07G0070200ZS/BnaA06G0156700ZS/BnaA01G0217100ZS/BnaC04G0361900ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA04G0076900ZS/BnaC04G0039400ZS/BnaA02G0052200ZS/BnaA05G0362200ZS/BnaA05G0036500ZS/BnaA03G0359600ZS/BnaC05G0396400ZS/BnaC02G0060000ZS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>setSize ：富集到该KEGG
+pathway的基因个数enrichmentScore：富集分数，也就是ES。NES：标准化以后的ES（normalized
+enrichment
+score）。<br>pvalue：富集的P值。<br>p.adjust：校正后的P值。<br>core_enrichment：富集到该KEGG
+pathway的基因列表。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/02.GSEA/MUT_vs_MUTE.DESeq2.DE_results.gseKEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>颜色代表p.adjust，横坐标代表NES，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/02.GSEA/MUT_vs_MUTE.DESeq2.DE_results.gseKEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+</div>
+</div>
+<div id="wt_vs_mut-2"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">WT_vs_MUT</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行GSEA (gene set
+enrichment analysis)。</p>
+<div id="go-6" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>共富集到0条GO term。</p>
+</div>
+<div id="kegg-6" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>共富集到0条KEGG pathway。</p>
+</div>
+</div>
+<div id="wte_vs_mute-2"
+class="section level4 unnumbered tabset tabset-fade tabset-pills">
+<h4 class="unnumbered tabset tabset-fade tabset-pills">WTE_vs_MUTE</h4>
+<p>我们以adjusted <em>p</em>-value &lt; 0.05的标准进行GSEA (gene set
+enrichment analysis)。</p>
+<div id="go-7" class="section level5 unnumbered">
+<h5 class="unnumbered">GO</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/02.GSEA/WTE_vs_MUTE.DESeq2.DE_results.gseGO.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ONTOLOGY</th>
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="right">setSize</th>
+<th align="right">enrichmentScore</th>
+<th align="right">NES</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="right">rank</th>
+<th align="left">leading_edge</th>
+<th align="left">core_enrichment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016143" class="uri">GO:0016143</a></td>
+<td align="left">S-glycoside metabolic process</td>
+<td align="right">192</td>
+<td align="right">-0.7007668</td>
+<td align="right">-1.860901</td>
+<td align="right">1e-07</td>
+<td align="right">0.0001909</td>
+<td align="right">0.0001864</td>
+<td align="right">2873</td>
+<td align="left">tags=26%, list=6%, signal=25%</td>
+<td
+align="left">BnaA05G0045000ZS/BnaC06G0428100ZS/BnaC03G0772700ZS/BnaC02G0280500ZS/BnaA09G0018800ZS/BnaA09G0043100ZS/BnaC03G0321400ZS/BnaC04G0436200ZS/BnaA01G0068200ZS/BnaC04G0359300ZS/BnaC01G0080800ZS/BnaC04G0361900ZS/BnaC05G0156000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaA05G0143900ZS/BnaC05G0210800ZS/BnaA04G0281800ZS/BnaA04G0076900ZS/BnaC08G0056100ZS/BnaC04G0504200ZS/BnaA09G0155200ZS/BnaC03G0090500ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaA05G0362200ZS/BnaA09G0155300ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaC09G0170500ZS/BnaA05G0036500ZS/BnaC05G0396400ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA03G0259200ZS/BnaC05G0460800ZS/BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC03G0308400ZS/BnaA09G0244600ZS/BnaC03G0308500ZS/BnaC09G0288000ZS/BnaC05G0460300ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019757" class="uri">GO:0019757</a></td>
+<td align="left">glycosinolate metabolic process</td>
+<td align="right">192</td>
+<td align="right">-0.7007668</td>
+<td align="right">-1.860901</td>
+<td align="right">1e-07</td>
+<td align="right">0.0001909</td>
+<td align="right">0.0001864</td>
+<td align="right">2873</td>
+<td align="left">tags=26%, list=6%, signal=25%</td>
+<td
+align="left">BnaA05G0045000ZS/BnaC06G0428100ZS/BnaC03G0772700ZS/BnaC02G0280500ZS/BnaA09G0018800ZS/BnaA09G0043100ZS/BnaC03G0321400ZS/BnaC04G0436200ZS/BnaA01G0068200ZS/BnaC04G0359300ZS/BnaC01G0080800ZS/BnaC04G0361900ZS/BnaC05G0156000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaA05G0143900ZS/BnaC05G0210800ZS/BnaA04G0281800ZS/BnaA04G0076900ZS/BnaC08G0056100ZS/BnaC04G0504200ZS/BnaA09G0155200ZS/BnaC03G0090500ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaA05G0362200ZS/BnaA09G0155300ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaC09G0170500ZS/BnaA05G0036500ZS/BnaC05G0396400ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA03G0259200ZS/BnaC05G0460800ZS/BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC03G0308400ZS/BnaA09G0244600ZS/BnaC03G0308500ZS/BnaC09G0288000ZS/BnaC05G0460300ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019760" class="uri">GO:0019760</a></td>
+<td align="left">glucosinolate metabolic process</td>
+<td align="right">192</td>
+<td align="right">-0.7007668</td>
+<td align="right">-1.860901</td>
+<td align="right">1e-07</td>
+<td align="right">0.0001909</td>
+<td align="right">0.0001864</td>
+<td align="right">2873</td>
+<td align="left">tags=26%, list=6%, signal=25%</td>
+<td
+align="left">BnaA05G0045000ZS/BnaC06G0428100ZS/BnaC03G0772700ZS/BnaC02G0280500ZS/BnaA09G0018800ZS/BnaA09G0043100ZS/BnaC03G0321400ZS/BnaC04G0436200ZS/BnaA01G0068200ZS/BnaC04G0359300ZS/BnaC01G0080800ZS/BnaC04G0361900ZS/BnaC05G0156000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaA05G0143900ZS/BnaC05G0210800ZS/BnaA04G0281800ZS/BnaA04G0076900ZS/BnaC08G0056100ZS/BnaC04G0504200ZS/BnaA09G0155200ZS/BnaC03G0090500ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaA05G0362200ZS/BnaA09G0155300ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaC09G0170500ZS/BnaA05G0036500ZS/BnaC05G0396400ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA03G0259200ZS/BnaC05G0460800ZS/BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC03G0308400ZS/BnaA09G0244600ZS/BnaC03G0308500ZS/BnaC09G0288000ZS/BnaC05G0460300ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0044272" class="uri">GO:0044272</a></td>
+<td align="left">sulfur compound biosynthetic process</td>
+<td align="right">258</td>
+<td align="right">-0.6622419</td>
+<td align="right">-1.808222</td>
+<td align="right">3e-07</td>
+<td align="right">0.0003437</td>
+<td align="right">0.0003357</td>
+<td align="right">4471</td>
+<td align="left">tags=31%, list=10%, signal=28%</td>
+<td
+align="left">BnaA01G0408200ZS/BnaA03G0033000ZS/BnaC08G0083800ZS/BnaA09G0556800ZS/Bnascaffold0349G0000200ZS/BnaA01G0129800ZS/BnaC08G0193200ZS/BnaA02G0214900ZS/BnaC03G0506200ZS/BnaA09G0165000ZS/BnaA03G0111200ZS/BnaC09G0043300ZS/BnaA04G0010400ZS/Bnascaffold0418G0000200ZS/BnaA02G0206900ZS/BnaC06G0428100ZS/BnaA10G0191100ZS/BnaA06G0184800ZS/BnaA10G0117100ZS/BnaC03G0772700ZS/BnaC02G0280500ZS/BnaC02G0164500ZS/BnaC03G0132800ZS/BnaA10G0170100ZS/BnaA09G0018800ZS/BnaA08G0091500ZS/BnaC03G0321400ZS/BnaC04G0269000ZS/BnaC08G0130400ZS/BnaC06G0142700ZS/BnaC04G0436200ZS/BnaA01G0068200ZS/BnaC04G0359300ZS/BnaC01G0080800ZS/BnaC04G0361900ZS/BnaC04G0302800ZS/BnaC05G0156000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0111100ZS/BnaC04G0498800ZS/BnaC05G0542100ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaC09G0113400ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaA09G0056000ZS/BnaC05G0564300ZS/BnaA04G0031500ZS/BnaC08G0056100ZS/BnaC04G0504200ZS/BnaA09G0155200ZS/BnaC03G0090500ZS/BnaA05G0479500ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaC03G0351200ZS/BnaA03G0292400ZS/BnaA05G0362200ZS/BnaA09G0155300ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaC09G0170500ZS/BnaA05G0036500ZS/BnaC05G0396400ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA03G0259200ZS/BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC03G0308400ZS/BnaA09G0244600ZS/BnaC03G0308500ZS/BnaC09G0288000ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0016144" class="uri">GO:0016144</a></td>
+<td align="left">S-glycoside biosynthetic process</td>
+<td align="right">92</td>
+<td align="right">-0.7777772</td>
+<td align="right">-1.888301</td>
+<td align="right">1e-06</td>
+<td align="right">0.0006853</td>
+<td align="right">0.0006694</td>
+<td align="right">2454</td>
+<td align="left">tags=43%, list=5%, signal=41%</td>
+<td
+align="left">BnaC02G0280500ZS/BnaA09G0018800ZS/BnaC03G0321400ZS/BnaC04G0436200ZS/BnaC04G0359300ZS/BnaC04G0361900ZS/BnaC05G0156000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC08G0056100ZS/BnaC04G0504200ZS/BnaA09G0155200ZS/BnaC03G0090500ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaA05G0362200ZS/BnaA09G0155300ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaC09G0170500ZS/BnaA05G0036500ZS/BnaC05G0396400ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA03G0259200ZS/BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC03G0308400ZS/BnaA09G0244600ZS/BnaC03G0308500ZS/BnaC09G0288000ZS</td>
+</tr>
+<tr class="even">
+<td align="left">BP</td>
+<td align="left"><a href="GO:0019761" class="uri">GO:0019761</a></td>
+<td align="left">glucosinolate biosynthetic process</td>
+<td align="right">92</td>
+<td align="right">-0.7777772</td>
+<td align="right">-1.888301</td>
+<td align="right">1e-06</td>
+<td align="right">0.0006853</td>
+<td align="right">0.0006694</td>
+<td align="right">2454</td>
+<td align="left">tags=43%, list=5%, signal=41%</td>
+<td
+align="left">BnaC02G0280500ZS/BnaA09G0018800ZS/BnaC03G0321400ZS/BnaC04G0436200ZS/BnaC04G0359300ZS/BnaC04G0361900ZS/BnaC05G0156000ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC08G0056100ZS/BnaC04G0504200ZS/BnaA09G0155200ZS/BnaC03G0090500ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaA05G0362200ZS/BnaA09G0155300ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaC09G0170500ZS/BnaA05G0036500ZS/BnaC05G0396400ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA03G0259200ZS/BnaA02G0394700ZS/BnaA02G0052200ZS/BnaC03G0308400ZS/BnaA09G0244600ZS/BnaC03G0308500ZS/BnaC09G0288000ZS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ONTOLOGY：GO所属Ontology；<br>ID：GO_ID号；<br>Description：GO_term描述；<br>setSize：富集到该GO
+term的基因个数。enrichmentScore：富集分数，也就是ES。NES：标准化以后的ES（normalized
+enrichment
+score）。<br>pvalue：富集的P值。<br>p.adjust：校正后的P值。<br>core_enrichment：富集到该GO
+term的基因列表。</p>
+<p>对GO富集结果进行了可视化展示，结果如下：</p>
+<p><img src='result/04.Enrichment/02.GSEA/WTE_vs_MUTE.DESeq2.DE_results.gseGO_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>颜色代表p.adjust，横坐标代表NES，纵坐标代表Go
+term。</p>
+<p><img src='result/04.Enrichment/02.GSEA/WTE_vs_MUTE.DESeq2.DE_results.gseGO_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表GO
+term，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表GO
+term之间有相同的差异表达基因，连线粗细代表相同基因的数量。选取前30个GO
+term绘图。</p>
+</div>
+<div id="kegg-7" class="section level5 unnumbered">
+<h5 class="unnumbered">KEGG</h5>
+<p>部分结果如下表（全部结果见./result/04.Enrichment/02.GSEA/WTE_vs_MUTE.DESeq2.DE_results.gseKEGG.csv）：</p>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="4%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Description</th>
+<th align="right">setSize</th>
+<th align="right">enrichmentScore</th>
+<th align="right">NES</th>
+<th align="right">pvalue</th>
+<th align="right">p.adjust</th>
+<th align="right">qvalue</th>
+<th align="right">rank</th>
+<th align="left">leading_edge</th>
+<th align="left">core_enrichment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bna00196</td>
+<td align="left">Photosynthesis - antenna proteins</td>
+<td align="right">68</td>
+<td align="right">0.7519548</td>
+<td align="right">2.008092</td>
+<td align="right">0.0000114</td>
+<td align="right">0.0013752</td>
+<td align="right">0.0011365</td>
+<td align="right">7196</td>
+<td align="left">tags=74%, list=16%, signal=62%</td>
+<td
+align="left">BnaA05G0100800ZS/BnaC08G0234600ZS/BnaA06G0106800ZS/BnaC07G0308900ZS/BnaA03G0254400ZS/BnaC09G0025500ZS/BnaA06G0381100ZS/BnaC02G0465500ZS/BnaA09G0625000ZS/BnaA09G0507700ZS/BnaA02G0345900ZS/BnaC05G0507600ZS/BnaA08G0207100ZS/BnaC02G0169300ZS/BnaC09G0366900ZS/BnaA09G0040000ZS/BnaA10G0105600ZS/BnaC03G0479400ZS/BnaA06G0175800ZS/BnaA03G0387200ZS/BnaC06G0191500ZS/BnaC03G0302000ZS/BnaC08G0349200ZS/BnaC03G0191900ZS/BnaC04G0532900ZS/BnaC04G0124900ZS/BnaA03G0165600ZS/BnaC04G0235100ZS/BnaC02G0368500ZS/BnaC09G0303400ZS/BnaA09G0160400ZS/BnaA04G0221200ZS/BnaA05G0100700ZS/BnaC05G0132200ZS/BnaA09G0414200ZS/BnaC03G0618700ZS/BnaC09G0177400ZS/BnaA08G0267000ZS/BnaC04G0125000ZS/BnaA07G0086800ZS/BnaC03G0660800ZS/BnaC08G0482400ZS/BnaA03G0582000ZS/BnaC01G0342600ZS/BnaA09G0257700ZS/BnaA02G0222200ZS/BnaC05G0256200ZS/BnaA01G0279800ZS/BnaC02G0299600ZS/BnaC02G0001800ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna00966</td>
+<td align="left">Glucosinolate biosynthesis</td>
+<td align="right">91</td>
+<td align="right">-0.7364107</td>
+<td align="right">-1.812624</td>
+<td align="right">0.0000440</td>
+<td align="right">0.0026625</td>
+<td align="right">0.0022004</td>
+<td align="right">3035</td>
+<td align="left">tags=41%, list=7%, signal=38%</td>
+<td
+align="left">Bnascaffold0470G0000100ZS/BnaC01G0168900ZS/Bnascaffold0025G0036800ZS/BnaC04G0153200ZS/BnaA02G0135900ZS/BnaC02G0280500ZS/BnaC04G0513700ZS/BnaC04G0513800ZS/BnaA05G0121200ZS/BnaC04G0436200ZS/BnaC04G0359300ZS/BnaC04G0361900ZS/BnaA08G0054300ZS/BnaC08G0074300ZS/BnaA09G0448300ZS/BnaA04G0074700ZS/BnaC05G0210800ZS/BnaA04G0076900ZS/BnaC08G0458300ZS/BnaA07G0001300ZS/BnaC02G0060000ZS/BnaC07G0005900ZS/BnaC06G0404300ZS/BnaC05G0156200ZS/BnaA05G0362200ZS/BnaA03G0359600ZS/BnaC07G0006100ZS/BnaA05G0036500ZS/BnaA04G0267400ZS/BnaC05G0396400ZS/BnaA09G0604200ZS/BnaA06G0110600ZS/BnaC04G0039400ZS/BnaC05G0136700ZS/BnaA06G0128100ZS/BnaA02G0052200ZS/BnaC04G0584500ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">bna00400</td>
+<td align="left">Phenylalanine, tyrosine and tryptophan
+biosynthesis</td>
+<td align="right">139</td>
+<td align="right">-0.6509464</td>
+<td align="right">-1.668604</td>
+<td align="right">0.0002608</td>
+<td align="right">0.0105179</td>
+<td align="right">0.0086925</td>
+<td align="right">4603</td>
+<td align="left">tags=37%, list=10%, signal=34%</td>
+<td
+align="left">BnaC05G0194900ZS/BnaC08G0043900ZS/BnaA01G0009000ZS/BnaA08G0036200ZS/BnaC09G0373500ZS/BnaC05G0311300ZS/BnaC09G0468300ZS/BnaA03G0310100ZS/BnaC09G0102000ZS/BnaC04G0479500ZS/BnaA03G0384700ZS/BnaC03G0633000ZS/BnaA09G0505300ZS/BnaA02G0282500ZS/Bnascaffold0470G0000100ZS/BnaC01G0168900ZS/BnaA04G0285700ZS/BnaC01G0010600ZS/BnaA02G0072600ZS/BnaC04G0603700ZS/BnaC03G0363300ZS/BnaC05G0094000ZS/Bnascaffold0025G0036800ZS/BnaC05G0229800ZS/BnaC03G0578100ZS/BnaC03G0025600ZS/BnaA02G0135900ZS/BnaC08G0346300ZS/BnaA10G0190900ZS/BnaA09G0101800ZS/BnaA02G0020300ZS/BnaA02G0037900ZS/BnaC03G0259200ZS/BnaA03G0021000ZS/BnaC03G0270700ZS/BnaC09G0590700ZS/BnaA02G0080200ZS/BnaA03G0529900ZS/BnaA08G0224800ZS/BnaC03G0371600ZS/BnaC03G0270600ZS/BnaC08G0458300ZS/BnaA07G0001300ZS/BnaA03G0220100ZS/BnaC07G0005900ZS/BnaA09G0129100ZS/BnaC07G0006100ZS/BnaA09G0044300ZS/BnaA09G0604200ZS/BnaC09G0119600ZS/BnaA05G0129900ZS/BnaA03G0193700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna03440</td>
+<td align="left">Homologous recombination</td>
+<td align="right">213</td>
+<td align="right">-0.6090316</td>
+<td align="right">-1.645591</td>
+<td align="right">0.0003672</td>
+<td align="right">0.0111075</td>
+<td align="right">0.0091797</td>
+<td align="right">586</td>
+<td align="left">tags=11%, list=1%, signal=11%</td>
+<td
+align="left">BnaC02G0401400ZS/BnaC05G0325300ZS/BnaA03G0114400ZS/BnaC04G0388200ZS/BnaC05G0121900ZS/BnaC01G0162500ZS/BnaA03G0211500ZS/BnaC04G0249200ZS/BnaC08G0056200ZS/BnaC02G0338400ZS/BnaA01G0199500ZS/BnaA06G0078400ZS/BnaA04G0110600ZS/BnaC05G0521500ZS/BnaC09G0125900ZS/BnaC01G0195900ZS/BnaC05G0438400ZS/BnaA09G0250300ZS/BnaC08G0073800ZS/BnaA03G0464300ZS/BnaC03G0817800ZS/BnaA05G0336400ZS/BnaC05G0088700ZS</td>
+</tr>
+<tr class="odd">
+<td align="left">bna03430</td>
+<td align="left">Mismatch repair</td>
+<td align="right">174</td>
+<td align="right">-0.6090505</td>
+<td align="right">-1.594712</td>
+<td align="right">0.0008385</td>
+<td align="right">0.0202927</td>
+<td align="right">0.0167708</td>
+<td align="right">586</td>
+<td align="left">tags=14%, list=1%, signal=14%</td>
+<td
+align="left">BnaC02G0401400ZS/BnaA02G0226400ZS/BnaC05G0325300ZS/BnaC02G0305200ZS/BnaA03G0114400ZS/BnaC04G0388200ZS/BnaC05G0121900ZS/BnaA03G0211500ZS/BnaC04G0249200ZS/BnaC08G0056200ZS/BnaC02G0338400ZS/BnaA01G0199500ZS/BnaA06G0078400ZS/BnaA04G0110600ZS/BnaC08G0467100ZS/BnaC05G0521500ZS/BnaC09G0125900ZS/BnaC01G0195900ZS/BnaC05G0438400ZS/BnaA09G0250300ZS/BnaC08G0073800ZS/BnaA03G0464300ZS/BnaC03G0817800ZS/BnaA05G0336400ZS/BnaC05G0088700ZS</td>
+</tr>
+<tr class="even">
+<td align="left">bna03420</td>
+<td align="left">Nucleotide excision repair</td>
+<td align="right">245</td>
+<td align="right">-0.5546459</td>
+<td align="right">-1.522036</td>
+<td align="right">0.0018496</td>
+<td align="right">0.0373011</td>
+<td align="right">0.0308273</td>
+<td align="right">1164</td>
+<td align="left">tags=11%, list=3%, signal=11%</td>
+<td
+align="left">BnaC02G0401400ZS/BnaA02G0226400ZS/BnaC05G0325300ZS/BnaC02G0305200ZS/BnaC02G0102400ZS/BnaC01G0460300ZS/BnaA03G0114400ZS/BnaC04G0388200ZS/BnaC05G0121900ZS/BnaA03G0211500ZS/BnaC04G0249200ZS/BnaC08G0056200ZS/BnaC02G0338400ZS/BnaA01G0199500ZS/BnaA06G0078400ZS/BnaA04G0110600ZS/BnaC08G0467100ZS/BnaC05G0521500ZS/BnaC09G0125900ZS/BnaC01G0195900ZS/BnaC05G0438400ZS/BnaA09G0250300ZS/BnaC08G0073800ZS/BnaA03G0464300ZS/BnaC03G0467700ZS/BnaC03G0817800ZS/BnaA05G0336400ZS/BnaC05G0088700ZS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明：</strong><br>ID：KEGG pathway号；<br>Description：KEGG
+pathway描述；<br>setSize ：富集到该KEGG
+pathway的基因个数enrichmentScore：富集分数，也就是ES。NES：标准化以后的ES（normalized
+enrichment
+score）。<br>pvalue：富集的P值。<br>p.adjust：校正后的P值。<br>core_enrichment：富集到该KEGG
+pathway的基因列表。</p>
+<p>对KEGG富集结果进行可视化，结果如下：</p>
+<p><img src='result/04.Enrichment/02.GSEA/WTE_vs_MUTE.DESeq2.DE_results.gseKEGG_enrichment.png' width='60%'></p>
+<p><strong>说明：</strong>颜色代表p.adjust，横坐标代表NES，纵坐标代表KEGG
+pathway。<img src='result/04.Enrichment/02.GSEA/WTE_vs_MUTE.DESeq2.DE_results.gseKEGG_emapplot.png' width='60%'></p>
+<p><strong>说明：</strong>点代表KEGG
+pathway，点的大小代表基因数目，点的颜色代表p.adjust，点之间的连线代表KEGG
+pathway之间有相同的差异表达基因，连线粗细代表相同基因的数量。</p>
+<hr />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="参考文献" class="section level1 unnumbered">
+<h1 class="unnumbered">参考文献</h1>
+<div id="ref">
+
+</div>
+<ol style="list-style-type: decimal">
+<li>Chen, S., Zhou, Y., Chen, Y., &amp; Gu, J. (2018). fastp: an
+ultra-fast all-in-one FASTQ preprocessor. Bioinformatics (Oxford,
+England), 34(17), i884–i890. <a
+href="https://doi.org/10.1093/bioinformatics/bty560"
+class="uri">https://doi.org/10.1093/bioinformatics/bty560</a></li>
+<li>Dobin, A., Davis, C. A., Schlesinger, F., Drenkow, J., Zaleski, C.,
+Jha, S., Batut, P., Chaisson, M., &amp; Gingeras, T. R. (2013). STAR:
+ultrafast universal RNA-seq aligner. Bioinformatics (Oxford, England),
+29(1), 15–21. <a href="https://doi.org/10.1093/bioinformatics/bts635"
+class="uri">https://doi.org/10.1093/bioinformatics/bts635</a></li>
+<li>Song, J. M., Guan, Z., Hu, J., Guo, C., Yang, Z., Wang, S., Liu, D.,
+Wang, B., Lu, S., Zhou, R., Xie, W. Z., Cheng, Y., Zhang, Y., Liu, K.,
+Yang, Q. Y., Chen, L. L., &amp; Guo, L. (2020). Eight high-quality
+genomes reveal pan-genome architecture and ecotype differentiation of
+Brassica napus. Nature plants, 6(1), 34–45. <a
+href="https://doi.org/10.1038/s41477-019-0577-7"
+class="uri">https://doi.org/10.1038/s41477-019-0577-7</a></li>
+<li>Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer,
+N., Marth, G., Abecasis, G., Durbin, R., &amp; 1000 Genome Project Data
+Processing Subgroup (2009). The Sequence Alignment/Map format and
+SAMtools. Bioinformatics (Oxford, England), 25(16), 2078–2079 <a
+href="https://doi.org/10.1093/bioinformatics/btp352"
+class="uri">https://doi.org/10.1093/bioinformatics/btp352</a></li>
+<li>Tarasov, A., Vilella, A. J., Cuppen, E., Nijman, I. J., &amp; Prins,
+P. (2015). Sambamba: fast processing of NGS alignment formats
+Bioinformatics (Oxford, England), 31(12), 2032–2034. <a
+href="https://doi.org/10.1093/bioinformatics/btv098"
+class="uri">https://doi.org/10.1093/bioinformatics/btv098</a></li>
+<li>Liao, Y., Smyth, G. K., &amp; Shi, W. (2019). The R package Rsubread
+is easier, faster, cheaper and better for alignment and quantification
+of RNA sequencing reads. Nucleic acids research, 47(8), e47. <a
+href="https://doi.org/10.1093/nar/gkz114"
+class="uri">https://doi.org/10.1093/nar/gkz114</a></li>
+<li>Love, M. I., Huber, W., &amp; Anders, S. (2014). Moderated
+estimation of fold change and dispersion for RNA-seq data with DESeq2.
+Genome biology, 15(12), 550. <a
+href="https://doi.org/10.1186/s13059-014-0550-8"
+class="uri">https://doi.org/10.1186/s13059-014-0550-8</a></li>
+<li>Robinson, M. D., McCarthy, D. J., &amp; Smyth, G. K. (2010). edgeR:
+a Bioconductor package for differential expression analysis of digital
+gene expression data. Bioinformatics (Oxford, England), 26(1), 139–140.
+<a href="https://doi.org/10.1093/bioinformatics/btp616"
+class="uri">https://doi.org/10.1093/bioinformatics/btp616</a></li>
+<li>Wu, T., Hu, E., Xu, S., Chen, M., Guo, P., Dai, Z., Feng, T., Zhou,
+L., Tang, W., Zhan, L., Fu, X., Liu, S., Bo, X., &amp; Yu, G. (2021).
+clusterProfiler 4.0: A universal enrichment tool for interpreting omics
+data. Innovation (Cambridge (Mass.)), 2(3), 100141. <a
+href="https://doi.org/10.1016/j.xinn.2021.100141"
+class="uri">https://doi.org/10.1016/j.xinn.2021.100141</a></li>
+<li>Ashburner, M., Ball, C. A., Blake, J. A., Botstein, D., Butler, H.,
+Cherry, J. M., Davis, A. P., Dolinski, K., Dwight, S. S., Eppig, J. T.,
+Harris, M. A., Hill, D. P., Issel-Tarver, L., Kasarskis, A., Lewis, S.,
+Matese, J. C., Richardson, J. E., Ringwald, M., Rubin, G. M., &amp;
+Sherlock, G. (2000). Gene ontology: tool for the unification of biology.
+The Gene Ontology Consortium. Nature genetics, 25(1), 25–29. <a
+href="https://doi.org/10.1038/75556"
+class="uri">https://doi.org/10.1038/75556</a></li>
+<li>Kanehisa, M., &amp; Goto, S. (2000). KEGG: kyoto encyclopedia of
+genes and genomes. Nucleic acids research, 28(1), 27–30. <a
+href="https://doi.org/10.1093/nar/28.1.27"
+class="uri">https://doi.org/10.1093/nar/28.1.27</a></li>
+</ol>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
