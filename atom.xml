@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>请叫我老王</title>
+  <icon>https://laowang2023.cn/icon.png</icon>
+  
+  <link href="https://laowang2023.cn/atom.xml" rel="self"/>
+  
+  <link href="https://laowang2023.cn/"/>
+  <updated>2023-10-07T14:08:55.914Z</updated>
+  <id>https://laowang2023.cn/</id>
+  
+  <author>
+    <name>老王</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Plant Commun. | 甘蓝型油菜功能基因组学研究的模式材料-小芸</title>
+    <link href="https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/"/>
+    <id>https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/</id>
+    <published>2023-10-03T03:37:50.000Z</published>
+    <updated>2023-10-07T14:08:55.914Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;甘蓝型油菜（&lt;em&gt;Brassica napus&lt;/em&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="甘蓝型油菜" scheme="https://laowang2023.cn/tags/%E7%94%98%E8%93%9D%E5%9E%8B%E6%B2%B9%E8%8F%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PNAS | 番茄愈伤组织芽再生的空间转录组图谱</title>
+    <link href="https://laowang2023.cn/2023/09/20/20230920-tomatoCallusSpatialTranscriptomics/"/>
+    <id>https://laowang2023.cn/2023/09/20/20230920-tomatoCallusSpatialTranscriptomics/</id>
+    <published>2023-09-20T03:05:00.000Z</published>
+    <updated>2023-10-03T04:01:39.378Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;再生芽的从头器官发生（De novo shoot organogenesis,</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="番茄" scheme="https://laowang2023.cn/tags/%E7%95%AA%E8%8C%84/"/>
+    
+    <category term="植物再生" scheme="https://laowang2023.cn/tags/%E6%A4%8D%E7%89%A9%E5%86%8D%E7%94%9F/"/>
+    
+    <category term="空间转录组" scheme="https://laowang2023.cn/tags/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用chatGPT绘制基因共表达网络图</title>
+    <link href="https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/"/>
+    <id>https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/</id>
+    <published>2023-08-26T13:50:41.000Z</published>
+    <updated>2023-08-29T12:09:48.484Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ChatGPT是一款强大的语言模型，不仅可以回答问题和进行对话，还可以辅助编写代码。通过提供清晰的问题或指令，可以从ChatGPT获得代码段、算法示例以及编程建议。它支持多种编程语言和领域，为编程任务提供快速而可靠的帮助，无论是解决问题、学习新技术还是优化代码结构，Chat</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
+    
+    <category term="绘图" scheme="https://laowang2023.cn/tags/%E7%BB%98%E5%9B%BE/"/>
+    
+    <category term="chatGPT" scheme="https://laowang2023.cn/tags/chatGPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nat Commun. | 黄瓜graph-based pangenome与黄瓜农艺性状和驯化相关结构变异</title>
+    <link href="https://laowang2023.cn/2023/08/15/20230815-cucumberGraphBasedPanGenome/"/>
+    <id>https://laowang2023.cn/2023/08/15/20230815-cucumberGraphBasedPanGenome/</id>
+    <published>2023-08-15T13:03:23.000Z</published>
+    <updated>2023-10-03T04:01:32.593Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;黄瓜(&lt;em&gt;Cucumis sativus&lt;/em&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="基因组" scheme="https://laowang2023.cn/tags/%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
+    
+    <category term="结构变异" scheme="https://laowang2023.cn/tags/%E7%BB%93%E6%9E%84%E5%8F%98%E5%BC%82/"/>
+    
+    <category term="泛基因组" scheme="https://laowang2023.cn/tags/%E6%B3%9B%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
+    
+    <category term="黄瓜" scheme="https://laowang2023.cn/tags/%E9%BB%84%E7%93%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R绘图 | 如何改变circos图中不同track中sector间的比例</title>
+    <link href="https://laowang2023.cn/2023/06/27/20230627-NewCircos/"/>
+    <id>https://laowang2023.cn/2023/06/27/20230627-NewCircos/</id>
+    <published>2023-06-27T12:11:53.000Z</published>
+    <updated>2023-10-03T04:12:30.785Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
+    
+    <category term="绘图" scheme="https://laowang2023.cn/tags/%E7%BB%98%E5%9B%BE/"/>
+    
+    <category term="circos" scheme="https://laowang2023.cn/tags/circos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言 | shiny基础（一）：shiny用户界面（UI）</title>
+    <link href="https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/"/>
+    <id>https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/</id>
+    <published>2023-06-02T03:46:15.000Z</published>
+    <updated>2023-10-05T14:17:44.359Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/&quot;&gt;书接上文&lt;/a&gt;，我们已经了解shiny的主体结构，今天详细讲一讲用户界面（ui）部分。ui是shiny</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
+    
+    <category term="shiny" scheme="https://laowang2023.cn/tags/shiny/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言 | shiny基础（一）：shiny入门</title>
+    <link href="https://laowang2023.cn/2023/05/31/20230531-shinyBasics1/"/>
+    <id>https://laowang2023.cn/2023/05/31/20230531-shinyBasics1/</id>
+    <published>2023-05-31T09:42:07.000Z</published>
+    <updated>2023-10-05T14:17:10.406Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;shiny是一个创建交互式web应用程序的工具，有R和python版本，这里只涉及R版本。&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+&lt;p&gt;shiny是一个R语言扩展包，安装方便：&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
+    
+    <category term="shiny" scheme="https://laowang2023.cn/tags/shiny/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nat Genet. | 玉米多组学整合网络图谱</title>
+    <link href="https://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/"/>
+    <id>https://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/</id>
+    <published>2023-05-22T03:18:45.000Z</published>
+    <updated>2023-10-03T04:01:19.385Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="玉米" scheme="https://laowang2023.cn/tags/%E7%8E%89%E7%B1%B3/"/>
+    
+    <category term="多组学" scheme="https://laowang2023.cn/tags/%E5%A4%9A%E7%BB%84%E5%AD%A6/"/>
+    
+    <category term="网络" scheme="https://laowang2023.cn/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>五一假期苍岩山游记</title>
+    <link href="https://laowang2023.cn/2023/05/01/20230501-CangyanMountain/"/>
+    <id>https://laowang2023.cn/2023/05/01/20230501-CangyanMountain/</id>
+    <published>2023-05-01T13:41:22.000Z</published>
+    <updated>2023-09-13T14:38:21.624Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;疫情之后的第一个“五一”假期，人们压抑三年的心彻底爆发。景区仿佛是迎来了人们的报复性旅游，路上车辆拥挤龟速行驶，售票处人潮涌动，队伍如长龙般蜿蜒。好在上山以后人渐渐变得少了，而且景色不错。&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;苍岩山风景名胜区，位于河北省石家庄市西南井陉县</summary>
+        
+      
+    
+    
+    
+    <category term="记录生活" scheme="https://laowang2023.cn/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="苍岩山" scheme="https://laowang2023.cn/tags/%E8%8B%8D%E5%B2%A9%E5%B1%B1/"/>
+    
+    <category term="旅游" scheme="https://laowang2023.cn/tags/%E6%97%85%E6%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搞对象一周年纪念日</title>
+    <link href="https://laowang2023.cn/2023/04/24/20230424-FirstYearAnniversary/"/>
+    <id>https://laowang2023.cn/2023/04/24/20230424-FirstYearAnniversary/</id>
+    <published>2023-04-24T11:44:05.000Z</published>
+    <updated>2023-08-21T03:02:34.448Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;快乐的时光总是飞快的，我们在一起一年了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./cake.jpg&quot; alt=&quot;一周年蛋糕&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="记录生活" scheme="https://laowang2023.cn/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="开心" scheme="https://laowang2023.cn/tags/%E5%BC%80%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QTL-seq系列 | 如何计算置信区间</title>
+    <link href="https://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/"/>
+    <id>https://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/</id>
+    <published>2023-04-22T13:32:37.000Z</published>
+    <updated>2023-10-05T14:15:45.837Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;../20230422-QTLseqMethod/&quot;&gt;书接上文&lt;/a&gt;，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
+    
+    <category term="QTL-seq" scheme="https://laowang2023.cn/tags/QTL-seq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QTL-seq系列 | QTL-seq原理</title>
+    <link href="https://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/"/>
+    <id>https://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/</id>
+    <published>2023-04-22T13:32:26.000Z</published>
+    <updated>2023-10-05T14:14:50.743Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;QTL-seq是一种将Bulked‐segregant analysis</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="QTL-seq" scheme="https://laowang2023.cn/tags/QTL-seq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nat Genet. | 一个优良抗旱玉米种质的基因组组装与遗传剖析</title>
+    <link href="https://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/"/>
+    <id>https://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/</id>
+    <published>2023-04-20T12:56:47.000Z</published>
+    <updated>2023-10-03T04:00:59.745Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;玉米（&lt;em&gt;Zea</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="基因组" scheme="https://laowang2023.cn/tags/%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
+    
+    <category term="结构变异" scheme="https://laowang2023.cn/tags/%E7%BB%93%E6%9E%84%E5%8F%98%E5%BC%82/"/>
+    
+    <category term="玉米" scheme="https://laowang2023.cn/tags/%E7%8E%89%E7%B1%B3/"/>
+    
+    <category term="抗旱" scheme="https://laowang2023.cn/tags/%E6%8A%97%E6%97%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R绘图 | 群体表型分布和相关关系</title>
+    <link href="https://laowang2023.cn/2023/03/22/20230322-pheCorDist/"/>
+    <id>https://laowang2023.cn/2023/03/22/20230322-pheCorDist/</id>
+    <published>2023-03-22T00:41:17.000Z</published>
+    <updated>2023-08-21T02:55:11.687Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;考察一个群体的多个表型或者一个表型的多个重复，我们想展示其分布和他们之间的相关关系可以使用柱状图和散点图（如下图所示）。&lt;br&gt;
+&lt;img src=&quot;./pheCorDist.png&quot; alt=&quot;不同重复的表型分布和相关性&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
+    
+    <category term="绘图" scheme="https://laowang2023.cn/tags/%E7%BB%98%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nat Commun. | 醋栗番茄基因组为研究番茄育种过程中的结构变异提供了依据</title>
+    <link href="https://laowang2023.cn/2023/03/21/20230321-SolanumPimpinellifoliumGenome/"/>
+    <id>https://laowang2023.cn/2023/03/21/20230321-SolanumPimpinellifoliumGenome/</id>
+    <published>2023-03-21T01:54:05.000Z</published>
+    <updated>2023-10-03T04:00:23.728Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;醋栗番茄（&lt;em&gt;Solanum lycopersicum&lt;/em&gt;, SP）是栽培番茄（&lt;em&gt;S. lycopersicum&lt;/em&gt;）的野生祖先种，他的果实小、颜色红呈现圆形。醋栗番茄在南美洲被驯化形成了观赏番茄（&lt;em&gt;S. lycopersicum&lt;/em&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="基因组" scheme="https://laowang2023.cn/tags/%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
+    
+    <category term="番茄" scheme="https://laowang2023.cn/tags/%E7%95%AA%E8%8C%84/"/>
+    
+    <category term="结构变异" scheme="https://laowang2023.cn/tags/%E7%BB%93%E6%9E%84%E5%8F%98%E5%BC%82/"/>
+    
+    <category term="eQTL" scheme="https://laowang2023.cn/tags/eQTL/"/>
+    
+    <category term="驯化" scheme="https://laowang2023.cn/tags/%E9%A9%AF%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="https://laowang2023.cn/2023/03/13/20230313-firstArticle/"/>
+    <id>https://laowang2023.cn/2023/03/13/20230313-firstArticle/</id>
+    <published>2023-03-13T13:44:44.000Z</published>
+    <updated>2023-03-21T14:47:37.048Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
