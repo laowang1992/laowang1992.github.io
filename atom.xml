@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2023-11-09T15:43:02.834Z</updated>
+  <updated>2023-12-06T12:32:23.670Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://laowang2023.cn/2023/11/07/20231107-easyQTLseq/"/>
     <id>https://laowang2023.cn/2023/11/07/20231107-easyQTLseq/</id>
     <published>2023-11-07T11:57:53.000Z</published>
-    <updated>2023-11-09T15:43:02.834Z</updated>
+    <updated>2023-12-06T12:32:23.670Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;QTL-seq 方法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;&lt;span class=&quot;hint--top hint--rounded&quot;</summary>
+    <summary type="html">&lt;p&gt;QTL-seq是一种结合混池分离分析（Bulked segregant analysis，BSA）和高通量测序的方法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot; rel=&quot;footnote&quot;&gt;&lt;span</summary>
         
       
     
@@ -43,6 +43,8 @@
     
     <category term="easyQTLseq" scheme="https://laowang2023.cn/tags/easyQTLseq/"/>
     
+    <category term="BSA" scheme="https://laowang2023.cn/tags/BSA/"/>
+    
   </entry>
   
   <entry>
@@ -50,7 +52,7 @@
     <link href="https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/"/>
     <id>https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/</id>
     <published>2023-10-03T03:37:50.000Z</published>
-    <updated>2023-10-07T14:08:55.914Z</updated>
+    <updated>2023-11-28T03:32:35.191Z</updated>
     
     
       
@@ -104,7 +106,7 @@
     <link href="https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/"/>
     <id>https://laowang2023.cn/2023/08/26/20230826-chatGPTforNetwork/</id>
     <published>2023-08-26T13:50:41.000Z</published>
-    <updated>2023-08-29T12:09:48.484Z</updated>
+    <updated>2023-12-06T12:32:30.140Z</updated>
     
     
       
@@ -164,7 +166,7 @@
     <link href="https://laowang2023.cn/2023/06/27/20230627-NewCircos/"/>
     <id>https://laowang2023.cn/2023/06/27/20230627-NewCircos/</id>
     <published>2023-06-27T12:11:53.000Z</published>
-    <updated>2023-10-03T04:12:30.785Z</updated>
+    <updated>2023-12-06T12:32:34.060Z</updated>
     
     
       
@@ -193,7 +195,7 @@
     <link href="https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/"/>
     <id>https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/</id>
     <published>2023-06-02T03:46:15.000Z</published>
-    <updated>2023-10-05T14:17:44.359Z</updated>
+    <updated>2023-12-06T12:32:37.882Z</updated>
     
     
       
@@ -220,7 +222,7 @@
     <link href="https://laowang2023.cn/2023/05/31/20230531-shinyBasics1/"/>
     <id>https://laowang2023.cn/2023/05/31/20230531-shinyBasics1/</id>
     <published>2023-05-31T09:42:07.000Z</published>
-    <updated>2023-10-05T14:17:10.406Z</updated>
+    <updated>2023-12-06T12:32:40.989Z</updated>
     
     
       
@@ -333,7 +335,7 @@
     <link href="https://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/"/>
     <id>https://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/</id>
     <published>2023-04-22T13:32:37.000Z</published>
-    <updated>2023-10-05T14:15:45.837Z</updated>
+    <updated>2023-12-06T12:32:44.602Z</updated>
     
     
       
@@ -361,7 +363,7 @@
     <link href="https://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/"/>
     <id>https://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/</id>
     <published>2023-04-22T13:32:26.000Z</published>
-    <updated>2023-10-05T14:14:50.743Z</updated>
+    <updated>2023-12-06T12:32:47.587Z</updated>
     
     
       
@@ -417,7 +419,7 @@
     <link href="https://laowang2023.cn/2023/03/22/20230322-pheCorDist/"/>
     <id>https://laowang2023.cn/2023/03/22/20230322-pheCorDist/</id>
     <published>2023-03-22T00:41:17.000Z</published>
-    <updated>2023-08-21T02:55:11.687Z</updated>
+    <updated>2023-12-06T11:44:55.329Z</updated>
     
     
       
