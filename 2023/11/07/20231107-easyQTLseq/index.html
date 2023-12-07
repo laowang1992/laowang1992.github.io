@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://laowang2023.cn/img/index_banner/20230422-QTLseqMethod.png">
 <meta property="article:published_time" content="2023-11-07T11:57:53.000Z">
-<meta property="article:modified_time" content="2023-12-06T12:32:23.670Z">
+<meta property="article:modified_time" content="2023-12-07T05:33:02.469Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="QTL-seq">
@@ -321,7 +321,7 @@
 <p>easyQTLseq 包的一个优势是可以灵活处理有无亲本信息、有一个还是两个亲本信息以及亲本是否有参考基因等各种情况，并且可以导出各个计算过程的结果以及生成高质量的图片。</p>
 <h2 id="安装easyQTLseq">安装easyQTLseq</h2>
 <p>easyQTLseq 包在 GitHub 上，使用 <code>devtools</code> 包安装。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># install devtools</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;devtools&quot;</span><span class="hljs-punctuation">)</span><br><span class="hljs-comment"># install easyQTLseq</span><br>devtools<span class="hljs-operator">::</span>install_github<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;laowang2023/easyQTLseq&quot;</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># install devtools</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;devtools&quot;</span><span class="hljs-punctuation">)</span><br><span class="hljs-comment"># install easyQTLseq</span><br>devtools<span class="hljs-operator">::</span>install_github<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;laowang1992/easyQTLseq&quot;</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
 <h2 id="准备输入数据">准备输入数据</h2>
 <h3 id="使用-GATK-VariantsToTable">使用 GATK VariantsToTable</h3>
 <p>对亲本和混池的测序数据使用 GATK best practice pipeline 得到 VCF 文件，其中包含了各个样本的基因型（Genotype，GT）、基因型质量（Genotype Quality，GQ）、等位基因的深度（Allelic Depth，AD）以及一些其他的信息。为了加快数据读取和处理速度，使用 GATK 的 <code>VariantsToTable</code> 功能提取 CHROM、POS、REF、ALT 以及各个样本的 GT、GQ 和 AD 信息。</p>
