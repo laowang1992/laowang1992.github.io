@@ -16,24 +16,23 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="甘蓝型油菜（Brassica napus L.）是一种在世界范围内广泛种植的重要的油料作物，与模式植物拟南芥同属十字花科。甘蓝型油菜是由白菜和甘蓝在~7,500年前种间杂交加倍后形成的，由于其祖先种白菜和甘蓝在物种形成过程中经历过多次基因组加倍事件，种间杂交加倍后又发生一系列基因保留和丢失事件，因此甘蓝型油菜基因组极其复杂，基因拷贝数高，这些特性极大地阻碍了油菜功能基因组学研究进展。 2023年9">
+    <meta name="description" content="在学习R语言的过程中我们大都被告诫过尽量不要使用循环结构处理数据，要尽量进行向量化编程或者使用apply之类的函数。但在实际应用的时候可能像我一样因为R语言编程技术不高或情况太复杂而难以写出高效的代码，再想一想过两天就要年终考核了，而代码中的for循环还在不紧不慢的执行着，想一想因为少了一部分重要结果不能汇报而影响考核评级时，心中难免又产生一丝焦虑。 但是真的没有机会了吗？或许可以赶紧改成并行运算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Plant Commun. | 甘蓝型油菜功能基因组学研究的模式材料-小芸">
-<meta property="og:url" content="https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/index.html">
+<meta property="og:title" content="R语言 | 并行运算-foreach和doParallel包">
+<meta property="og:url" content="https://laowang2023.cn/2024/01/29/20240129-doParallel/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="甘蓝型油菜（Brassica napus L.）是一种在世界范围内广泛种植的重要的油料作物，与模式植物拟南芥同属十字花科。甘蓝型油菜是由白菜和甘蓝在~7,500年前种间杂交加倍后形成的，由于其祖先种白菜和甘蓝在物种形成过程中经历过多次基因组加倍事件，种间杂交加倍后又发生一系列基因保留和丢失事件，因此甘蓝型油菜基因组极其复杂，基因拷贝数高，这些特性极大地阻碍了油菜功能基因组学研究进展。 2023年9">
+<meta property="og:description" content="在学习R语言的过程中我们大都被告诫过尽量不要使用循环结构处理数据，要尽量进行向量化编程或者使用apply之类的函数。但在实际应用的时候可能像我一样因为R语言编程技术不高或情况太复杂而难以写出高效的代码，再想一想过两天就要年终考核了，而代码中的for循环还在不紧不慢的执行着，想一想因为少了一部分重要结果不能汇报而影响考核评级时，心中难免又产生一丝焦虑。 但是真的没有机会了吗？或许可以赶紧改成并行运算">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/cover.png">
-<meta property="article:published_time" content="2023-10-03T03:37:50.000Z">
-<meta property="article:modified_time" content="2024-01-02T13:56:04.048Z">
+<meta property="article:published_time" content="2024-01-29T14:01:45.000Z">
+<meta property="article:modified_time" content="2024-01-30T01:29:18.682Z">
 <meta property="article:author" content="老王">
-<meta property="article:tag" content="甘蓝型油菜">
+<meta property="article:tag" content="R">
+<meta property="article:tag" content="并行计算">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/cover.png">
   
   
   
-  <title>Plant Commun. | 甘蓝型油菜功能基因组学研究的模式材料-小芸 - 请叫我老王</title>
+  <title>R语言 | 并行运算-foreach和doParallel包 - 请叫我老王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -223,13 +222,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/2023/10/03/20231003-Xiaoyun/cover.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Plant Commun. | 甘蓝型油菜功能基因组学研究的模式材料-小芸"></span>
+            <span id="subtitle" data-typed-text="R语言 | 并行运算-foreach和doParallel包"></span>
           
         </div>
 
@@ -240,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-03 11:37" pubdate>
-          2023年10月3日 中午
+        <time datetime="2024-01-29 22:01" pubdate>
+          2024年1月29日 晚上
         </time>
       </span>
     
@@ -252,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          996 字
         
       </span>
     
@@ -263,7 +262,7 @@
         
         
         
-          15 分钟
+          9 分钟
         
       </span>
     
@@ -309,28 +308,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Plant Commun. | 甘蓝型油菜功能基因组学研究的模式材料-小芸</h1>
+            <h1 style="display: none">R语言 | 并行运算-foreach和doParallel包</h1>
             
             
               <div class="markdown-body">
                 
-                <p>甘蓝型油菜（<em>Brassica napus</em> L.）是一种在世界范围内广泛种植的重要的油料作物，与模式植物拟南芥同属十字花科。甘蓝型油菜是由白菜和甘蓝在~7,500年前种间杂交加倍后形成的，由于其祖先种白菜和甘蓝在物种形成过程中经历过多次基因组加倍事件，种间杂交加倍后又发生一系列基因保留和丢失事件，因此甘蓝型油菜基因组极其复杂，基因拷贝数高，这些特性极大地阻碍了油菜功能基因组学研究进展。<br>
-2023年9月30日，<em>Plant Communications</em>在线发表了华中农业大学植物科学技术学院洪登峰教授团队和信息学院杨庆勇教授团队以及安徽省农科院作物研究所范志雄研究员团队题为“Xiaoyun, a model accession for functional genomics research in <em>Brassica napus</em>”<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Wang P, Song Y, Xie Z, et al. Xiaoyun, a model accession for functional genomics research in Brassica napus. Plant Commun. Published online September 30, 2023. doi:10.1016/j.xplc.2023.100727](https://doi.org/10.1016/j.xplc.2023.100727)">[1]</span></a></sup>的研究成果。该研究找到一份甘蓝型油菜优良遗传转化材料–小芸，并比较了小芸和Westar的遗传转化效率，研究了小芸早花的遗传机制，组装了小芸的参考基因组并搭建了基因组数据库网站，为油菜功能基因组学研究提供了一个类似拟南芥Columbia生态型的优良模式材料。<br>
-本研究通过对育种材料进行筛选，得到了一份在快速育种条件下生长周期短、株型紧凑但健壮的材料，将其命名为小芸。它从发芽到成熟只需57天，每年可完成6.5个世代。小芸的遗传转化效率很高，与Westar比较，其愈伤组织的再生率为9.68%，转化阳性率为37.50%，明显高于Westar。利用CRISPR/Cas9系统敲除小芸基因组中两个<em>Bna.ER</em>基因，仅用半年可获得T<sub>2</sub>种子，且纯合T<sub>2</sub>代<em>bna.er</em>突变体株高显著降低。QTL定位分析表明，小芸基因组中<em>BnaA2.FT</em>、<em>BnaA2.FLC</em>和<em>BnaC2.FLC</em>等位基因的序列变异共同决定了其早花表型。为促进小芸在油菜遗传学研究中的应用，该团队组装了小芸的参考基因组并搭建基因组数据（BnGDXY，<a target="_blank" rel="noopener" href="https://yanglab.hzau.edu.cn/BnGDXY/%EF%BC%89%E3%80%82">https://yanglab.hzau.edu.cn/BnGDXY/）。</a></p>
-<p><img src="./Figure1.png" srcset="/img/loading.gif" lazyload alt="小芸" title="小芸"></p>
-<p>利用小芸生长周期短、株型紧凑且遗传转化效率高等特点，结合小芸高质量的参考基因组和相关数据库以及该团队先前报道的快速育种平台<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Song Y, Duan X, Wang P, et al. Comprehensive speed breeding: a high-throughput and rapid generation system for long-day crops. Plant Biotechnol J. 2022;20(1):13-15. doi:10.1111/pbi.13726](https://doi.org/10.1111/pbi.13726)">[2]</span></a></sup>，小芸有望成为油菜功能基因组研究的模式材料，在油菜功能基因组学研究中发挥重要作用。同时小芸也可以作为供体材料为油菜早花育种提供花期基因的早花单倍型。该团队致力于小芸的推广应用，将小芸向国内多家研究机构发放，已有其他团队利用该材料取得研究成果并发表<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Geng R, Shan Y, Li L, et al. CRISPR-mediated BnaIDA editing prevents silique shattering, floral organ abscission, and spreading of Sclerotinia sclerotiorum in Brassica napus. Plant Commun. 2022;3(6):100452. doi:10.1016/j.xplc.2022.100452](https://doi.org/10.1016/j.xplc.2022.100452)">[3]</span></a></sup>。</p>
-<!--![示意图](./Figure2.png "示意图")-->
-<figure>
-  <img src="/2023/10/03/20231003-Xiaoyun/Figure2.png" srcset="/img/loading.gif" lazyload alt="Image Alt Text" width="500px">
-  <figcaption>示意图</figcaption>
-</figure>
-<p>华中农业大学洪登峰教授、杨庆勇教授以及安徽省农科院范志雄研究员为论文通讯作者，华中农业大学博士研究生王鹏飞为论文第一作者。华中农业大学杨光圣教授对该项研究进行了指导。该研究得到国家重点研发计划和国家自然科学基金的资助。</p>
-<hr>
-<p class="note note-primary">原文链接</p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.xplc.2023.100727">Wang P, Song Y, Xie Z, et al. Xiaoyun, a model accession for functional genomics research in Brassica napus. Plant Commun. Published online September 30, 2023. doi:10.1016/j.xplc.2023.100727</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://doi.org/10.1111/pbi.13726">Song Y, Duan X, Wang P, et al. Comprehensive speed breeding: a high-throughput and rapid generation system for long-day crops. Plant Biotechnol J. 2022;20(1):13-15. doi:10.1111/pbi.13726</a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.xplc.2022.100452">Geng R, Shan Y, Li L, et al. CRISPR-mediated BnaIDA editing prevents silique shattering, floral organ abscission, and spreading of Sclerotinia sclerotiorum in Brassica napus. Plant Commun. 2022;3(6):100452. doi:10.1016/j.xplc.2022.100452</a>
-<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                <p>在学习R语言的过程中我们大都被告诫过尽量不要使用循环结构处理数据，要尽量进行向量化编程或者使用<code>apply</code>之类的函数。但在实际应用的时候可能像我一样因为R语言编程技术不高或情况太复杂而难以写出高效的代码，再想一想过两天就要年终考核了，而代码中的<code>for</code>循环还在不紧不慢的执行着，想一想因为少了一部分重要结果不能汇报而影响考核评级时，心中难免又产生一丝焦虑。</p>
+<p>但是真的没有机会了吗？或许可以赶紧改成并行运算还能补救。使用<code>foreach</code>和<code>doParallel</code>包可以比较方便地实现循环的并行化，我们使用一个例子对串行运算和并行计算进行比较。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># 串行运算</span><br>system.time<span class="hljs-punctuation">(</span><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-keyword">for</span> <span class="hljs-punctuation">(</span>i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">10</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">&#123;</span><br>    Sys.sleep<span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-punctuation">)</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">)</span><br><span class="hljs-comment">#&gt; 用户  系统  流逝 </span><br><span class="hljs-comment">#&gt; 0.00  0.00 10.22 </span><br></code></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># 并行运算</span><br>library<span class="hljs-punctuation">(</span>foreach<span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>doParallel<span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 设置并行计算的核心数，这里设置为2，可以根据需要调整</span><br>num_cores <span class="hljs-operator">&lt;-</span> 4<br>registerDoParallel<span class="hljs-punctuation">(</span>cores <span class="hljs-operator">=</span> num_cores<span class="hljs-punctuation">)</span><br><br><br>system.time<span class="hljs-punctuation">(</span><span class="hljs-punctuation">&#123;</span><br>  foreach<span class="hljs-punctuation">(</span>i <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">10</span><span class="hljs-punctuation">,</span> .packages <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;dplyr&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;tidyverse&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">%dopar%</span> <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">## 这里的.packages = c(&quot;dplyr&quot;, &quot;tidyverse&quot;)参数只是为了举例说明：通过.packages参数将需要的包传递给并行计算环境，根据实际情况调整</span><br>    Sys.sleep<span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-punctuation">)</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment"># 结束并行计算</span><br>stopImplicitCluster<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><br><br><span class="hljs-comment">#&gt; 用户 系统 流逝 </span><br><span class="hljs-comment">#&gt; 0.00 0.00 4.25 </span><br></code></pre></td></tr></table></figure>
+<p>通过比较上面的代码我们发现，首先在运行时间上使用<code>foreach</code>和<code>doParallel</code>包的并行运算版本耗时更短，其次在将<code>for</code>循环改成<code>foreach</code>循环的难度上并不高，只需要在循环前设置好并行计算核心数并在最后结束并行运算，以及<code>for</code>和<code>foreach</code>地参数上有区别，而在循环内部地代码并不需要修改，整体而言可以很方便的将现有<code>for</code>循环改写成<code>foreach</code>循环。那么到现在又可以愉快的年终冲业绩了。</p>
+
                 
               </div>
             
@@ -348,7 +336,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/" class="category-chain-item">文献解读</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
   
   
 
@@ -363,7 +351,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%94%98%E8%93%9D%E5%9E%8B%E6%B2%B9%E8%8F%9C/">#甘蓝型油菜</a>
+        <a href="/tags/R/">#R</a>
+      
+        <a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/">#并行计算</a>
       
     </div>
   
@@ -375,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Plant Commun. | 甘蓝型油菜功能基因组学研究的模式材料-小芸</div>
-      <div>https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/</div>
+      <div>R语言 | 并行运算-foreach和doParallel包</div>
+      <div>https://laowang2023.cn/2024/01/29/20240129-doParallel/</div>
     </div>
     <div class="license-meta">
       
@@ -388,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月3日</div>
+          <div>2024年1月29日</div>
         </div>
       
       
@@ -420,18 +410,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/07/20231107-easyQTLseq/" title="QTL-seq系列 | 使用easyQTLseq进行QTL-seq分析">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">QTL-seq系列 | 使用easyQTLseq进行QTL-seq分析</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/20/20230920-tomatoCallusSpatialTranscriptomics/" title="PNAS | 番茄愈伤组织芽再生的空间转录组图谱">
-                        <span class="hidden-mobile">PNAS | 番茄愈伤组织芽再生的空间转录组图谱</span>
+                      <a href="/2023/12/22/20231222-JinYongChronicles/" title="金庸武侠编年史">
+                        <span class="hidden-mobile">金庸武侠编年史</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
