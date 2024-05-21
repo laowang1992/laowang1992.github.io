@@ -16,16 +16,16 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="QTL-seq是一种结合混池分离分析（Bulked segregant analysis，BSA）和高通量测序的方法[1]，这种方法对于质量性状 QTL 或数量性状主效 QTL 定位具有省时省力省钱的特点。我们在前面已经介绍过QTL-seq分析的原理以及如何计算QTL-seq中的的置信区间。这里我们介绍如何使用R包 easyQTLseq 进行 QTL-seq 分析。 easyQTLseq 包的一个">
+    <meta name="description" content="window.addEventListener(&#39;DOMContentLoaded&#39;, (event) &#x3D;&gt; {     const codeBlocks &#x3D; document.querySelectorAll(&#39;pre code&#39;);     const maxLines &#x3D; 10; &#x2F;&#x2F; 设置最大行数      codeBlocks.forEach((codeBlock) &#x3D;&gt; {">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QTL-seq系列 | 使用easyQTLseq进行QTL-seq分析">
 <meta property="og:url" content="https://laowang2023.cn/2023/11/07/20231107-easyQTLseq/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="QTL-seq是一种结合混池分离分析（Bulked segregant analysis，BSA）和高通量测序的方法[1]，这种方法对于质量性状 QTL 或数量性状主效 QTL 定位具有省时省力省钱的特点。我们在前面已经介绍过QTL-seq分析的原理以及如何计算QTL-seq中的的置信区间。这里我们介绍如何使用R包 easyQTLseq 进行 QTL-seq 分析。 easyQTLseq 包的一个">
+<meta property="og:description" content="window.addEventListener(&#39;DOMContentLoaded&#39;, (event) &#x3D;&gt; {     const codeBlocks &#x3D; document.querySelectorAll(&#39;pre code&#39;);     const maxLines &#x3D; 10; &#x2F;&#x2F; 设置最大行数      codeBlocks.forEach((codeBlock) &#x3D;&gt; {">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://laowang2023.cn/img/index_banner/20230422-QTLseqMethod.png">
 <meta property="article:published_time" content="2023-11-07T11:57:53.000Z">
-<meta property="article:modified_time" content="2023-12-24T02:40:25.618Z">
+<meta property="article:modified_time" content="2024-05-21T07:06:52.061Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="QTL-seq">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.5k 字
+          8.4k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          63 分钟
+          70 分钟
         
       </span>
     
@@ -317,7 +317,42 @@
             
               <div class="markdown-body">
                 
-                <p>QTL-seq是一种结合混池分离分析（Bulked segregant analysis，BSA）和高通量测序的方法<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Takagi H, Abe A, Yoshida K, et al. QTL-seq: rapid mapping of quantitative trait loci in rice by whole genome resequencing of DNA from two bulked populations. Plant J. 2013;74(1):174-183. doi:10.1111/tpj.12105](https://doi.org/10.1111/tpj.12105)">[1]</span></a></sup>，这种方法对于质量性状 QTL 或数量性状主效 QTL 定位具有省时省力省钱的特点。我们在前面已经介绍过<a href="/2023/04/22/20230422-QTLseqMethod/">QTL-seq分析的原理</a>以及<a href="/2023/04/22/20230422-getQTLseqCI/">如何计算QTL-seq中的的置信区间</a>。这里我们介绍如何使用R包 <a target="_blank" rel="noopener" href="https://github.com/laowang1992/easyQTLseq.git">easyQTLseq</a> 进行 QTL-seq 分析。</p>
+                <script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    const codeBlocks = document.querySelectorAll('pre code');
+    const maxLines = 10; // 设置最大行数
+
+    codeBlocks.forEach((codeBlock) => {
+        const lines = codeBlock.textContent.split('\n').length;
+        if (lines > maxLines) {
+            const button = document.createElement('button');
+            button.textContent = '显示更多';
+            button.classList.add('toggle-button');
+
+            const details = document.createElement('details');
+            details.classList.add('code-details');
+
+            const summary = document.createElement('summary');
+            summary.textContent = '点击展开/折叠';
+
+            const pre = document.createElement('pre');
+            pre.appendChild(codeBlock.cloneNode(true));
+
+            details.appendChild(summary);
+            details.appendChild(pre);
+
+            codeBlock.parentNode.replaceChild(details, codeBlock);
+            details.parentNode.insertBefore(button, details);
+            
+            button.addEventListener('click', () => {
+                details.open = !details.open;
+                button.textContent = details.open ? '显示更少' : '显示更多';
+            });
+        }
+    });
+});
+</script>
+<p>QTL-seq是一种结合混池分离分析（Bulked segregant analysis，BSA）和高通量测序的方法<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Takagi H, Abe A, Yoshida K, et al. QTL-seq: rapid mapping of quantitative trait loci in rice by whole genome resequencing of DNA from two bulked populations. Plant J. 2013;74(1):174-183. doi:10.1111/tpj.12105](https://doi.org/10.1111/tpj.12105)">[1]</span></a></sup>，这种方法对于质量性状 QTL 或数量性状主效 QTL 定位具有省时省力省钱的特点。我们在前面已经介绍过<a href="/2023/04/22/20230422-QTLseqMethod/">QTL-seq分析的原理</a>以及<a href="/2023/04/22/20230422-getQTLseqCI/">如何计算QTL-seq中的的置信区间</a>。这里我们介绍如何使用R包 <a target="_blank" rel="noopener" href="https://github.com/laowang1992/easyQTLseq.git">easyQTLseq</a> 进行 QTL-seq 分析。</p>
 <p>easyQTLseq 包的一个优势是可以灵活处理有无亲本信息、有一个还是两个亲本信息以及亲本是否有参考基因等各种情况，并且可以导出各个计算过程的结果以及生成高质量的图片。</p>
 <h2 id="安装easyQTLseq">安装easyQTLseq</h2>
 <p>easyQTLseq 包在 GitHub 上，使用 <code>devtools</code> 包安装。</p>
@@ -428,7 +463,7 @@
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs R">export_dp<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x_filter<span class="hljs-punctuation">,</span> outPrefix <span class="hljs-operator">=</span> <span class="hljs-string">&quot;outprefix&quot;</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
 <h3 id="滑窗统计计算-ΔSNP-index-和-ED-值">滑窗统计计算 ΔSNP-index 和 ED 值</h3>
 <p>为了减小噪音使结果更加平滑，这里只用滑窗统计的方法来计算 SNP index、ΔSNP index、欧几里得距离（Euclidean Distance, ED）。在这一步，如果存在至少一个亲本的信息或者 call SNP 使用的是其中一个亲本的参考基因组，则 ΔSNP index 和 ED 值可以同时计算，如果没有亲本信息，则只计算 ED 值。同时这一步也会自动在当前目录导出滑窗统计的结果。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs R">x_filter <span class="hljs-operator">&lt;-</span> calc_index_etc<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x_filter<span class="hljs-punctuation">,</span> outPrefix <span class="hljs-operator">=</span> <span class="hljs-string">&quot;outprefix&quot;</span><span class="hljs-punctuation">,</span> <br>                           winSize <span class="hljs-operator">=</span> <span class="hljs-number">2000000</span><span class="hljs-punctuation">,</span>   <span class="hljs-comment"># 滑窗统计的窗口大小</span><br>                           winStep <span class="hljs-operator">=</span> <span class="hljs-number">20000</span>      <span class="hljs-comment"># 滑窗统计的步长</span><br>                           <span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs R">x_filter <span class="hljs-operator">&lt;-</span> calc_index_etc<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x_filter<span class="hljs-punctuation">,</span> outPrefix <span class="hljs-operator">=</span> <span class="hljs-string">&quot;outprefix&quot;</span><span class="hljs-punctuation">,</span> <br>                           winSize <span class="hljs-operator">=</span> <span class="hljs-number">2000000</span><span class="hljs-punctuation">,</span>   <span class="hljs-comment"># 滑窗统计的窗口大小</span><br>                           winStep <span class="hljs-operator">=</span> <span class="hljs-number">200000</span>      <span class="hljs-comment"># 滑窗统计的步长</span><br>                           <span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
 <h3 id="导出图片">导出图片</h3>
 <p>前面使用滑窗统计计算出结果，这一步则将上述计算结果按照染色体位置绘制图片并导出。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs R">export_figure<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x_filter<span class="hljs-punctuation">,</span> <br>              outPrefix <span class="hljs-operator">=</span> <span class="hljs-string">&quot;outprefix&quot;</span><span class="hljs-punctuation">,</span> <br>              targetChr <span class="hljs-operator">=</span> targetChr<span class="hljs-punctuation">,</span>   <span class="hljs-comment"># Target chromosome to be drawn in figures, default is all chromosomes in the data.</span><br>              chrLabel <span class="hljs-operator">=</span> chrLabel<span class="hljs-punctuation">,</span>     <span class="hljs-comment"># The label for chromosome shown in figures, default is chromosome names in the data.</span><br>              minN <span class="hljs-operator">=</span> <span class="hljs-number">20</span><span class="hljs-punctuation">,</span>               <span class="hljs-comment"># Too few SNPs in a window will result in noise, the windows containing SNPs less than minN will be omitted in figures.</span><br>              width <span class="hljs-operator">=</span> <span class="hljs-number">12</span><span class="hljs-punctuation">,</span> height <span class="hljs-operator">=</span> <span class="hljs-number">4</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
