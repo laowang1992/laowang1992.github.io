@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>202426-FusedHiFiReads</title>
+    <link href="/2024/04/26/20240426-FusedHiFiReads/"/>
+    <url>/2024/04/26/20240426-FusedHiFiReads/</url>
+    
+    <content type="html"><![CDATA[<p>三代长读长测序中，ONT 的纳米孔测序在读长方面远胜过 Pacbio 的 SMRT 测序，然而 Pacbio 通过构建 SMRT bell 文库并使用 Circular Consensus Sequencing（CCS）模式对同一个DNA片段进行多次测序产生多条 subreads，然后使用来自同一个DNA片段的subreads进行自我纠错矫正，实现测序质量的极大提升。最新推出的 Revio 系统在通量上是以往的 Sequel IIe 系统的大约 15 倍，可以实现更高通量和更低的测序成本。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>R绘图 | ggrastr：位图矢量图可以兼得</title>
     <link href="/2024/03/15/20240315-ggraster/"/>
     <url>/2024/03/15/20240315-ggraster/</url>

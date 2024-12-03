@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2024-06-07T02:09:46.736Z</updated>
+  <updated>2024-04-30T08:24:32.383Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>202426-FusedHiFiReads</title>
+    <link href="https://laowang2023.cn/2024/04/26/20240426-FusedHiFiReads/"/>
+    <id>https://laowang2023.cn/2024/04/26/20240426-FusedHiFiReads/</id>
+    <published>2024-04-26T14:09:02.000Z</published>
+    <updated>2024-04-30T08:24:32.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;三代长读长测序中，ONT 的纳米孔测序在读长方面远胜过 Pacbio 的 SMRT 测序，然而 Pacbio 通过构建 SMRT bell 文库并使用 Circular Consensus Sequencing（CCS）模式对同一个DNA片段进行多次测序产生多条</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>R绘图 | ggrastr：位图矢量图可以兼得</title>
@@ -553,27 +574,6 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <category term="eQTL" scheme="https://laowang2023.cn/tags/eQTL/"/>
     
     <category term="驯化" scheme="https://laowang2023.cn/tags/%E9%A9%AF%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇博客</title>
-    <link href="https://laowang2023.cn/2023/03/13/20230313-firstArticle/"/>
-    <id>https://laowang2023.cn/2023/03/13/20230313-firstArticle/</id>
-    <published>2023-03-13T13:44:44.000Z</published>
-    <updated>2023-12-08T08:52:34.904Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
