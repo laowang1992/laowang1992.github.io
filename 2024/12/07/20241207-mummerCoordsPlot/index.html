@@ -16,25 +16,27 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="R语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。">
+    <meta name="description" content="The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics. ——Marçais, Guillaume et al., 2018, PLoS computational biolog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R绘图 | ggrastr：位图矢量图可以兼得">
-<meta property="og:url" content="https://laowang2023.cn/2024/03/15/20240315-ggraster/index.html">
+<meta property="og:title" content="R绘图 | mummer比对可视化">
+<meta property="og:url" content="https://laowang2023.cn/2024/12/07/20241207-mummerCoordsPlot/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="R语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。">
+<meta property="og:description" content="The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics. ——Marçais, Guillaume et al., 2018, PLoS computational biolog">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://laowang2023.cn/2024/03/15/20240315-ggraster/rastr.svg">
-<meta property="article:published_time" content="2024-03-15T13:37:51.000Z">
-<meta property="article:modified_time" content="2024-06-07T02:09:46.736Z">
+<meta property="og:image" content="https://laowang2023.cn/img/index_banner/20241207-mummerCoordsPlot.png">
+<meta property="article:published_time" content="2024-12-07T01:25:37.000Z">
+<meta property="article:modified_time" content="2024-12-07T10:34:55.422Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="绘图">
+<meta property="article:tag" content="mummer">
+<meta property="article:tag" content="可视化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://laowang2023.cn/2024/03/15/20240315-ggraster/rastr.svg">
+<meta name="twitter:image" content="https://laowang2023.cn/img/index_banner/20241207-mummerCoordsPlot.png">
   
   
   
-  <title>R绘图 | ggrastr：位图矢量图可以兼得 - 请叫我老王</title>
+  <title>R绘图 | mummer比对可视化 - 请叫我老王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,13 +226,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/2024/12/07/20241207-mummerCoordsPlot/example.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="R绘图 | ggrastr：位图矢量图可以兼得"></span>
+            <span id="subtitle" data-typed-text="R绘图 | mummer比对可视化"></span>
           
         </div>
 
@@ -241,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-15 21:37" pubdate>
-          2024年3月15日 晚上
+        <time datetime="2024-12-07 09:25" pubdate>
+          2024年12月7日 上午
         </time>
       </span>
     
@@ -253,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          3.4k 字
         
       </span>
     
@@ -264,7 +266,7 @@
         
         
         
-          10 分钟
+          29 分钟
         
       </span>
     
@@ -310,27 +312,48 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">R绘图 | ggrastr：位图矢量图可以兼得</h1>
+            <h1 style="display: none">R绘图 | mummer比对可视化</h1>
             
             
               <div class="markdown-body">
                 
-                <p>R语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。Adobe illustrator作为专业的矢量图处理工具当然可以实现，但是生成的图片还要打开二次编辑还是会令人烦恼，有没有办法在用R语言作图的过程中就完成这个处理呢？那就是今天要讲的R包<strong>ggraster</strong>了。</p>
-<p><img src="./ManhattanPlot.JPG" srcset="/img/loading.gif" lazyload alt="曼哈顿图，Hu et al. 2022" title="Hu et al. 2022"></p>
-<h2 id="安装">安装</h2>
-<p>从<a target="_blank" rel="noopener" href="https://cran.r-project.org/package=ggrastr">CRAN</a>或<a target="_blank" rel="noopener" href="https://github.com/VPetukhov/ggrastr.git">GitHub</a>都可以安装。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># from CRAN</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;ggrastr&#x27;</span><span class="hljs-punctuation">)</span><br><span class="hljs-comment"># or from github</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;devtools&#x27;</span><span class="hljs-punctuation">)</span><br>devtools<span class="hljs-operator">::</span>install_github<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;VPetukhov/ggrastr&#x27;</span><span class="hljs-punctuation">,</span> build_vignettes <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
-<h2 id="使用">使用</h2>
-<p>与默认的ggplot作图相比，使用<code>ggraster</code>栅格化图层并不会有太多改动。仅仅把需要栅格化的图层代码放到<code>rasterise()</code>函数中就可以。</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># library package</span><br>library<span class="hljs-punctuation">(</span>ggplot2<span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>ggrastr<span class="hljs-punctuation">)</span><br><br>ggplot<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  rasterise<span class="hljs-punctuation">(</span>geom_point<span class="hljs-punctuation">(</span>aes<span class="hljs-punctuation">(</span>carat<span class="hljs-punctuation">,</span> price<span class="hljs-punctuation">,</span> colour <span class="hljs-operator">=</span> cut<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> data<span class="hljs-operator">=</span>diamonds<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> dpi<span class="hljs-operator">=</span><span class="hljs-number">30</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span><br>  geom_point<span class="hljs-punctuation">(</span>aes<span class="hljs-punctuation">(</span>x<span class="hljs-operator">=</span>runif<span class="hljs-punctuation">(</span><span class="hljs-number">20</span><span class="hljs-punctuation">,</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> y<span class="hljs-operator">=</span>runif<span class="hljs-punctuation">(</span><span class="hljs-number">20</span><span class="hljs-punctuation">,</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-number">20000</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> size<span class="hljs-operator">=</span><span class="hljs-number">10</span><span class="hljs-punctuation">,</span> color<span class="hljs-operator">=</span><span class="hljs-string">&quot;black&quot;</span><span class="hljs-punctuation">,</span> shape<span class="hljs-operator">=</span><span class="hljs-number">8</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
-<p><img src="./rastr.svg" srcset="/img/loading.gif" lazyload alt="部分栅格化" title="部分栅格化"></p>
-<p>上述代码将第一个<code>geom_point</code>生成的圆点图层栅格化，并设置分辨率是30 dpi，而第二个<code>geom_point</code>生成的八角星的点和坐标轴等依然保持矢量图的状态。</p>
-<p>最后感谢<a target="_blank" rel="noopener" href="https://d.cosx.org/u/meeeeeeeeo">@meeeeeeeeo</a>在统计之都论坛的<a target="_blank" rel="noopener" href="https://d.cosx.org/d/425089-ryu-yan-dao-chu-wei-tu-he-shi-liang-tu-jie-he-de-tu-pian">回复与分享</a>。</p>
-<p class="note note-primary">参考</p>
-<p><a target="_blank" rel="noopener" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/VPetukhov/ggrastr/main/doc/Raster_geoms.html">ggraster使用说明</a></p>
-<p class="note note-primary">曼哈顿图来源</p>
-<p><a target="_blank" rel="noopener" href="https://doi.org/10.1038/s41588-022-01055-6">Hu J, Chen B, Zhao J, et al. Genomic selection and genetic architecture of agronomic traits during modern rapeseed breeding. Nat Genet. 2022;54(5):694-704. doi:10.1038/s41588-022-01055-6</a></p>
-<p><img src="https://images.pexels.com/photos/1322138/pexels-photo-1322138.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" srcset="/img/loading.gif" lazyload alt="图片与主题无关" title="图片与主题无关"></p>
+                <blockquote>
+<p>The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics.<br>
+——<a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pcbi.1005944">Marçais, Guillaume et al., 2018, PLoS computational biology</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/mummer4/mummer.git">mummer</a> 是基因组序列比对的常用工具之一。对比对结果进行可视化可以让我们直观的看到序列之间的共线性区域或结构变异，使用 mummer 工具包中自带的 mummerplot 可以方便的对比对结果可视化，但是其颜值可能并不突出。<br>
+<a target="_blank" rel="noopener" href="https://github.com/tpoorten/dotPlotly.git">dotPlotly</a> 中的 mummerCoordsDotPlotly.R 也是一个可以对 mummer 比对结果进行可视化的优秀工具，并且它在一些基因组研究的文章中被使用。但是这个软件的有些方便不太符合我的需求：</p>
+<ul>
+<li>软件默认按照 query 染色体的长度进行排序，而我更希望按照染色体在基因组中的顺序排序；</li>
+<li>当它将 identity 按照颜色进行展示时使用了<span style="color:yellow">黄色</span>，在白色背景中并不明显，改用<span style="color:red">红色</span>或<span style="color:blue">蓝色</span>可以更加醒目；</li>
+<li>不能用不同颜色展示不同的比对方向；</li>
+<li>图片中染色体 ID 的位置并没有出现在染色体的中间而是在末尾；</li>
+<li>不能自定义图片显示出来的 ID，例如有的染色体中的 ID 像是 <code>chromosome1</code> 这种超长的形式，而你只想写成 <code>chr1</code> 这样的简短形式；</li>
+</ul>
+<p>而今天介绍一个更符合我需求的 <a target="_blank" rel="noopener" href="https://github.com/mummer4/mummer.git">mummer</a> 可视化工具 <strong>mummerCoordsPlot.R</strong>。这个工具实际上是对 mummerCoordsDotPlotly.R 的模仿，只是对上面描述的一些问题进行了修改，而且这个工具的作者更习惯于使用 <code>tidyverse</code>，所以大量使用 <code>tidyverse</code> 语法写了这个工具。</p>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="工具下载">工具下载</h3>
+<p>该工具可以在在 github 上下载，下载后是一个叫 SomeScript 的文件夹，里面有 mummerCoordsPlot.R 这个工具，并且有一个 example_data 的子文件夹，里面有演示用的相应数据。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">下载</span><br>git clone https://github.com/laowang1992/SomeScript.git<br></code></pre></td></tr></table></figure>
+<h3 id="数据下载">数据下载</h3>
+<p>为了演示 mummerCoordsPlot.R 的使用方法，我们首先在<a target="_blank" rel="noopener" href="https://www.cncb.ac.cn/">国家生物信息中心</a>下载<a target="_blank" rel="noopener" href="https://ngdc.cncb.ac.cn/gwh/search/advanced/result?search_category=&amp;search_term=&amp;source=0&amp;query_box=PRJCA019480">两个白菜（<em>Brassica rapa</em> L.）T2T 的基因组</a>，每个基因组中都包括 <strong>10 条核基因组染色体</strong>以及<strong>叶绿体</strong>和<strong>线粒体</strong>基因组。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">两个基因组分别对应 AiJiaoBai 和 HongShanCaiTai 这两个品种</span><br>wget https://download.cncb.ac.cn/gwh/Plants/Brassica_rapa_subsp._chinensis_AiJiaoBai_GWHERGL00000000/GWHERGL00000000.genome.fasta.gz<br>wget https://download.cncb.ac.cn/gwh/Plants/Brassica_rapa_var._purpuraria_HongShanCaiTai_GWHERGM00000000/GWHERGM00000000.genome.fasta.gz<br>gunzip GWHERGL00000000.genome.fasta.gz GWHERGM00000000.genome.fasta.gz<br></code></pre></td></tr></table></figure>
+<h3 id="数据处理">数据处理</h3>
+<p>下载并解压两个基因组以后，使用 mummer 中的 nucmer 工具进行比对，进而用 delta-filter 工具过滤比对结果，最后使用 show-coords 工具将 delta 格式转换为 coords 格式。不过在前面工具下载那一步的已经同时下载了一个比对好的 coords 文件（<code>./SomeScript/example_data/mummerCoordsPlot/input/example.coords</code>），其实可以省略这一步。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">设置 PATH 变量（optional）</span><br>PATH=/path/to/mummer-4.0.0rc1:$PATH<br>export PATH<br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置变量</span><br>ref=/path/to/GWHERGL00000000.genome.fasta<br>query=/path/to/GWHERGM00000000.genome.fasta<br>prefix=example<br>thread=10<br><span class="hljs-meta prompt_"># </span><span class="language-bash">比对</span><br>nucmer --mum --prefix=$prefix -g 1000 -c 90 -l 40 -t $thread $ref $query &gt; nucmer.log<br>delta-filter -r -q $prefix.delta &gt; $prefix.filter<br>show-coords $prefix.filter &gt; $prefix.coords<br></code></pre></td></tr></table></figure>
+<h2 id="比对结果可视化">比对结果可视化</h2>
+<p>首先准备一个 reference 和 query 的染色体 ID 的文件，第一列是下载的基因组中的 ID 形式，正如下面看到的那样，上传到数据库的基因组染色体 ID 命名不符合我们的需要，因此第二列对应的位置上是我们实际想展示的 ID 形式。并且下载的基因组中还有还有两个细胞器基因组序列，我们并不想展示，因此在这个文件中只指定了 10 条核基因组染色体。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs text">GWHERGL00000001	A01<br>GWHERGL00000002	A02<br>GWHERGL00000003	A03<br>GWHERGL00000004	A04<br>GWHERGL00000005	A05<br>GWHERGL00000006	A06<br>GWHERGL00000007	A07<br>GWHERGL00000008	A08<br>GWHERGL00000009	A09<br>GWHERGL00000010	A10<br></code></pre></td></tr></table></figure>
+<p>另一个是准备染色体长度的文件，同样是两列，染色体 ID 和 对应长度。但实际上我们一般并不需要这个文件，默认将比对结果中每个染色体最大的 alignment 的位置作为染色体长度。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">GWHERGL00000001	59205763<br>GWHERGL00000002	39005548<br>GWHERGL00000003	44769757<br>GWHERGL00000004	28346059<br>GWHERGL00000005	46671336<br>...	...<br></code></pre></td></tr></table></figure>
+<p>准备好所有输入文件以后就可以运行 <code>mummerCoordsPlot.R</code> 并得到比对可视化结果。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">根据比对方向设定颜色</span><br>mummerCoordsPlot.R \<br>    -i example.coords \               # 输入文件名<br>    -o example.direction \            # 输出文件名前缀<br>    -r AiJiaoBai -q HongShanCaiTai \  # ref 和 query 的名字<br>    -R refIDs.txt -Q queryIDs.txt \   # 需要展示的 ref 和 query 的染色体 ID<br>    -l refLen.txt -L queryLen.txt \   # ref 和 query 染色体的长度<br>    -c direction \                    # 根据比对的方向指定颜色，区分出反向互补<br>    -W 8 -H 7                         # 输出图片的长宽（inches）<br><span class="hljs-meta prompt_"># </span><span class="language-bash">根据 identity 设定颜色</span><br>mummerCoordsPlot.R \<br>    -i example.coords \               # 输入文件名<br>    -o example.identity \             # 输出文件名前缀<br>    -r AiJiaoBai -q HongShanCaiTai \  # ref 和 query 的名字<br>    -R refIDs.txt -Q queryIDs.txt \   # 需要展示的 ref 和 query 的染色体 ID<br>    -l refLen.txt -L queryLen.txt \   # ref 和 query 染色体的长度<br>    -c identity \                     # 根据比对结果的加权平均 identity 指定颜色<br>    -W 8 -H 7                         # 输出图片的长宽（inches）<br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用默认参数</span><br>mummerCoordsPlot.R \<br>    -i example.coords \               # 输入文件名<br>    -o example.default                #输出文件名前缀<br></code></pre></td></tr></table></figure>
+<p><img src="./example.png" srcset="/img/loading.gif" lazyload alt="从左到右依次是根据 direction、identity 指定颜色以及 default" title="从左到右依次是根据 direction、identity 指定颜色以及 default"></p>
+<p class="note note-primary">数据来源</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.scib.2024.03.030">Zhou, Yifan et al. “The complexity of structural variations in Brassica rapa revealed by assembly of two complete T2T genomes.” Science bulletin vol. 69,15 (2024): 2346-2351. doi:10.1016/j.scib.2024.03.030</a></p>
+</blockquote>
+<p><img src="https://images.pexels.com/photos/20766120/pexels-photo-20766120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" srcset="/img/loading.gif" lazyload alt="图片与主题无关" title="图片与主题无关"></p>
 
                 
               </div>
@@ -368,6 +391,10 @@
       
         <a href="/tags/%E7%BB%98%E5%9B%BE/">#绘图</a>
       
+        <a href="/tags/mummer/">#mummer</a>
+      
+        <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">#可视化</a>
+      
     </div>
   
 </div>
@@ -378,8 +405,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>R绘图 | ggrastr：位图矢量图可以兼得</div>
-      <div>https://laowang2023.cn/2024/03/15/20240315-ggraster/</div>
+      <div>R绘图 | mummer比对可视化</div>
+      <div>https://laowang2023.cn/2024/12/07/20241207-mummerCoordsPlot/</div>
     </div>
     <div class="license-meta">
       
@@ -391,7 +418,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月15日</div>
+          <div>2024年12月7日</div>
         </div>
       
       
@@ -423,18 +450,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/07/20241207-mummerCoordsPlot/" title="R绘图 | mummer比对可视化">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">R绘图 | mummer比对可视化</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/06/20240206-HZAUsnow/" title="春节前的一场大雪">
-                        <span class="hidden-mobile">春节前的一场大雪</span>
+                      <a href="/2024/03/15/20240315-ggraster/" title="R绘图 | ggrastr：位图矢量图可以兼得">
+                        <span class="hidden-mobile">R绘图 | ggrastr：位图矢量图可以兼得</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
