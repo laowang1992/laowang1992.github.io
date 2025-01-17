@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量</title>
+    <link href="/2025/01/16/20250116-DYSOC1/"/>
+    <url>/2025/01/16/20250116-DYSOC1/</url>
+    
+    <content type="html"><![CDATA[<p>甘蓝型油菜（<em>Brassica napus</em> L.）是重要的油料作物之一。已有研究表明，黄籽油菜比黑籽油菜有更高的含油量，同时具有更低木质纤维素含量、皮壳率以及原花青素含量，其生产的菜籽油在市场上更受欢迎。然而具有显性黄籽表型等位基因的种质资源十分稀少，阻碍了黄籽油菜品种的选育。<br>2025年1月3日，华中科技大学<strong>栗茂腾</strong>教授和华中农业大学<strong>张椿雨</strong>教授为共同通讯作者在 Science Advance 期刊发表了题为 “A rare dominant allele <em>DYSOC1</em> determines seed coat color and improves seed oil content in <em>Brassica napus</em>” 的研究论文。在研究克隆了黄籽油菜品系 N53-2 中可以同时影响种皮颜色以及提高种子含油量的显性等位基因 <em>DYSOC1</em>（<em>dominant gene of yellow seed coat color and improved seed oil content 1</em>）。</p><!--![eQTL](./Figure2.png "eQTL")--><figure>  <img src="/2025/01/16/20250116-DYSOC1/index.jpg" alt="Image Alt Text" width="600px">  <figcaption>eQTL</figcaption></figure><p>该研究对黄籽油菜 N53-2 与黑籽油菜 Ken-C8 为亲本构建的 KN DH 群体进行转录组测序并进行 eQTL 分析，鉴定到 25 个 trans-eQTL 热点区域，其中位于 chrA09 上的 eQTL 热点区域和种子含油量、木质纤维素含量以及种皮颜色的 QTL 共定位。进一步进行精细定位并结合表达量分析和序列变异分析，鉴定到一个候选基因 <em>BnaA09g44670D</em>（<em>DYSOC1</em>）。该基因在 N53-2 中的等位基因发生移码突变并包含了一个 Skp1 结构域。<br>通过互补实验转基因互补实验和基因敲除实验对 <em>DYSOC1</em> 基因功能进行验证。转入 <em>DYSOC1</em> 基因的 Ken-C8 和 J9709 均表现为种皮变黄、含油量增加以及木质纤维素和皮壳率显著下降，敲除 N53-2 的 <em>DYSOC1</em> 基因则使其表现出相反的表型。将 N53-2 与 ZS11 进行杂交构建 F2 群体并考察表型发现，包含 <em>DYSOC1</em> 基因的纯合和杂合个体含油量显著上升，表明该基因在油菜高含油量育种中具有应用潜力。转录组和代谢组学分析表明，<em>DYSOC1</em> 基因下调苯丙素和类黄酮的生物合成途径，限制原花青素和木质素单体的合成。进化分析表明 <em>DYSOC1</em> 是一个在芸薹属中演化的孤儿基因，其仅在甘蓝型油菜和祖先种 （<em>B. rapa</em> 和 <em>B. oleracea</em>）存在同源基因。在甘蓝型油菜自然群体中 <em>DYSOC1</em> 为稀有单倍型，且与黄籽、高含油量和低木质纤维素含量等表型相关联。</p><p><img src="./transgenic.jpg" alt="DYSOC1 功能验证" title="DYSOC1 功能验证"></p><p>通过杂交育种可以将 <em>DYSOC1</em> 导入其他黑籽油菜中从而提高产油量，并且不会对产量、株型等其他农艺性状产生影响。<em>DYSOC1</em> 等位基因在油菜自然群体中十分稀有进一步突出其应用潜力。因此，未来 <em>DYSOC1</em> 的广泛应用有希望大幅提高菜籽油产量。</p><p><img src="./banner.JPG" alt="育种策略示意图" title="育种策略示意图"></p><hr><p class="note note-primary">原文链接</p><p><a href="https://doi.org/10.1126/sciadv.ads7620">Li H, Wu M, Chao H, et al. A rare dominant allele DYSOC1 determines seed coat color and improves seed oil content in Brassica napus. Sci Adv. 2025;11(1):eads7620. doi:10.1126/sciadv.ads7620</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>文献解读</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>eQTL</tag>
+      
+      <tag>甘蓝型油菜</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>R绘图 | mummer比对可视化</title>
     <link href="/2024/12/07/20241207-mummerCoordsPlot/"/>
     <url>/2024/12/07/20241207-mummerCoordsPlot/</url>

@@ -16,27 +16,25 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics. ——Marçais, Guillaume et al., 2018, PLoS computational biolog">
+    <meta name="description" content="甘蓝型油菜（Brassica napus L.）是重要的油料作物之一。已有研究表明，黄籽油菜比黑籽油菜有更高的含油量，同时具有更低木质纤维素含量、皮壳率以及原花青素含量，其生产的菜籽油在市场上更受欢迎。然而具有显性黄籽表型等位基因的种质资源十分稀少，阻碍了黄籽油菜品种的选育。 2025年1月3日，华中科技大学栗茂腾教授和华中农业大学张椿雨教授为共同通讯作者在 Science Advance 期刊发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="R绘图 | mummer比对可视化">
-<meta property="og:url" content="https://laowang2023.cn/2024/12/07/20241207-mummerCoordsPlot/index.html">
+<meta property="og:title" content="Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量">
+<meta property="og:url" content="https://laowang2023.cn/2025/01/16/20250116-DYSOC1/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics. ——Marçais, Guillaume et al., 2018, PLoS computational biolog">
+<meta property="og:description" content="甘蓝型油菜（Brassica napus L.）是重要的油料作物之一。已有研究表明，黄籽油菜比黑籽油菜有更高的含油量，同时具有更低木质纤维素含量、皮壳率以及原花青素含量，其生产的菜籽油在市场上更受欢迎。然而具有显性黄籽表型等位基因的种质资源十分稀少，阻碍了黄籽油菜品种的选育。 2025年1月3日，华中科技大学栗茂腾教授和华中农业大学张椿雨教授为共同通讯作者在 Science Advance 期刊发">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://laowang2023.cn/img/index_banner/20241207-mummerCoordsPlot.png">
-<meta property="article:published_time" content="2024-12-07T01:25:37.000Z">
-<meta property="article:modified_time" content="2024-12-08T13:29:34.516Z">
+<meta property="og:image" content="https://laowang2023.cn/2025/01/16/20250116-DYSOC1/index.jpg">
+<meta property="article:published_time" content="2025-01-16T07:12:52.000Z">
+<meta property="article:modified_time" content="2025-01-17T06:35:17.214Z">
 <meta property="article:author" content="老王">
-<meta property="article:tag" content="R">
-<meta property="article:tag" content="绘图">
-<meta property="article:tag" content="mummer">
-<meta property="article:tag" content="可视化">
+<meta property="article:tag" content="eQTL">
+<meta property="article:tag" content="甘蓝型油菜">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://laowang2023.cn/img/index_banner/20241207-mummerCoordsPlot.png">
+<meta name="twitter:image" content="https://laowang2023.cn/2025/01/16/20250116-DYSOC1/index.jpg">
   
   
   
-  <title>R绘图 | mummer比对可视化 - 请叫我老王</title>
+  <title>Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量 - 请叫我老王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -226,13 +224,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/2024/12/07/20241207-mummerCoordsPlot/example.png') no-repeat center center; background-size: cover;">
+     style="background: url('/2025/01/16/20250116-DYSOC1/banner.JPG') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="R绘图 | mummer比对可视化"></span>
+            <span id="subtitle" data-typed-text="Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量"></span>
           
         </div>
 
@@ -243,8 +241,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-07 09:25" pubdate>
-          2024年12月7日 上午
+        <time datetime="2025-01-16 15:12" pubdate>
+          2025年1月16日 下午
         </time>
       </span>
     
@@ -255,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.5k 字
+          1.3k 字
         
       </span>
     
@@ -266,7 +264,7 @@
         
         
         
-          30 分钟
+          11 分钟
         
       </span>
     
@@ -312,48 +310,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">R绘图 | mummer比对可视化</h1>
+            <h1 style="display: none">Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics.<br>
-——<a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pcbi.1005944">Marçais, Guillaume et al., 2018, PLoS computational biology</a></p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/mummer4/mummer.git">mummer</a> 是基因组序列比对的常用工具之一。对比对结果进行可视化可以让我们直观的看到序列之间的共线性区域或结构变异，使用 mummer 工具包中自带的 mummerplot 可以方便的对比对结果可视化，但是其颜值可能并不突出。<br>
-<a target="_blank" rel="noopener" href="https://github.com/tpoorten/dotPlotly.git">dotPlotly</a> 中的 mummerCoordsDotPlotly.R 也是一个可以对 mummer 比对结果进行可视化的优秀工具，并且它在一些基因组研究的文章中被使用。但是这个软件的有些方便不太符合我的需求：</p>
-<ul>
-<li>软件默认按照 query 染色体的长度进行排序，而我更希望按照染色体在基因组中的顺序排序；</li>
-<li>当它将 identity 按照颜色进行展示时使用了<span style="color:yellow">黄色</span>，在白色背景中并不明显，改用<span style="color:red">红色</span>或<span style="color:blue">蓝色</span>可以更加醒目；</li>
-<li>不能用不同颜色展示不同的比对方向；</li>
-<li>图片中染色体 ID 的位置并没有出现在染色体的中间而是在末尾；</li>
-<li>不能自定义图片显示出来的 ID，例如有的染色体中的 ID 像是 <code>chromosome1</code> 这种超长的形式，而你只想写成 <code>chr1</code> 这样的简短形式；</li>
-</ul>
-<p>而今天介绍一个更符合我需求的 <a target="_blank" rel="noopener" href="https://github.com/mummer4/mummer.git">mummer</a> 可视化工具 <strong>mummerCoordsPlot.R</strong>。这个工具实际上是对 mummerCoordsDotPlotly.R 的模仿，只是对上面描述的一些问题进行了修改，而且这个工具的作者更习惯于使用 <code>tidyverse</code>，所以大量使用 <code>tidyverse</code> 语法写了这个工具。</p>
-<h2 id="使用方法">使用方法</h2>
-<h3 id="工具下载">工具下载</h3>
-<p>该工具可以在在 github 上下载，下载后是一个叫 SomeScript 的文件夹，里面有 mummerCoordsPlot.R 这个工具，并且有一个 example_data 的子文件夹，里面有演示用的相应数据。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">下载</span><br>git clone https://github.com/laowang1992/SomeScript.git<br></code></pre></td></tr></table></figure>
-<h3 id="数据下载">数据下载</h3>
-<p>为了演示 mummerCoordsPlot.R 的使用方法，我们首先在<a target="_blank" rel="noopener" href="https://www.cncb.ac.cn/">国家生物信息中心</a>下载<a target="_blank" rel="noopener" href="https://ngdc.cncb.ac.cn/gwh/search/advanced/result?search_category=&amp;search_term=&amp;source=0&amp;query_box=PRJCA019480">两个白菜（<em>Brassica rapa</em> L.）T2T 的基因组</a>，每个基因组中都包括 <strong>10 条核基因组染色体</strong>以及<strong>叶绿体</strong>和<strong>线粒体</strong>基因组。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">两个基因组分别对应 AiJiaoBai 和 HongShanCaiTai 这两个品种</span><br>wget https://download.cncb.ac.cn/gwh/Plants/Brassica_rapa_subsp._chinensis_AiJiaoBai_GWHERGL00000000/GWHERGL00000000.genome.fasta.gz<br>wget https://download.cncb.ac.cn/gwh/Plants/Brassica_rapa_var._purpuraria_HongShanCaiTai_GWHERGM00000000/GWHERGM00000000.genome.fasta.gz<br>gunzip GWHERGL00000000.genome.fasta.gz GWHERGM00000000.genome.fasta.gz<br></code></pre></td></tr></table></figure>
-<h3 id="数据处理">数据处理</h3>
-<p>下载并解压两个基因组以后，使用 mummer 中的 nucmer 工具进行比对，进而用 delta-filter 工具过滤比对结果，最后使用 show-coords 工具将 delta 格式转换为 coords 格式。不过在前面工具下载那一步的已经同时下载了一个比对好的 coords 文件（<code>./SomeScript/example_data/mummerCoordsPlot/input/example.coords</code>），其实可以省略这一步。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">设置 PATH 变量（optional）</span><br>PATH=/path/to/mummer-4.0.0rc1:$PATH<br>export PATH<br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置变量</span><br>ref=/path/to/GWHERGL00000000.genome.fasta<br>query=/path/to/GWHERGM00000000.genome.fasta<br>prefix=example<br>thread=10<br><span class="hljs-meta prompt_"># </span><span class="language-bash">比对</span><br>nucmer --mum --prefix=$prefix -g 1000 -c 90 -l 40 -t $thread $ref $query &gt; nucmer.log<br>delta-filter -r -q $prefix.delta &gt; $prefix.filter<br>show-coords $prefix.filter &gt; $prefix.coords<br></code></pre></td></tr></table></figure>
-<h2 id="比对结果可视化">比对结果可视化</h2>
-<p>首先准备一个 reference 和 query 的染色体 ID 的文件，第一列是下载的基因组中的 ID 形式，正如下面看到的那样，上传到数据库的基因组染色体 ID 命名不符合我们的需要，因此第二列对应的位置上是我们实际想展示的 ID 形式。并且下载的基因组中还有还有两个细胞器基因组序列，我们并不想展示，因此在这个文件中只指定了 10 条核基因组染色体。当然，准备这个文件有点麻烦，也可以在命令行参数只当染色体，只需要在同样的位置将文件名替换成类似“GWHERGL00000001:A01,GWHERGL00000002:A02:GWHERGL00000003:A03”这样的字符串就可以。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs text">GWHERGL00000001	A01<br>GWHERGL00000002	A02<br>GWHERGL00000003	A03<br>GWHERGL00000004	A04<br>GWHERGL00000005	A05<br>GWHERGL00000006	A06<br>GWHERGL00000007	A07<br>GWHERGL00000008	A08<br>GWHERGL00000009	A09<br>GWHERGL00000010	A10<br></code></pre></td></tr></table></figure>
-<p>另一个是准备染色体长度的文件，同样是两列，染色体 ID 和 对应长度。但实际上我们一般并不需要这个文件，默认将比对结果中每个染色体最大的 alignment 的位置作为染色体长度。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">GWHERGL00000001	59205763<br>GWHERGL00000002	39005548<br>GWHERGL00000003	44769757<br>GWHERGL00000004	28346059<br>GWHERGL00000005	46671336<br>...	...<br></code></pre></td></tr></table></figure>
-<p>准备好所有输入文件以后就可以运行 <code>mummerCoordsPlot.R</code> 并得到比对可视化结果。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">根据比对方向设定颜色</span><br>mummerCoordsPlot.R \<br>    -i example.coords \               # 输入文件名<br>    -o example.direction \            # 输出文件名前缀<br>    -r AiJiaoBai -q HongShanCaiTai \  # ref 和 query 的名字<br>    -R refIDs.txt -Q queryIDs.txt \   # 需要展示的 ref 和 query 的染色体 ID<br>    -l refLen.txt -L queryLen.txt \   # ref 和 query 染色体的长度<br>    -c direction \                    # 根据比对的方向指定颜色，区分出反向互补<br>    -W 8 -H 7                         # 输出图片的长宽（inches）<br><span class="hljs-meta prompt_"># </span><span class="language-bash">根据 identity 设定颜色</span><br>mummerCoordsPlot.R \<br>    -i example.coords \               # 输入文件名<br>    -o example.identity \             # 输出文件名前缀<br>    -r AiJiaoBai -q HongShanCaiTai \  # ref 和 query 的名字<br>    -R refIDs.txt -Q queryIDs.txt \   # 需要展示的 ref 和 query 的染色体 ID<br>    -l refLen.txt -L queryLen.txt \   # ref 和 query 染色体的长度<br>    -c identity \                     # 根据比对结果的加权平均 identity 指定颜色<br>    -W 8 -H 7                         # 输出图片的长宽（inches）<br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用默认参数</span><br>mummerCoordsPlot.R \<br>    -i example.coords \               # 输入文件名<br>    -o example.default                #输出文件名前缀<br></code></pre></td></tr></table></figure>
-<p><img src="./example.png" srcset="/img/loading.gif" lazyload alt="从左到右依次是根据 direction、identity 指定颜色以及 default" title="从左到右依次是根据 direction、identity 指定颜色以及 default"></p>
-<p class="note note-primary">数据来源</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.scib.2024.03.030">Zhou, Yifan et al. “The complexity of structural variations in Brassica rapa revealed by assembly of two complete T2T genomes.” Science bulletin vol. 69,15 (2024): 2346-2351. doi:10.1016/j.scib.2024.03.030</a></p>
-</blockquote>
-<p><img src="https://images.pexels.com/photos/20766120/pexels-photo-20766120.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" srcset="/img/loading.gif" lazyload alt="图片与主题无关" title="图片与主题无关"></p>
+                <p>甘蓝型油菜（<em>Brassica napus</em> L.）是重要的油料作物之一。已有研究表明，黄籽油菜比黑籽油菜有更高的含油量，同时具有更低木质纤维素含量、皮壳率以及原花青素含量，其生产的菜籽油在市场上更受欢迎。然而具有显性黄籽表型等位基因的种质资源十分稀少，阻碍了黄籽油菜品种的选育。<br>
+2025年1月3日，华中科技大学<strong>栗茂腾</strong>教授和华中农业大学<strong>张椿雨</strong>教授为共同通讯作者在 Science Advance 期刊发表了题为 “A rare dominant allele <em>DYSOC1</em> determines seed coat color and improves seed oil content in <em>Brassica napus</em>” 的研究论文。在研究克隆了黄籽油菜品系 N53-2 中可以同时影响种皮颜色以及提高种子含油量的显性等位基因 <em>DYSOC1</em>（<em>dominant gene of yellow seed coat color and improved seed oil content 1</em>）。</p>
+<!--![eQTL](./Figure2.png "eQTL")-->
+<figure>
+  <img src="/2025/01/16/20250116-DYSOC1/index.jpg" srcset="/img/loading.gif" lazyload alt="Image Alt Text" width="600px">
+  <figcaption>eQTL</figcaption>
+</figure>
+<p>该研究对黄籽油菜 N53-2 与黑籽油菜 Ken-C8 为亲本构建的 KN DH 群体进行转录组测序并进行 eQTL 分析，鉴定到 25 个 trans-eQTL 热点区域，其中位于 chrA09 上的 eQTL 热点区域和种子含油量、木质纤维素含量以及种皮颜色的 QTL 共定位。进一步进行精细定位并结合表达量分析和序列变异分析，鉴定到一个候选基因 <em>BnaA09g44670D</em>（<em>DYSOC1</em>）。该基因在 N53-2 中的等位基因发生移码突变并包含了一个 Skp1 结构域。<br>
+通过互补实验转基因互补实验和基因敲除实验对 <em>DYSOC1</em> 基因功能进行验证。转入 <em>DYSOC1</em> 基因的 Ken-C8 和 J9709 均表现为种皮变黄、含油量增加以及木质纤维素和皮壳率显著下降，敲除 N53-2 的 <em>DYSOC1</em> 基因则使其表现出相反的表型。将 N53-2 与 ZS11 进行杂交构建 F2 群体并考察表型发现，包含 <em>DYSOC1</em> 基因的纯合和杂合个体含油量显著上升，表明该基因在油菜高含油量育种中具有应用潜力。转录组和代谢组学分析表明，<em>DYSOC1</em> 基因下调苯丙素和类黄酮的生物合成途径，限制原花青素和木质素单体的合成。进化分析表明 <em>DYSOC1</em> 是一个在芸薹属中演化的孤儿基因，其仅在甘蓝型油菜和祖先种 （<em>B. rapa</em> 和 <em>B. oleracea</em>）存在同源基因。在甘蓝型油菜自然群体中 <em>DYSOC1</em> 为稀有单倍型，且与黄籽、高含油量和低木质纤维素含量等表型相关联。</p>
+<p><img src="./transgenic.jpg" srcset="/img/loading.gif" lazyload alt="DYSOC1 功能验证" title="DYSOC1 功能验证"></p>
+<p>通过杂交育种可以将 <em>DYSOC1</em> 导入其他黑籽油菜中从而提高产油量，并且不会对产量、株型等其他农艺性状产生影响。<em>DYSOC1</em> 等位基因在油菜自然群体中十分稀有进一步突出其应用潜力。因此，未来 <em>DYSOC1</em> 的广泛应用有希望大幅提高菜籽油产量。</p>
+<p><img src="./banner.JPG" srcset="/img/loading.gif" lazyload alt="育种策略示意图" title="育种策略示意图"></p>
+<hr>
+<p class="note note-primary">原文链接</p>
+<p><a target="_blank" rel="noopener" href="https://doi.org/10.1126/sciadv.ads7620">Li H, Wu M, Chao H, et al. A rare dominant allele DYSOC1 determines seed coat color and improves seed oil content in Brassica napus. Sci Adv. 2025;11(1):eads7620. doi:10.1126/sciadv.ads7620</a></p>
 
                 
               </div>
@@ -372,7 +348,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  <a href="/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/" class="category-chain-item">文献解读</a>
   
   
 
@@ -387,13 +363,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/R/">#R</a>
+        <a href="/tags/eQTL/">#eQTL</a>
       
-        <a href="/tags/%E7%BB%98%E5%9B%BE/">#绘图</a>
-      
-        <a href="/tags/mummer/">#mummer</a>
-      
-        <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">#可视化</a>
+        <a href="/tags/%E7%94%98%E8%93%9D%E5%9E%8B%E6%B2%B9%E8%8F%9C/">#甘蓝型油菜</a>
       
     </div>
   
@@ -405,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>R绘图 | mummer比对可视化</div>
-      <div>https://laowang2023.cn/2024/12/07/20241207-mummerCoordsPlot/</div>
+      <div>Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量</div>
+      <div>https://laowang2023.cn/2025/01/16/20250116-DYSOC1/</div>
     </div>
     <div class="license-meta">
       
@@ -418,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月7日</div>
+          <div>2025年1月16日</div>
         </div>
       
       
@@ -450,18 +422,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/16/20250116-DYSOC1/" title="Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/15/20240315-ggraster/" title="R绘图 | ggrastr：位图矢量图可以兼得">
-                        <span class="hidden-mobile">R绘图 | ggrastr：位图矢量图可以兼得</span>
+                      <a href="/2024/12/07/20241207-mummerCoordsPlot/" title="R绘图 | mummer比对可视化">
+                        <span class="hidden-mobile">R绘图 | mummer比对可视化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

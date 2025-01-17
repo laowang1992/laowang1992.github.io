@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2024-12-08T13:29:34.516Z</updated>
+  <updated>2025-01-17T06:35:17.214Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sci. Adv | 一个稀有的 DYSOC1 等位基因可以影响种皮颜色并提高含油量</title>
+    <link href="https://laowang2023.cn/2025/01/16/20250116-DYSOC1/"/>
+    <id>https://laowang2023.cn/2025/01/16/20250116-DYSOC1/</id>
+    <published>2025-01-16T07:12:52.000Z</published>
+    <updated>2025-01-17T06:35:17.214Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;甘蓝型油菜（&lt;em&gt;Brassica napus&lt;/em&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="eQTL" scheme="https://laowang2023.cn/tags/eQTL/"/>
+    
+    <category term="甘蓝型油菜" scheme="https://laowang2023.cn/tags/%E7%94%98%E8%93%9D%E5%9E%8B%E6%B2%B9%E8%8F%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>R绘图 | mummer比对可视化</title>
@@ -552,39 +579,6 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
     
     <category term="绘图" scheme="https://laowang2023.cn/tags/%E7%BB%98%E5%9B%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nat Commun. | 醋栗番茄基因组为研究番茄育种过程中的结构变异提供了依据</title>
-    <link href="https://laowang2023.cn/2023/03/21/20230321-SolanumPimpinellifoliumGenome/"/>
-    <id>https://laowang2023.cn/2023/03/21/20230321-SolanumPimpinellifoliumGenome/</id>
-    <published>2023-03-21T01:54:05.000Z</published>
-    <updated>2023-10-03T04:00:23.728Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;醋栗番茄（&lt;em&gt;Solanum lycopersicum&lt;/em&gt;, SP）是栽培番茄（&lt;em&gt;S. lycopersicum&lt;/em&gt;）的野生祖先种，他的果实小、颜色红呈现圆形。醋栗番茄在南美洲被驯化形成了观赏番茄（&lt;em&gt;S. lycopersicum&lt;/em&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
-    
-    
-    <category term="基因组" scheme="https://laowang2023.cn/tags/%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
-    
-    <category term="番茄" scheme="https://laowang2023.cn/tags/%E7%95%AA%E8%8C%84/"/>
-    
-    <category term="结构变异" scheme="https://laowang2023.cn/tags/%E7%BB%93%E6%9E%84%E5%8F%98%E5%BC%82/"/>
-    
-    <category term="eQTL" scheme="https://laowang2023.cn/tags/eQTL/"/>
-    
-    <category term="驯化" scheme="https://laowang2023.cn/tags/%E9%A9%AF%E5%8C%96/"/>
     
   </entry>
   
