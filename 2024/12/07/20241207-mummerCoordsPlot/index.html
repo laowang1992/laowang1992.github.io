@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://laowang2023.cn/img/index_banner/20241207-mummerCoordsPlot.png">
 <meta property="article:published_time" content="2024-12-07T01:25:37.000Z">
-<meta property="article:modified_time" content="2025-01-21T03:25:45.243Z">
+<meta property="article:modified_time" content="2025-01-24T08:28:10.314Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="绘图">
@@ -321,8 +321,7 @@
 <p>The MUMmer system and the genome sequence aligner nucmer included within it are among the most widely used alignment packages in genomics.<br>
 ——<a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pcbi.1005944">Marçais, Guillaume et al., 2018, PLoS computational biology</a></p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/mummer4/mummer.git">mummer</a> 是基因组序列比对的常用工具之一。对比对结果进行可视化可以让我们直观的看到序列之间的共线性区域或结构变异，使用 mummer 工具包中自带的 mummerplot 可以方便的对比对结果可视化，但是其颜值可能并不突出。<br>
-<a target="_blank" rel="noopener" href="https://github.com/tpoorten/dotPlotly.git">dotPlotly</a> 中的 mummerCoordsDotPlotly.R 也是一个可以对 mummer 比对结果进行可视化的优秀工具，并且它在一些基因组研究的文章中被使用。但是这个软件的有些方便不太符合我的需求：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mummer4/mummer.git">mummer</a> 是基因组序列比对的常用工具之一。对比对结果进行可视化可以让我们直观的看到序列之间的共线性区域或结构变异，使用 mummer 工具包中自带的 mummerplot 可以方便的对比对结果可视化，但是其颜值可能并不突出。<a target="_blank" rel="noopener" href="https://github.com/tpoorten/dotPlotly.git">dotPlotly</a> 中的 mummerCoordsDotPlotly.R 也是一个可以对 mummer 比对结果进行可视化的优秀工具，并且它在一些基因组研究的文章中被使用。但是这个软件的有些方便不太符合我的需求：</p>
 <ul>
 <li>软件默认按照 query 染色体的长度进行排序，而我更希望按照染色体在基因组中的顺序排序；</li>
 <li>当它将 identity 按照颜色进行展示时使用了<span style="color:yellow">黄色</span>，在白色背景中并不明显，改用<span style="color:red">红色</span>或<span style="color:blue">蓝色</span>可以更加醒目；</li>
