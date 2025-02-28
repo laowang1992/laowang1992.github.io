@@ -331,18 +331,18 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
   </entry>
   
   <entry>
-    <title>R语言 | shiny基础（一）：shiny用户界面（UI）</title>
+    <title>R语言 | shiny 基础（一）：shiny 用户界面（UI）</title>
     <link href="https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/"/>
     <id>https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/</id>
     <published>2023-06-02T03:46:15.000Z</published>
-    <updated>2023-12-13T02:07:01.206Z</updated>
+    <updated>2025-02-28T01:51:38.924Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/&quot;&gt;书接上文&lt;/a&gt;，我们已经了解shiny的主体结构，今天详细讲一讲用户界面（ui）部分。ui是shiny</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/&quot;&gt;书接上文&lt;/a&gt;，我们已经了解 shiny 的主体结构，今天详细讲一讲用户界面（ui）部分。ui 是 shiny web</summary>
         
       
     
@@ -362,16 +362,16 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <link href="https://laowang2023.cn/2023/05/31/20230531-shinyBasics1/"/>
     <id>https://laowang2023.cn/2023/05/31/20230531-shinyBasics1/</id>
     <published>2023-05-31T09:42:07.000Z</published>
-    <updated>2023-12-06T12:32:40.989Z</updated>
+    <updated>2025-02-28T01:47:21.788Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;shiny是一个创建交互式web应用程序的工具，有R和python版本，这里只涉及R版本。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;shiny 是一个创建交互式 web 应用程序的工具，有 R 和 python 版本，这里只涉及 R 版本。&lt;/p&gt;
 &lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
-&lt;p&gt;shiny是一个R语言扩展包，安装方便：&lt;/p&gt;
+&lt;p&gt;shiny 是一个 R 语言扩展包，安装方便：&lt;/p&gt;
 &lt;figure class=&quot;highlight</summary>
         
       
@@ -392,14 +392,14 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <link href="https://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/"/>
     <id>https://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/</id>
     <published>2023-05-22T03:18:45.000Z</published>
-    <updated>2023-10-03T04:01:19.385Z</updated>
+    <updated>2025-02-28T01:45:31.493Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从DNA序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics</summary>
+    <summary type="html">&lt;p&gt;随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从 DNA 序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics</summary>
         
       
     
@@ -475,14 +475,14 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <link href="https://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/"/>
     <id>https://laowang2023.cn/2023/04/22/20230422-getQTLseqCI/</id>
     <published>2023-04-22T13:32:37.000Z</published>
-    <updated>2023-12-06T12:32:44.602Z</updated>
+    <updated>2025-01-24T09:28:26.386Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;../20230422-QTLseqMethod/&quot;&gt;书接上文&lt;/a&gt;，在计算出ΔSNP-index之后如何判断该位点是否存在QTL？这里通过随机模拟实验来确定ΔSNP-index的置信区间（H0: 没有QTL）。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;../20230422-QTLseqMethod/&quot;&gt;书接上文&lt;/a&gt;，在计算出 ΔSNP-index 之后如何判断该位点是否存在 QTL？这里通过随机模拟实验来确定 ΔSNP-index 的置信区间（H0: 没有QTL）。&lt;/p&gt;
 &lt;p&gt;&lt;img</summary>
         
       
@@ -503,14 +503,14 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <link href="https://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/"/>
     <id>https://laowang2023.cn/2023/04/22/20230422-QTLseqMethod/</id>
     <published>2023-04-22T13:32:26.000Z</published>
-    <updated>2024-12-07T11:19:15.954Z</updated>
+    <updated>2025-01-24T09:24:54.971Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;QTL-seq是一种将Bulked‐segregant analysis (BSA)和高通量测序相结合，快速定位质量性状或数量性状主效QTL的方法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot;</summary>
+    <summary type="html">&lt;p&gt;QTL-seq 是一种将 Bulked‐segregant analysis（BSA）和高通量测序相结合，快速定位质量性状或数量性状主效 QTL 的方法&lt;sup id=&quot;fnref:1&quot; class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn:1&quot;</summary>
         
       
     
@@ -528,7 +528,7 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <link href="https://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/"/>
     <id>https://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/</id>
     <published>2023-04-20T12:56:47.000Z</published>
-    <updated>2023-10-03T04:00:59.745Z</updated>
+    <updated>2025-01-24T09:21:57.619Z</updated>
     
     
       
