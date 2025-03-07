@@ -16,16 +16,16 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="R语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。">
+    <meta name="description" content="R 语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R绘图 | ggrastr：位图矢量图可以兼得">
 <meta property="og:url" content="https://laowang2023.cn/2024/03/15/20240315-ggraster/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="R语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。">
+<meta property="og:description" content="R 语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://laowang2023.cn/2024/03/15/20240315-ggraster/rastr.svg">
 <meta property="article:published_time" content="2024-03-15T13:37:51.000Z">
-<meta property="article:modified_time" content="2024-06-07T02:09:46.736Z">
+<meta property="article:modified_time" content="2025-03-05T02:03:38.865Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="绘图">
@@ -315,19 +315,19 @@
             
               <div class="markdown-body">
                 
-                <p>R语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。Adobe illustrator作为专业的矢量图处理工具当然可以实现，但是生成的图片还要打开二次编辑还是会令人烦恼，有没有办法在用R语言作图的过程中就完成这个处理呢？那就是今天要讲的R包<strong>ggraster</strong>了。</p>
+                <p>R 语言绘图导出时我们可以选择矢量图，清晰且放大不失真，但是当图中元素太多时会导致导出文件太大并且打开查看时也不太方便；那么也可以选择位图，不管图中元素有多少，在一定分辨率下图片大小不会有太大差别，但是图中的注释或一些文字信息就会失真。以下面这个曼哈顿图为例，如果全用矢量图那么肯定会给存储、编辑、查看带来不便。一个合理的方案是将图片中主体部分变成位图，也就是栅格化，坐标轴阈值线等等其他部分保持不变。Adobe illustrator 作为专业的矢量图处理工具当然可以实现，但是生成的图片还要打开二次编辑还是会令人烦恼，有没有办法在用R语言作图的过程中就完成这个处理呢？那就是今天要讲的 R 包 <strong>ggraster</strong> 了。</p>
 <p><img src="./ManhattanPlot.JPG" srcset="/img/loading.gif" lazyload alt="曼哈顿图，Hu et al. 2022" title="Hu et al. 2022"></p>
 <h2 id="安装">安装</h2>
-<p>从<a target="_blank" rel="noopener" href="https://cran.r-project.org/package=ggrastr">CRAN</a>或<a target="_blank" rel="noopener" href="https://github.com/VPetukhov/ggrastr.git">GitHub</a>都可以安装。</p>
+<p>从 <a target="_blank" rel="noopener" href="https://cran.r-project.org/package=ggrastr">CRAN</a> 或 <a target="_blank" rel="noopener" href="https://github.com/VPetukhov/ggrastr.git">GitHub</a> 都可以安装。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># from CRAN</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;ggrastr&#x27;</span><span class="hljs-punctuation">)</span><br><span class="hljs-comment"># or from github</span><br>install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;devtools&#x27;</span><span class="hljs-punctuation">)</span><br>devtools<span class="hljs-operator">::</span>install_github<span class="hljs-punctuation">(</span><span class="hljs-string">&#x27;VPetukhov/ggrastr&#x27;</span><span class="hljs-punctuation">,</span> build_vignettes <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
 <h2 id="使用">使用</h2>
-<p>与默认的ggplot作图相比，使用<code>ggraster</code>栅格化图层并不会有太多改动。仅仅把需要栅格化的图层代码放到<code>rasterise()</code>函数中就可以。</p>
+<p>与默认的 ggplot 作图相比，使用 <code>ggraster</code> 栅格化图层并不会有太多改动。仅仅把需要栅格化的图层代码放到 <code>rasterise()</code> 函数中就可以。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs R"><span class="hljs-comment"># library package</span><br>library<span class="hljs-punctuation">(</span>ggplot2<span class="hljs-punctuation">)</span><br>library<span class="hljs-punctuation">(</span>ggrastr<span class="hljs-punctuation">)</span><br><br>ggplot<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span> <br>  rasterise<span class="hljs-punctuation">(</span>geom_point<span class="hljs-punctuation">(</span>aes<span class="hljs-punctuation">(</span>carat<span class="hljs-punctuation">,</span> price<span class="hljs-punctuation">,</span> colour <span class="hljs-operator">=</span> cut<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> data<span class="hljs-operator">=</span>diamonds<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> dpi<span class="hljs-operator">=</span><span class="hljs-number">30</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span><br>  geom_point<span class="hljs-punctuation">(</span>aes<span class="hljs-punctuation">(</span>x<span class="hljs-operator">=</span>runif<span class="hljs-punctuation">(</span><span class="hljs-number">20</span><span class="hljs-punctuation">,</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> y<span class="hljs-operator">=</span>runif<span class="hljs-punctuation">(</span><span class="hljs-number">20</span><span class="hljs-punctuation">,</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-number">20000</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> size<span class="hljs-operator">=</span><span class="hljs-number">10</span><span class="hljs-punctuation">,</span> color<span class="hljs-operator">=</span><span class="hljs-string">&quot;black&quot;</span><span class="hljs-punctuation">,</span> shape<span class="hljs-operator">=</span><span class="hljs-number">8</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
 <p><img src="./rastr.svg" srcset="/img/loading.gif" lazyload alt="部分栅格化" title="部分栅格化"></p>
-<p>上述代码将第一个<code>geom_point</code>生成的圆点图层栅格化，并设置分辨率是30 dpi，而第二个<code>geom_point</code>生成的八角星的点和坐标轴等依然保持矢量图的状态。</p>
-<p>最后感谢<a target="_blank" rel="noopener" href="https://d.cosx.org/u/meeeeeeeeo">@meeeeeeeeo</a>在统计之都论坛的<a target="_blank" rel="noopener" href="https://d.cosx.org/d/425089-ryu-yan-dao-chu-wei-tu-he-shi-liang-tu-jie-he-de-tu-pian">回复与分享</a>。</p>
+<p>上述代码将第一个 <code>geom_point</code> 生成的圆点图层栅格化，并设置分辨率是 30 dpi，而第二个 <code>geom_point</code> 生成的八角星的点和坐标轴等依然保持矢量图的状态。</p>
+<p>最后感谢 <a target="_blank" rel="noopener" href="https://d.cosx.org/u/meeeeeeeeo">@meeeeeeeeo</a> 在统计之都论坛的<a target="_blank" rel="noopener" href="https://d.cosx.org/d/425089-ryu-yan-dao-chu-wei-tu-he-shi-liang-tu-jie-he-de-tu-pian">回复与分享</a>。</p>
 <p class="note note-primary">参考</p>
-<p><a target="_blank" rel="noopener" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/VPetukhov/ggrastr/main/doc/Raster_geoms.html">ggraster使用说明</a></p>
+<p><a target="_blank" rel="noopener" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/VPetukhov/ggrastr/main/doc/Raster_geoms.html">ggraster 使用说明</a></p>
 <p class="note note-primary">曼哈顿图来源</p>
 <p><a target="_blank" rel="noopener" href="https://doi.org/10.1038/s41588-022-01055-6">Hu J, Chen B, Zhao J, et al. Genomic selection and genetic architecture of agronomic traits during modern rapeseed breeding. Nat Genet. 2022;54(5):694-704. doi:10.1038/s41588-022-01055-6</a></p>
 <p><img src="https://images.pexels.com/photos/1322138/pexels-photo-1322138.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" srcset="/img/loading.gif" lazyload alt="图片与主题无关" title="图片与主题无关"></p>
