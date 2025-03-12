@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2025-03-07T02:44:06.997Z</updated>
+  <updated>2025-03-12T03:19:16.391Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Cell | AI 预测蛋白质结构揭示脱氨酶功能及其基因编辑应用</title>
+    <link href="https://laowang2023.cn/2025/03/12/20250312-deaminase/"/>
+    <id>https://laowang2023.cn/2025/03/12/20250312-deaminase/</id>
+    <published>2025-03-12T02:43:01.000Z</published>
+    <updated>2025-03-12T03:19:16.391Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;脱氨酶（Deaminase）是一类催化核苷酸和碱基脱氨的酶，广泛参与突变、核苷酸代谢以及基因编辑等重要生物学过程。近年来，脱氨酶在单碱基编辑技术中的应用受到了广泛关注。然而，传统的蛋白功能挖掘主要依赖于氨基酸序列信息，难以全面揭示脱氨酶的进化关系和功能特性。&lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    <category term="2024 中国农业科学重大进展" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/2024-%E4%B8%AD%E5%9B%BD%E5%86%9C%E4%B8%9A%E7%A7%91%E5%AD%A6%E9%87%8D%E5%A4%A7%E8%BF%9B%E5%B1%95/"/>
+    
+    
+    <category term="2024中国农业科学重大进展" scheme="https://laowang2023.cn/tags/2024%E4%B8%AD%E5%9B%BD%E5%86%9C%E4%B8%9A%E7%A7%91%E5%AD%A6%E9%87%8D%E5%A4%A7%E8%BF%9B%E5%B1%95/"/>
+    
+    <category term="基因编辑" scheme="https://laowang2023.cn/tags/%E5%9F%BA%E5%9B%A0%E7%BC%96%E8%BE%91/"/>
+    
+    <category term="AI" scheme="https://laowang2023.cn/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cell | 籼稻粳稻杂种不育分子机理</title>
     <link href="https://laowang2023.cn/2025/03/05/20250305-riceRHS12/"/>
     <id>https://laowang2023.cn/2025/03/05/20250305-riceRHS12/</id>
     <published>2025-03-05T02:36:28.000Z</published>
-    <updated>2025-03-07T02:44:06.997Z</updated>
+    <updated>2025-03-12T03:21:14.029Z</updated>
     
     
       
@@ -225,7 +257,7 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <link href="https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/"/>
     <id>https://laowang2023.cn/2023/10/03/20231003-Xiaoyun/</id>
     <published>2023-10-03T03:37:50.000Z</published>
-    <updated>2025-03-05T02:00:45.407Z</updated>
+    <updated>2025-03-12T03:09:48.525Z</updated>
     
     
       
@@ -553,37 +585,6 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     
     
     <category term="QTL-seq" scheme="https://laowang2023.cn/tags/QTL-seq/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nat Genet. | 一个优良抗旱玉米种质的基因组组装与遗传剖析</title>
-    <link href="https://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/"/>
-    <id>https://laowang2023.cn/2023/04/20/20230420-DroughtResistantMaizeGermplasm/</id>
-    <published>2023-04-20T12:56:47.000Z</published>
-    <updated>2025-01-24T09:21:57.619Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;玉米（&lt;em&gt;Zea</summary>
-        
-      
-    
-    
-    
-    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
-    
-    
-    <category term="基因组" scheme="https://laowang2023.cn/tags/%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
-    
-    <category term="结构变异" scheme="https://laowang2023.cn/tags/%E7%BB%93%E6%9E%84%E5%8F%98%E5%BC%82/"/>
-    
-    <category term="玉米" scheme="https://laowang2023.cn/tags/%E7%8E%89%E7%B1%B3/"/>
-    
-    <category term="抗旱" scheme="https://laowang2023.cn/tags/%E6%8A%97%E6%97%B1/"/>
     
   </entry>
   
