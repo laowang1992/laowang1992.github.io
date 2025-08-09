@@ -16,16 +16,16 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="传统育种工作量大、周期长。通过将回交育种与分子标记辅助选择（Marker-Assisted Selection，MAS）技术相结合，可以将产量、品质和抗性等相关基因或QTLs的优良单倍型快速导入目标材料，从而改良相关性状，显著提高育种效率。在对目标位点进行选择的同时，还需评估改良后材料的背景基因组回复率。传统基于聚丙烯酰胺凝胶电泳的分子标记方法不仅标记数量有限，覆盖范围小，且操作繁琐、效率低。相比">
+    <meta name="description" content="📌 更新说明（2025-07-31） BackgroundAnalysis.R 中使用的 SNPbinner 改成依赖 python3 的版本。 12# 下载 python3 版本的 SNPbinnergit clone https:&#x2F;&#x2F;github.com&#x2F;laowang1992&#x2F;SNPbinner.git  传统育种工作量大、周期长。通过将回交育种与分子标记辅助选择（Marker-Assi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言 | 一个计算背景回复率的工具">
 <meta property="og:url" content="https://laowang2023.cn/2025/05/29/20250529-BackgroundAnalysis/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="传统育种工作量大、周期长。通过将回交育种与分子标记辅助选择（Marker-Assisted Selection，MAS）技术相结合，可以将产量、品质和抗性等相关基因或QTLs的优良单倍型快速导入目标材料，从而改良相关性状，显著提高育种效率。在对目标位点进行选择的同时，还需评估改良后材料的背景基因组回复率。传统基于聚丙烯酰胺凝胶电泳的分子标记方法不仅标记数量有限，覆盖范围小，且操作繁琐、效率低。相比">
+<meta property="og:description" content="📌 更新说明（2025-07-31） BackgroundAnalysis.R 中使用的 SNPbinner 改成依赖 python3 的版本。 12# 下载 python3 版本的 SNPbinnergit clone https:&#x2F;&#x2F;github.com&#x2F;laowang1992&#x2F;SNPbinner.git  传统育种工作量大、周期长。通过将回交育种与分子标记辅助选择（Marker-Assi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://laowang2023.cn/2025/05/29/20250529-BackgroundAnalysis/index.jpg">
 <meta property="article:published_time" content="2025-05-29T07:48:20.000Z">
-<meta property="article:modified_time" content="2025-06-01T06:17:54.752Z">
+<meta property="article:modified_time" content="2025-07-31T09:07:05.277Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="回交育种">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.6k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          12 分钟
+          13 分钟
         
       </span>
     
@@ -317,7 +317,12 @@
             
               <div class="markdown-body">
                 
-                <p>传统育种工作量大、周期长。通过将回交育种与分子标记辅助选择（Marker-Assisted Selection，MAS）技术相结合，可以将产量、品质和抗性等相关基因或QTLs的优良单倍型快速导入目标材料，从而改良相关性状，显著提高育种效率。在对目标位点进行选择的同时，还需评估改良后材料的背景基因组回复率。传统基于聚丙烯酰胺凝胶电泳的分子标记方法不仅标记数量有限，覆盖范围小，且操作繁琐、效率低。相比之下，利用高通量二代测序技术，能够以较低成本实现对改良材料更高覆盖度、更高精度的背景评价，从而加快育种进程。<br>
+                <blockquote>
+<p>📌 <strong>更新说明（2025-07-31）</strong><br>
+BackgroundAnalysis.R 中使用的 <a target="_blank" rel="noopener" href="https://github.com/laowang1992/SNPbinner.git">SNPbinner</a> 改成依赖 python3 的版本。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">下载 python3 版本的 SNPbinner</span><br>git clone https://github.com/laowang1992/SNPbinner.git<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>传统育种工作量大、周期长。通过将回交育种与分子标记辅助选择（Marker-Assisted Selection，MAS）技术相结合，可以将产量、品质和抗性等相关基因或QTLs的优良单倍型快速导入目标材料，从而改良相关性状，显著提高育种效率。在对目标位点进行选择的同时，还需评估改良后材料的背景基因组回复率。传统基于聚丙烯酰胺凝胶电泳的分子标记方法不仅标记数量有限，覆盖范围小，且操作繁琐、效率低。相比之下，利用高通量二代测序技术，能够以较低成本实现对改良材料更高覆盖度、更高精度的背景评价，从而加快育种进程。<br>
 选取供体亲本、轮回亲本以及改良株系进行二代测序和变异分析得到一个 vcf 文件，后续如何获得供体基因组片段的位置和长度呢？今天我们介绍的 R 脚本 <strong>BackgroundAnalysis.R</strong> 可以解决这一问题。</p>
 <h2 id="使用方法">使用方法</h2>
 <h3 id="工具下载">工具下载</h3>
