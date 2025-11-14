@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2025-07-31T09:07:05.277Z</updated>
+  <updated>2025-11-14T09:57:13.126Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么？EMMAX也能做全转录组关联分析（Transcriptome-wide Association Study，TWAS）</title>
+    <link href="https://laowang2023.cn/2025/11/14/20251114-emmaxtwas/"/>
+    <id>https://laowang2023.cn/2025/11/14/20251114-emmaxtwas/</id>
+    <published>2025-11-14T09:57:13.126Z</published>
+    <updated>2025-11-14T09:57:13.126Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;全基因组关联分析从正向遗传学的角度出发，探究“基因型-表型”之间的关联，近年来在人类疾病和作物产量、品质以及抗逆等多方面的遗传机理研究中发挥重要作用。然而由于连锁不平衡（Linkage Disequilibrium，LD）的存在，我们很难直接从 GWAS</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="TWAS" scheme="https://laowang2023.cn/tags/TWAS/"/>
+    
+    <category term="Transcriptome-wide Association Study" scheme="https://laowang2023.cn/tags/Transcriptome-wide-Association-Study/"/>
+    
+    <category term="全转录组关联分析" scheme="https://laowang2023.cn/tags/%E5%85%A8%E8%BD%AC%E5%BD%95%E7%BB%84%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/"/>
+    
+    <category term="EMMAX" scheme="https://laowang2023.cn/tags/EMMAX/"/>
+    
+  </entry>
   
   <entry>
     <title>R语言 | 一个计算背景回复率的工具</title>
@@ -172,7 +203,7 @@ BackgroundAnalysis.R 中使用的 &lt;a</summary>
     <link href="https://laowang2023.cn/2024/12/07/20241207-mummerCoordsPlot/"/>
     <id>https://laowang2023.cn/2024/12/07/20241207-mummerCoordsPlot/</id>
     <published>2024-12-07T01:25:37.000Z</published>
-    <updated>2025-10-31T09:19:22.906Z</updated>
+    <updated>2025-11-03T03:40:03.575Z</updated>
     
     
       
@@ -180,7 +211,8 @@ BackgroundAnalysis.R 中使用的 &lt;a</summary>
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;📌</summary>
+&lt;p&gt;📌 &lt;strong&gt;更新说明（2025-10-31）&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;mummerCoordsPlot.R&lt;/strong&gt; 已经整合到 &lt;a</summary>
         
       
     
@@ -565,32 +597,6 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <category term="苍岩山" scheme="https://laowang2023.cn/tags/%E8%8B%8D%E5%B2%A9%E5%B1%B1/"/>
     
     <category term="旅游" scheme="https://laowang2023.cn/tags/%E6%97%85%E6%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搞对象一周年纪念日</title>
-    <link href="https://laowang2023.cn/2023/04/24/20230424-FirstYearAnniversary/"/>
-    <id>https://laowang2023.cn/2023/04/24/20230424-FirstYearAnniversary/</id>
-    <published>2023-04-24T11:44:05.000Z</published>
-    <updated>2023-12-08T12:40:25.916Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;快乐的时光总是飞快的，我们在一起一年了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./cake.jpg&quot; alt=&quot;一周年蛋糕&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="记录生活" scheme="https://laowang2023.cn/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="开心" scheme="https://laowang2023.cn/tags/%E5%BC%80%E5%BF%83/"/>
     
   </entry>
   
