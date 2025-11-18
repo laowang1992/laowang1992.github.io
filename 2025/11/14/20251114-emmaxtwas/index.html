@@ -24,8 +24,8 @@
 <meta property="og:description" content="全基因组关联分析从正向遗传学的角度出发，探究“基因型-表型”之间的关联，近年来在人类疾病和作物产量、品质以及抗逆等多方面的遗传机理研究中发挥重要作用。然而由于连锁不平衡（Linkage Disequilibrium，LD）的存在，我们很难直接从 GWAS 结果中找到和表型相关的因果变异（causal variant）或候选基因。尤其在自交作物中，由于 LD 衰减较慢，这一问题更加突出。全转录组关联">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://laowang2023.cn/2025/11/14/20251114-emmaxtwas/index.png">
-<meta property="article:published_time" content="2025-11-14T10:25:26.317Z">
-<meta property="article:modified_time" content="2025-11-14T10:25:26.318Z">
+<meta property="article:published_time" content="2025-11-14T08:28:11.000Z">
+<meta property="article:modified_time" content="2025-11-18T02:04:50.342Z">
 <meta property="article:author" content="老王">
 <meta property="article:tag" content="TWAS">
 <meta property="article:tag" content="Transcriptome-wide Association Study">
@@ -243,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-14 18:25" pubdate>
-          2025年11月14日 晚上
+        <time datetime="2025-11-14 16:28" pubdate>
+          2025年11月14日 下午
         </time>
       </span>
     
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.9k 字
+          2.8k 字
         
       </span>
     
@@ -327,7 +327,7 @@
 <p><strong>Running EMMAX with dosages</strong><br>
 If you add -Z option, it will accept .tped file format, where each individual is represented as one dosage value (ranging from 0 to 2), instead of two genotype columns, (which is one of the standard PLINK dosage format). You will be able to run EMMAX with this model. But when creating the kinship matrix, you will not be able to use dosage-based genotypes.</p>
 </blockquote>
-<p>在 TWAS 场景下，我们将表达量按样本缩放至 0~2 范围，使其形式上可被视为“连续型 dosage”，从而被 EMMAX 接受，尽管此时无法基于 dosage 构建亲缘矩阵（kinship）。按照这一思路，我们对表达量矩阵中每个基因在不同样本的表达量进行转换并整理成 tped/tfam 格式，加上 <code>-Z</code> 参数重新运行 EMMAX 可以得到输出结果。可以看到该结果与文章中结果整体一致。</p>
+<p>在 TWAS 场景下，我们将每个基因在不同样本中的表达量缩放至 0~2 范围，使其形式上可被视为“连续型 dosage”，从而被 EMMAX 接受，尽管此时无法基于 dosage 构建亲缘矩阵（kinship）。按照这一思路，我们对表达量矩阵进行转换并整理成 tped/tfam 格式，加上 <code>-Z</code> 参数重新运行 EMMAX 可以得到输出结果。可以看到该结果与文章中结果整体一致。</p>
 <p><img src="./GLblup.TWAS.png" srcset="/img/loading.gif" lazyload alt="使用 EMMAX 得到的 TWAS 结果" title="使用 EMMAX 得到的 TWAS 结果"><br>
 <img src="./banner.jpg" srcset="/img/loading.gif" lazyload alt="原文中的 TWAS 结果" title="原文中的 TWAS 结果"></p>
 <h2 id="进一步讨论：TWAS-信号峰是否意味着-causal-基因？">进一步讨论：TWAS 信号峰是否意味着 causal 基因？</h2>
