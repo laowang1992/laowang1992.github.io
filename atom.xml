@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2026-01-05T11:00:09.186Z</updated>
+  <updated>2026-01-08T11:38:46.746Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>家猫颜色之谜终于揭开：为什么三花/玳瑁多是母猫？</title>
+    <link href="https://laowang2023.cn/2026/01/07/20260107-catcolor/"/>
+    <id>https://laowang2023.cn/2026/01/07/20260107-catcolor/</id>
+    <published>2026-01-07T06:47:59.000Z</published>
+    <updated>2026-01-08T11:38:46.746Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;猫咪作为宠物，其毛皮有多种颜色和花纹。橘猫（Orange）、玳瑁猫（Tortoiseshell）和三花猫（Calico）因其独特的花色深受人们喜爱。通过观察我们可以发现，绝大多数的三花猫和玳瑁猫都是雌猫，这一现象表明橙色毛皮是一种与性染色体连锁的性状。科学家早在 60</summary>
+        
+      
+    
+    
+    
+    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
+    
+    
+    <category term="猫" scheme="https://laowang2023.cn/tags/%E7%8C%AB/"/>
+    
+    <category term="Arhgap36" scheme="https://laowang2023.cn/tags/Arhgap36/"/>
+    
+  </entry>
+  
+  <entry>
     <title>穿越千年的“喵”声：古DNA揭秘家猫征服欧亚大陆的隐秘往事</title>
     <link href="https://laowang2023.cn/2026/01/05/20260105-cat/"/>
     <id>https://laowang2023.cn/2026/01/05/20260105-cat/</id>
     <published>2026-01-05T07:37:15.000Z</published>
-    <updated>2026-01-05T11:00:09.186Z</updated>
+    <updated>2026-01-07T06:59:08.888Z</updated>
     
     
       
@@ -567,35 +594,6 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
     
     <category term="shiny" scheme="https://laowang2023.cn/tags/shiny/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nat Genet. | 玉米多组学整合网络图谱</title>
-    <link href="https://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/"/>
-    <id>https://laowang2023.cn/2023/05/22/20230522-maizeMultiOmicsNetwork/</id>
-    <published>2023-05-22T03:18:45.000Z</published>
-    <updated>2025-02-28T01:45:31.493Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;随着技术发展，生命科学进入大数据时代。中心法则的提出和发展表明从 DNA 序列到表型之间存在多个层次的调控过程。利用多组学数据构建整合网络为解析复杂性状的遗传调控提新的有效途径，结合机器学习挖掘生物大数据更为解析表型变异的分子调控网络提供便利。“A multi-omics</summary>
-        
-      
-    
-    
-    
-    <category term="文献解读" scheme="https://laowang2023.cn/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/"/>
-    
-    
-    <category term="玉米" scheme="https://laowang2023.cn/tags/%E7%8E%89%E7%B1%B3/"/>
-    
-    <category term="多组学" scheme="https://laowang2023.cn/tags/%E5%A4%9A%E7%BB%84%E5%AD%A6/"/>
-    
-    <category term="网络" scheme="https://laowang2023.cn/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
