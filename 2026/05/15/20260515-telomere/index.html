@@ -16,25 +16,27 @@
   <meta name="author" content="老王">
   <meta name="keywords" content="">
   
-    <meta name="description" content="家猫（Felis catus）作为如今最常见的伴侣动物之一遍布全世界。家猫起源于非洲野猫（Felis lybica lybica），然而它们是究竟何时、如何进入不同的文明体系，其实一直存在争议。最近两篇分别发表在《Science》[1]和《Cell Genomics》[2]上的研究通过大规模古 DNA 测序与考古证据，为“家猫如何走向世界”给出了更清晰、也更出人意料的答案。 欧洲篇：迟到的“北非移">
+    <meta name="description" content="端粒位于染色体末端，是染色体结构中的保守功能区域，在维持基因组稳定性上发挥重要作用，端粒由高度保守的短串联重复序列（绝大多数陆地植物为“CCCTAAA&#x2F;TTTAGGG”）组成。随着三代测序技术以及组装算法的发展，实现一个物种的T2T（Telomere to Telomere）基因组组装越来越容易。组装出全部或大多数端粒序列意味着较高的基因组完整性，然而如何在组装后鉴定出端粒的位置呢？ tidk和q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="穿越千年的“喵”声：古DNA揭秘家猫征服欧亚大陆的隐秘往事">
-<meta property="og:url" content="https://laowang2023.cn/2026/01/05/20260105-cat/index.html">
+<meta property="og:title" content="如何从基因组序列中鉴定端粒">
+<meta property="og:url" content="https://laowang2023.cn/2026/05/15/20260515-telomere/index.html">
 <meta property="og:site_name" content="请叫我老王">
-<meta property="og:description" content="家猫（Felis catus）作为如今最常见的伴侣动物之一遍布全世界。家猫起源于非洲野猫（Felis lybica lybica），然而它们是究竟何时、如何进入不同的文明体系，其实一直存在争议。最近两篇分别发表在《Science》[1]和《Cell Genomics》[2]上的研究通过大规模古 DNA 测序与考古证据，为“家猫如何走向世界”给出了更清晰、也更出人意料的答案。 欧洲篇：迟到的“北非移">
+<meta property="og:description" content="端粒位于染色体末端，是染色体结构中的保守功能区域，在维持基因组稳定性上发挥重要作用，端粒由高度保守的短串联重复序列（绝大多数陆地植物为“CCCTAAA&#x2F;TTTAGGG”）组成。随着三代测序技术以及组装算法的发展，实现一个物种的T2T（Telomere to Telomere）基因组组装越来越容易。组装出全部或大多数端粒序列意味着较高的基因组完整性，然而如何在组装后鉴定出端粒的位置呢？ tidk和q">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://laowang2023.cn/2026/01/05/20260105-cat/index.jpg">
-<meta property="article:published_time" content="2026-01-05T07:37:15.000Z">
-<meta property="article:modified_time" content="2026-01-09T10:57:50.077Z">
+<meta property="og:image" content="https://laowang2023.cn/2026/05/15/20260515-telomere/index.jpg">
+<meta property="article:published_time" content="2026-05-15T09:02:23.000Z">
+<meta property="article:modified_time" content="2026-05-15T11:03:31.724Z">
 <meta property="article:author" content="老王">
-<meta property="article:tag" content="古基因组">
-<meta property="article:tag" content="猫">
+<meta property="article:tag" content="端粒">
+<meta property="article:tag" content="端粒鉴定">
+<meta property="article:tag" content="telomere">
+<meta property="article:tag" content="T2T基因组">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://laowang2023.cn/2026/01/05/20260105-cat/index.jpg">
+<meta name="twitter:image" content="https://laowang2023.cn/2026/05/15/20260515-telomere/index.jpg">
   
   
   
-  <title>穿越千年的“喵”声：古DNA揭秘家猫征服欧亚大陆的隐秘往事 - 请叫我老王</title>
+  <title>如何从基因组序列中鉴定端粒 - 请叫我老王</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,13 +226,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/2026/01/05/20260105-cat/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/2026/05/15/20260515-telomere/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="穿越千年的“喵”声：古DNA揭秘家猫征服欧亚大陆的隐秘往事"></span>
+            <span id="subtitle" data-typed-text="如何从基因组序列中鉴定端粒"></span>
           
         </div>
 
@@ -241,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-01-05 15:37" pubdate>
-          2026年1月5日 下午
+        <time datetime="2026-05-15 17:02" pubdate>
+          2026年5月15日 下午
         </time>
       </span>
     
@@ -253,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          1.5k 字
         
       </span>
     
@@ -264,7 +266,7 @@
         
         
         
-          16 分钟
+          13 分钟
         
       </span>
     
@@ -310,26 +312,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">穿越千年的“喵”声：古DNA揭秘家猫征服欧亚大陆的隐秘往事</h1>
+            <h1 style="display: none">如何从基因组序列中鉴定端粒</h1>
             
             
               <div class="markdown-body">
                 
-                <p>家猫（<em>Felis catus</em>）作为如今最常见的伴侣动物之一遍布全世界。家猫起源于非洲野猫（<em>Felis lybica lybica</em>），然而它们是究竟何时、如何进入不同的文明体系，其实一直存在争议。最近两篇分别发表在《Science》<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[De Martino, M., De Cupere, B., Rovelli, V., Serventi, P., Mouraud, B., Baldoni, M., Di Corcia, T., Geiger, S., Alhaique, F., Alves, P. C., Buitenhuis, H., Ceccaroni, E., Cerilli, E., De Grossi Mazzorin, J., Detry, C., Dowd, M., Fiore, I., Gourichon, L., Grau-Sologestoa, I., Küchelmann, H. C., … Ottoni, C. (2025). The dispersal of domestic cats from North Africa to Europe around 2000 years ago. Science (New York, N.Y.), 390(6776), eadt2642. https://doi.org/10.1126/science.adt2642](https://doi.org/10.1126/science.adt2642)">[1]</span></a></sup>和《Cell Genomics》<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Han, Y., Hu, S., Liu, K., Xu, X., Li, Z., Doherty, S., Jamieson, A. E., Manin, A., Martins, S. G., Yang, M., Yu, C., Wang, J., Wu, Z., Chen, C., Han, S., Lu, D., Peng, L., Wu, X., Fan, W., Cai, Q., … Luo, S. J. (2025). The late arrival of domestic cats in China via the Silk Road after 3,500 years of human-leopard cat commensalism. Cell genomics, 101099. Advance online publication. https://doi.org/10.1016/j.xgen.2025.101099](https://doi.org/10.1016/j.xgen.2025.101099)">[2]</span></a></sup>上的研究通过大规模古 DNA 测序与考古证据，为“家猫如何走向世界”给出了更清晰、也更出人意料的答案。</p>
-<h2 id="欧洲篇：迟到的“北非移民”">欧洲篇：迟到的“北非移民”</h2>
-<p>长期以来，人们普遍认为家猫是随着新石器时代的农业活动，从近东地区扩散到欧洲。但最新的古基因组分析挑战了这一观点，通过对 87 个古代和现代猫基因组的分析，科学家发现家猫并不是在新石器时代进入欧洲，而是在大约 2000 年前才从北非引入。过去被认为带有非洲野猫线粒体 DNA 的欧洲早期遗骸，实际上是与非洲野猫发生过杂交的欧洲野猫（<em>Felis silvestris</em>）。同时该研究揭示，存在两次“非洲-&gt;欧洲”的猫扩散事件。第一次是约 2200 年前从西北非（摩洛哥一带）引入的一个独立野猫谱系，建立了今天的撒丁岛野猫种群；第二次则是约 2000 年前（罗马帝国时期）从北非引入的与家猫群体，该谱系与的基因型与现代家猫高度一致并迅速在欧洲扩散。家猫在欧洲的扩散并非偶然，而是与宗教（巴斯特女神）、农业、贸易（抓老鼠）等的人类活动密切相关。</p>
-<p><img src="./science.JPG" srcset="/img/loading.gif" lazyload alt="家猫在欧洲的传播" title="家猫在欧洲的传播"></p>
-<h2 id="中国篇：豹猫的“临时工”时代与丝路来客">中国篇：豹猫的“临时工”时代与丝路来客</h2>
-<p>有观点认为在新石器时代晚期（约 5400 年前）中国已经有“家猫”，或至少在汉代已经出现。然而最新研究表明，起源于黎凡特地区的家猫直到公元 600 年以后（唐）才通过丝绸之路真正抵达中国。中国目前已知最早的家猫遗骸发现于陕西统万城，测定约为公元 730 年。虽然我们今天只能看到这只猫的遗骸，但是通过基因组分析推测，这只猫可能是一只纯白或带有白色斑块的个体。</p>
-<p>看到这里有同学就要问了，难道唐朝以前我们就没有猫猫吗？根据基因组和放射性碳定年证据显示，早在 5400 年前到公元 2 世纪，出现在中国的人类定居点附件的小型猫科动物几乎全部是豹猫（<em>Prionailurus bengalensis</em>）。它们在人类环境中捕食老鼠，且这种共生关系持续了约 3500 年，但最终未能像家猫那样被完全驯化。</p>
-<p><img src="./CG.JPG" srcset="/img/loading.gif" lazyload alt="家猫在中国的传播" title="家猫在中国的传播"></p>
-<h2 id="全球视野下的猫猫扩张史">全球视野下的猫猫扩张史</h2>
-<p>家猫全球扩张的成功，在于它们精准地嵌入了人类社会的结构性需求。综合这两项研究，我们可以看到无论是家猫在欧洲的扩张，还是在中国通过丝绸之路的引入，家猫的全球足迹都与人类的贸易路线或农业活动紧密相连。和对玉米、小麦、葡萄等作物的研究一样，我们对于家猫驯化和扩张的研究，其实是在用另一种方式研究人类自己。</p>
-<hr>
-<p class="note note-primary">参考文献</p>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://doi.org/10.1126/science.adt2642">De Martino, M., De Cupere, B., Rovelli, V., Serventi, P., Mouraud, B., Baldoni, M., Di Corcia, T., Geiger, S., Alhaique, F., Alves, P. C., Buitenhuis, H., Ceccaroni, E., Cerilli, E., De Grossi Mazzorin, J., Detry, C., Dowd, M., Fiore, I., Gourichon, L., Grau-Sologestoa, I., Küchelmann, H. C., … Ottoni, C. (2025). The dispersal of domestic cats from North Africa to Europe around 2000 years ago. Science (New York, N.Y.), 390(6776), eadt2642. https://doi.org/10.1126/science.adt2642</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.xgen.2025.101099">Han, Y., Hu, S., Liu, K., Xu, X., Li, Z., Doherty, S., Jamieson, A. E., Manin, A., Martins, S. G., Yang, M., Yu, C., Wang, J., Wu, Z., Chen, C., Han, S., Lu, D., Peng, L., Wu, X., Fan, W., Cai, Q., … Luo, S. J. (2025). The late arrival of domestic cats in China via the Silk Road after 3,500 years of human-leopard cat commensalism. Cell genomics, 101099. Advance online publication. https://doi.org/10.1016/j.xgen.2025.101099</a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                <p>端粒位于染色体末端，是染色体结构中的保守功能区域，在维持基因组稳定性上发挥重要作用，端粒由高度保守的短串联重复序列（绝大多数陆地植物为“CCCTAAA/TTTAGGG”）组成。随着三代测序技术以及组装算法的发展，实现一个物种的T2T（Telomere to Telomere）基因组组装越来越容易。组装出全部或大多数端粒序列意味着较高的基因组完整性，然而如何在组装后鉴定出端粒的位置呢？</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tolkit/telomeric-identifier.git">tidk</a>和<a target="_blank" rel="noopener" href="https://github.com/aaranyue/quarTeT.git">quarTeT</a>是我用过的两个比较方便、快速的工具。然而在实际应用过程中我也发现了一些问题，这两个软件只是按照滑窗的方式在每个窗口中鉴定端粒重复序列motif的数量，将富含端粒motif的窗口视作候选端粒区域，并不关心这些motif是否是串联在一起的。例如下面应用tidk的一个例子，在该染色体上由4个显著的端粒motif信号，但在360 kb左右只是一段包含“CCCTAAA”的串联重复，并非是端粒序列，quarTeT软件也有同样的问题，因此有鉴定到假的端粒结构的潜在可能。</p>
+<p><img src="./tidk.JPG" srcset="/img/loading.gif" lazyload alt="一个tidk鉴定端粒的例子" title="一个tidk鉴定端粒的例子"></p>
+<pre><code class="hljs">
+C03	TRF	TandemRepeat	359867	369931	3665	.	.	ID=TR320552;PeriodSize=25;CopyNumber=402.8;ConsensusSize=24;PercentMatches=70;PercentIndels=15;Consensus=TTAAA<span style="color:red;font-weight:bold;">CCCTAAA</span>CCCTGCCTAGGG
+C03	TRF	TandemRepeat	359867	370385	3308	.	.	ID=TR320554;PeriodSize=49;CopyNumber=213.4;ConsensusSize=48;PercentMatches=71;PercentIndels=14;Consensus=TTAAA<span style="color:red;font-weight:bold;">CCCTAAA</span>CCCTGCCTAGGGCTAAA<span style="color:red;font-weight:bold;">CCCTAAA</span>CCCTCTCTAGGG
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://github.com/Benson-Genomics-Lab/TRF.git">TRF</a>（Tandem Repeats Finder）是鉴定串联重复序列的经典工具，当然也可以鉴定到端粒motif的串联重复且较为准确，只是在上万条结果中挑出端粒序列略显麻烦。此处推荐一个工具<strong>find_telomere_from_TRF.py</strong>可以较为方便的从TRF结果中筛选出端粒序列，该脚本可以从<a target="_blank" rel="noopener" href="https://github.com/laowang1992/SomeScript.git">Github</a>下载。使用前需要先用<a target="_blank" rel="noopener" href="https://github.com/Adamtaranto/TRF2GFF.git">trf2gff</a>将TRF结果转换成gff3格式文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">github下载脚本</span><br>git clone https://github.com/laowang1992/SomeScript.git<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">trf鉴定串联重复</span><br>trf genome.fa 2 7 7 80 10 50 500 -f -d -m<br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用trf2gff转换为gff文件</span><br>trf2gff -i genome.fa.2.7.7.80.10.50.500.dat -o genome.TRF.gff3<br><span class="hljs-meta prompt_"># </span><span class="language-bash">筛选端粒序列</span><br>python find_telomere_from_TRF.py \<br>	-i genome.TRF.gff3 -o telomere.gff3 \<br>	-m TTTAGGG \    # 指定端粒motif，默认值是TTTAGGG<br>	-c 100 \        # 指定最小重复次数<br>	--match 85      # 最低PercentMatches<br></code></pre></td></tr></table></figure>
+<p>当然这个工具还有进一步修改的空间，首先可以输入染色体长度信息，检查筛选的端粒序列是否在染色体末端，其次可以添加可视化功能，展示染色体和端粒位置。另外，TRF运行速度并不快，如果就想省点事用tidk，建议用<code>search</code>功能，且指定端粒基序为至少两个重复，即“<code>tidk search --string CCCTAAACCCTAAA --output out --dir ./ $genome</code>”，可在一定程度避免上述问题。</p>
+
                 
               </div>
             
@@ -347,7 +346,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%96%87%E7%8C%AE%E8%A7%A3%E8%AF%BB/" class="category-chain-item">文献解读</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
   
   
 
@@ -362,9 +361,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8F%A4%E5%9F%BA%E5%9B%A0%E7%BB%84/">#古基因组</a>
+        <a href="/tags/%E7%AB%AF%E7%B2%92/">#端粒</a>
       
-        <a href="/tags/%E7%8C%AB/">#猫</a>
+        <a href="/tags/%E7%AB%AF%E7%B2%92%E9%89%B4%E5%AE%9A/">#端粒鉴定</a>
+      
+        <a href="/tags/telomere/">#telomere</a>
+      
+        <a href="/tags/T2T%E5%9F%BA%E5%9B%A0%E7%BB%84/">#T2T基因组</a>
       
     </div>
   
@@ -376,8 +379,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>穿越千年的“喵”声：古DNA揭秘家猫征服欧亚大陆的隐秘往事</div>
-      <div>https://laowang2023.cn/2026/01/05/20260105-cat/</div>
+      <div>如何从基因组序列中鉴定端粒</div>
+      <div>https://laowang2023.cn/2026/05/15/20260515-telomere/</div>
     </div>
     <div class="license-meta">
       
@@ -389,7 +392,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年1月5日</div>
+          <div>2026年5月15日</div>
         </div>
       
       
@@ -421,18 +424,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/01/07/20260107-catcolor/" title="家猫颜色之谜终于揭开：为什么三花/玳瑁多是母猫？">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">家猫颜色之谜终于揭开：为什么三花/玳瑁多是母猫？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/11/14/20251114-emmaxtwas/" title="什么？EMMAX也能做全转录组关联分析（Transcriptome-wide Association Study，TWAS）">
-                        <span class="hidden-mobile">什么？EMMAX也能做全转录组关联分析（Transcriptome-wide Association Study，TWAS）</span>
+                      <a href="/2026/01/09/20260109-Lateralizedsleeping/" title="一项通过看猫片进行的研究：为什么猫更爱左侧卧？">
+                        <span class="hidden-mobile">一项通过看猫片进行的研究：为什么猫更爱左侧卧？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

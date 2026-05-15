@@ -6,7 +6,7 @@
   <link href="https://laowang2023.cn/atom.xml" rel="self"/>
   
   <link href="https://laowang2023.cn/"/>
-  <updated>2026-01-09T10:51:24.236Z</updated>
+  <updated>2026-05-15T11:03:31.724Z</updated>
   <id>https://laowang2023.cn/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何从基因组序列中鉴定端粒</title>
+    <link href="https://laowang2023.cn/2026/05/15/20260515-telomere/"/>
+    <id>https://laowang2023.cn/2026/05/15/20260515-telomere/</id>
+    <published>2026-05-15T09:02:23.000Z</published>
+    <updated>2026-05-15T11:03:31.724Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;端粒位于染色体末端，是染色体结构中的保守功能区域，在维持基因组稳定性上发挥重要作用，端粒由高度保守的短串联重复序列（绝大多数陆地植物为“CCCTAAA/TTTAGGG”）组成。随着三代测序技术以及组装算法的发展，实现一个物种的T2T（Telomere to</summary>
+        
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="端粒" scheme="https://laowang2023.cn/tags/%E7%AB%AF%E7%B2%92/"/>
+    
+    <category term="端粒鉴定" scheme="https://laowang2023.cn/tags/%E7%AB%AF%E7%B2%92%E9%89%B4%E5%AE%9A/"/>
+    
+    <category term="telomere" scheme="https://laowang2023.cn/tags/telomere/"/>
+    
+    <category term="T2T基因组" scheme="https://laowang2023.cn/tags/T2T%E5%9F%BA%E5%9B%A0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一项通过看猫片进行的研究：为什么猫更爱左侧卧？</title>
     <link href="https://laowang2023.cn/2026/01/09/20260109-Lateralizedsleeping/"/>
     <id>https://laowang2023.cn/2026/01/09/20260109-Lateralizedsleeping/</id>
     <published>2026-01-09T07:55:22.000Z</published>
-    <updated>2026-01-09T10:51:24.236Z</updated>
+    <updated>2026-01-22T02:18:16.334Z</updated>
     
     
       
@@ -79,14 +110,14 @@
     <link href="https://laowang2023.cn/2026/01/05/20260105-cat/"/>
     <id>https://laowang2023.cn/2026/01/05/20260105-cat/</id>
     <published>2026-01-05T07:37:15.000Z</published>
-    <updated>2026-01-07T06:59:08.888Z</updated>
+    <updated>2026-01-09T10:57:50.077Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;家猫（&lt;em&gt;Felis catus&lt;/em&gt;）作为如今最常见的伴侣动物之一遍布全世界。家猫起源于非洲野猫（&lt;em&gt;Felis lybica lybica&lt;/em&gt;），然而它们是究竟何时、如何进入不同的文明体系，其实一直存在争议。最近两篇分别发表在 Science&lt;sup</summary>
+    <summary type="html">&lt;p&gt;家猫（&lt;em&gt;Felis catus&lt;/em&gt;）作为如今最常见的伴侣动物之一遍布全世界。家猫起源于非洲野猫（&lt;em&gt;Felis lybica</summary>
         
       
     
@@ -568,33 +599,6 @@ window.addEventListener(&#39;DOMContentLoaded&#39;, (event) =&gt; {
     <category term="绘图" scheme="https://laowang2023.cn/tags/%E7%BB%98%E5%9B%BE/"/>
     
     <category term="circos" scheme="https://laowang2023.cn/tags/circos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>R语言 | shiny 基础（一）：shiny 用户界面（UI）</title>
-    <link href="https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/"/>
-    <id>https://laowang2023.cn/2023/06/02/20230602-shinyBasics2UI/</id>
-    <published>2023-06-02T03:46:15.000Z</published>
-    <updated>2025-06-02T05:15:01.226Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://laowang2023.cn/2023/05/31/20230531-shinyBasics1/&quot;&gt;书接上文&lt;/a&gt;，我们已经了解 shiny 的主体结构，今天详细讲一讲用户界面（ui）部分。ui 是 shiny web</summary>
-        
-      
-    
-    
-    
-    <category term="技术分享" scheme="https://laowang2023.cn/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="R" scheme="https://laowang2023.cn/tags/R/"/>
-    
-    <category term="shiny" scheme="https://laowang2023.cn/tags/shiny/"/>
     
   </entry>
   
