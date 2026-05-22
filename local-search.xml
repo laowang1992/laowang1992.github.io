@@ -686,31 +686,6 @@
   
   
   <entry>
-    <title>搞对象一周年纪念日</title>
-    <link href="/2023/04/24/20230424-FirstYearAnniversary/"/>
-    <url>/2023/04/24/20230424-FirstYearAnniversary/</url>
-    
-    <content type="html"><![CDATA[<p>快乐的时光总是飞快的，我们在一起一年了</p><p><img src="./cake.jpg" alt="一周年蛋糕" title="一周年蛋糕"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>记录生活</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>开心</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>QTL-seq系列 | 如何计算置信区间</title>
     <link href="/2023/04/22/20230422-getQTLseqCI/"/>
     <url>/2023/04/22/20230422-getQTLseqCI/</url>
@@ -858,7 +833,7 @@
     <link href="/2023/03/13/20230313-firstArticle/"/>
     <url>/2023/03/13/20230313-firstArticle/</url>
     
-    <content type="html"><![CDATA[<h2 id="我搭建了一个博客网站">我搭建了一个博客网站</h2><p>如题所说这是这个网站上的第一篇博客，以后会在这里分享一些学习、生活相关的文章。为什么会搭建一个网站来写博客呢？相较于简书、知乎、微信公众号等平台，个人网站有更高的灵活性，版面设计更加丰富；相比于微博、小红书等社交平台，个人网站内容更加纯粹，广告更少，字数等限制也更少；还有一点就是搭建个网站看起来很厉害。</p><h2 id="网站内容">网站内容</h2><p>以后大概会分享以下几个方面的文章：</p><ul><li>日常生活</li><li>文献解读</li><li>编程技术</li><li>软件工具</li><li>… …</li></ul><h2 id="技术框架">技术框架</h2><p>前面提到搭建网站看起来很厉害，其实真正操作起来并不难。就像做一个 PPT 可以用 Microsoft PowerPoint，甚至还有很多好看的模板可以下载使用，做博客网站也有很多成熟的框架和主题可以使用。这个网站是使用 <a href="https://hexo.io/zh-cn/index.html">Hexo</a> 搭建，选用 <a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a> 主题，使用 markdown 语法来写文章。以上步骤完成后把网站部署在 <a href="https://github.com/">GitHub</a> 上就可以供大家访问了。最后在阿里云上购买了一个域名（可选），最终做成一个现在大家看到的网站了。<s>以后可以写一篇博客详细讲一讲搭建这个网站的过程</s>已经有很多关于 hexo 搭建博客网站的资料，我就不写了😅。</p><p><img src="./LaowangAndHuining_20230313210505.png" alt="老王和惠宁" title="老王和女朋友在公园划船"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="我搭建了一个博客网站">我搭建了一个博客网站</h2><p>如题所说这是这个网站上的第一篇博客，以后会在这里分享一些学习、生活相关的文章。为什么会搭建一个网站来写博客呢？相较于简书、知乎、微信公众号等平台，个人网站有更高的灵活性，版面设计更加丰富；相比于微博、小红书等社交平台，个人网站内容更加纯粹，广告更少，字数等限制也更少；还有一点就是搭建个网站看起来很厉害。</p><h2 id="网站内容">网站内容</h2><p>以后大概会分享以下几个方面的文章：</p><ul><li>日常生活</li><li>文献解读</li><li>编程技术</li><li>软件工具</li><li>… …</li></ul><h2 id="技术框架">技术框架</h2><p>前面提到搭建网站看起来很厉害，其实真正操作起来并不难。就像做一个 PPT 可以用 Microsoft PowerPoint，甚至还有很多好看的模板可以下载使用，做博客网站也有很多成熟的框架和主题可以使用。这个网站是使用 <a href="https://hexo.io/zh-cn/index.html">Hexo</a> 搭建，选用 <a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a> 主题，使用 markdown 语法来写文章。以上步骤完成后把网站部署在 <a href="https://github.com/">GitHub</a> 上就可以供大家访问了。最后在阿里云上购买了一个域名（可选），最终做成一个现在大家看到的网站了。<s>以后可以写一篇博客详细讲一讲搭建这个网站的过程</s>已经有很多关于 hexo 搭建博客网站的资料，我就不写了😅。</p><!--![老王和惠宁](./LaowangAndHuining_20230313210505.png "老王和女朋友在公园划船")-->]]></content>
     
     
     
